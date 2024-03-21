@@ -123,7 +123,7 @@ class _HelperState extends State<Helper> {
                                   onTap: () {
                                     helperBloc.add(HelperGenerateEvent(
                                         helperText:
-                                            'Can you tell me some best practices for dealing with ${textEditingController.text} in 10 points'));
+                                            'Can you tell me some best practices for dealing with ${textEditingController.text} html form'));
                                   },
                                   child: CircleAvatar(
                                     child: CircleAvatar(

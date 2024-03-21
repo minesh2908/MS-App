@@ -31,8 +31,7 @@ class _DashboardState extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
-    print('------------------');
-    print(MediaQuery.of(context).size.width);
+  
     DateTime now = DateTime.now();
     String formattedDate = DateFormat('EEE, d MMM y').format(now);
     return Scaffold(
