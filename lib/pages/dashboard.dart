@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:space_app/Theme/bloc/theme_bloc.dart';
+import 'package:space_app/pages/ComingSoon/comingsoon.dart';
 import 'package:space_app/pages/Helper/UI/helper.dart';
 import 'package:space_app/pages/home_page.dart';
 import 'package:intl/intl.dart';
@@ -147,7 +148,7 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return Helper();
+                                return ComingSoon();
                               }));
                             },
                             child: DashboardCard(
