@@ -47,7 +47,7 @@ const darkColorScheme = ColorScheme(
   primaryContainer: Color.fromARGB(255, 194, 173, 214),
   onPrimaryContainer: Color.fromARGB(255, 240, 212, 137),
   secondary: Color(0xFFCBC2DB),
-  onSecondary: Color(0xFF332D41),
+  onSecondary: Color.fromARGB(255, 243, 199, 212),
   secondaryContainer: Color(0xFF4A4458),
   onSecondaryContainer: Color(0xFFE8DEF8),
   tertiary: Color(0xFFEFB8C8),

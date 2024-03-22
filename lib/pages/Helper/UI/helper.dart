@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:html/parser.dart';
 import 'package:lottie/lottie.dart';
 import 'package:space_app/model/helper.dart';
 import 'package:space_app/pages/Helper/bloc/helper_bloc.dart';
@@ -123,7 +124,7 @@ class _HelperState extends State<Helper> {
                                   onTap: () {
                                     helperBloc.add(HelperGenerateEvent(
                                         helperText:
-                                            'Can you tell me some best practices for dealing with ${textEditingController.text} html form'));
+                                            "Can you tell me some best practices for dealing with ${textEditingController.text}, I need answer in HTML code but in HTMl I just need the body tag and all tags and data inside body does not need HTML tag, head tag."));
                                   },
                                   child: CircleAvatar(
                                     child: CircleAvatar(
@@ -188,9 +189,10 @@ class _HelperState extends State<Helper> {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            helperResult.replaceAll('**', ''),
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w500),
+                            parse(helperResult).outerHtml,
+                            // helperResult.replaceAll('**', ''),
+                            // style: TextStyle(
+                            //     fontSize: 18, fontWeight: FontWeight.w500),
                           ),
                         ),
                       ),
@@ -224,7 +226,7 @@ class _HelperState extends State<Helper> {
                               fontSize: 18,
                               fontFamily: 'Goldman',
                               fontWeight: FontWeight.bold)),
-                      RotateAnimatedText('We will definatley give you soution',
+                      RotateAnimatedText('We will definatley give you solution',
                           textStyle: TextStyle(
                               fontSize: 18,
                               fontFamily: 'Goldman',

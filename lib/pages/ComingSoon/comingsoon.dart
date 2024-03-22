@@ -8,7 +8,7 @@ class ComingSoon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).colorScheme.scrim,
       body: Container(
         width: double.maxFinite,
         height: double.maxFinite,
