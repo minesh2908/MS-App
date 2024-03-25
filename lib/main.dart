@@ -5,6 +5,7 @@ import 'package:space_app/Theme/bloc/theme_bloc.dart';
 import 'package:space_app/pages/Dashboard/UI/dashboard.dart';
 import 'package:space_app/pages/AIchat/UI/AIchat.dart';
 import 'package:space_app/pages/Helper/UI/helper.dart';
+import 'package:space_app/pages/QR/UI/Qr.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       child: BlocBuilder<ThemeBloc, ThemeMode>(
         builder: (context, state) {
           return MaterialApp(
-            home: Dashboard(),
+            home: QrPage(),
             debugShowCheckedModeBanner: false,
             theme: lightTheme,
             darkTheme: darkTheme,

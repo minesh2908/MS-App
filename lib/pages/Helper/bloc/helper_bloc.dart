@@ -11,22 +11,28 @@ part 'helper_state.dart';
 class HelperBloc extends Bloc<HelperEvent, HelperState> {
   HelperBloc() : super(HelperInitial()) {
     on<HelperGenerateEvent>(helperGenerateEvent);
+    on<HelperPopEvent>(helperPopEvent);
   }
 
   FutureOr<void> helperGenerateEvent(
       HelperGenerateEvent event, Emitter<HelperState> emit) async {
-      emit(HelperLoadingState());
-      print('----------------');
-      print(state);
+    emit(HelperLoadingState());
+    print('----------------');
+    print(state);
     try {
       String helperResult = await HelperApi.HelperGenerationApi([
         HelperModel(parts: [HelperPartModel(text: event.helperText)])
       ]);
       emit(HelperSuccessState(helperResult: helperResult));
-       print('----------------');
+      print('----------------');
       print(state);
     } catch (e) {
       print(e.toString());
     }
   }
+
+  FutureOr<void> helperPopEvent(
+      HelperPopEvent event, Emitter<HelperState> emit) {
+        emit(HelperInitial());
+      }
 }

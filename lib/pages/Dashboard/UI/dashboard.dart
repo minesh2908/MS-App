@@ -148,7 +148,7 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return ComingSoon();
+                                return Helper();
                               }));
                             },
                             child: DashboardCard(
@@ -276,7 +276,7 @@ class _DashboardState extends State<Dashboard> {
                            onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return ComingSoon();
+                                return Helper();
                               }));
                             },
                             child: DashboardCard(
@@ -404,7 +404,7 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return ComingSoon();
+                                return Helper();
                               }));
                             },
                             child: DashboardCard(

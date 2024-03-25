@@ -3,10 +3,12 @@ part of 'helper_bloc.dart';
 
 @immutable
 sealed class HelperEvent {}
+
 class HelperGenerateEvent extends HelperEvent {
   String helperText;
   HelperGenerateEvent({
     required this.helperText,
   });
-  
 }
+
+class HelperPopEvent extends HelperEvent {}
