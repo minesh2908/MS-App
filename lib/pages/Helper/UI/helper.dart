@@ -73,9 +73,6 @@ class _HelperState extends State<Helper> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 40,
-                      ),
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.only(),
@@ -88,7 +85,7 @@ class _HelperState extends State<Helper> {
                                     width: 150,
                                     decoration: BoxDecoration(
                                         color:
-                                            Color.fromARGB(255, 231, 193, 105),
+                                            Color.fromARGB(255, 243, 200, 99),
                                         borderRadius: BorderRadius.circular(25),
                                         boxShadow: [
                                           BoxShadow(
