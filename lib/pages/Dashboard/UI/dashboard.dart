@@ -6,7 +6,10 @@ import 'package:space_app/pages/ComingSoon/comingsoon.dart';
 import 'package:space_app/pages/Helper/UI/helper.dart';
 import 'package:space_app/pages/AIchat/UI/AIchat.dart';
 import 'package:intl/intl.dart';
+import 'package:space_app/pages/QR/UI/Qr.dart';
+import 'package:space_app/pages/QR/UI/QrCodeGeneration.dart';
 import 'package:space_app/responsive/responsive_layout.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -30,9 +33,18 @@ class _DashboardState extends State<Dashboard> {
     });
   }
 
+  Future<void> launchInBrowserView(Uri url) async {
+    if (!await launchUrl(url, mode: LaunchMode.inAppBrowserView)) {
+      throw Exception('Could not launch $url');
+    }
+  }
+
+  final Uri toLaunch = Uri(
+      scheme: 'https',
+      host: 'www.linkedin.com',
+      path: '/in/minesh-sarawogi-4787401a1/');
   @override
   Widget build(BuildContext context) {
-  
     DateTime now = DateTime.now();
     String formattedDate = DateFormat('EEE, d MMM y').format(now);
     return Scaffold(
@@ -156,7 +168,7 @@ class _DashboardState extends State<Dashboard> {
                               bodyContent:
                                   'Discribe your problem and get help from AI',
                               headingContent: 'Helper',
-                              cardColor: Theme.of(context).colorScheme.primary,
+                              cardColor: Theme.of(context).colorScheme.onPrimaryContainer,
                             ),
                           ),
                         ),
@@ -178,7 +190,7 @@ class _DashboardState extends State<Dashboard> {
                               headingContent: 'Download',
                               cardColor: Theme.of(context)
                                   .colorScheme
-                                  .onPrimaryContainer,
+                                  .primary,
                             ),
                           ),
                         ),
@@ -189,16 +201,17 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return ComingSoon();
+                                return QrCodeGenerator();
                               }));
                             },
                             child: DashboardCard(
                               icon: Icons.qr_code,
                               bodyContent:
-                                  'Scan or Generate QR Code in once Click',
+                                  'Generate Customise QR Code in once Click',
                               headingContent: 'QR Code',
-                              cardColor:
-                                  Theme.of(context).colorScheme.primaryContainer,
+                              cardColor: Theme.of(context)
+                                  .colorScheme
+                                  .primaryContainer,
                             ),
                           ),
                         ),
@@ -216,7 +229,8 @@ class _DashboardState extends State<Dashboard> {
                               icon: Icons.games,
                               bodyContent: 'Play differnt type of games here',
                               headingContent: 'Games',
-                              cardColor: Theme.of(context).colorScheme.onPrimary,
+                              cardColor:
+                                  Theme.of(context).colorScheme.onPrimary,
                             ),
                           ),
                         ),
@@ -224,17 +238,14 @@ class _DashboardState extends State<Dashboard> {
                           crossAxisCellCount: 1,
                           mainAxisCellCount: 1,
                           child: InkWell(
-                            onTap: () {
-                              Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) {
-                                return ComingSoon();
-                              }));
+                            onTap: () async {
+                              launchInBrowserView(toLaunch);
                             },
                             child: DashboardCard(
                               icon: Icons.person,
                               bodyContent: 'Know About the developer',
                               headingContent: 'Developer',
-                              cardColor: Theme.of(context).colorScheme.primary,
+                              cardColor: Theme.of(context).colorScheme.onPrimaryContainer,
                             ),
                           ),
                         ),
@@ -273,7 +284,7 @@ class _DashboardState extends State<Dashboard> {
                           crossAxisCellCount: 1,
                           mainAxisCellCount: 1,
                           child: InkWell(
-                           onTap: () {
+                            onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
                                 return Helper();
@@ -284,7 +295,7 @@ class _DashboardState extends State<Dashboard> {
                               bodyContent:
                                   'Discribe your problem and get help from AI',
                               headingContent: 'Helper',
-                              cardColor: Theme.of(context).colorScheme.primary,
+                              cardColor: Theme.of(context).colorScheme.onPrimaryContainer,
                             ),
                           ),
                         ),
@@ -306,7 +317,7 @@ class _DashboardState extends State<Dashboard> {
                               headingContent: 'Download',
                               cardColor: Theme.of(context)
                                   .colorScheme
-                                  .onPrimaryContainer,
+                                  .primary,
                             ),
                           ),
                         ),
@@ -314,19 +325,20 @@ class _DashboardState extends State<Dashboard> {
                           crossAxisCellCount: 1,
                           mainAxisCellCount: 1,
                           child: InkWell(
-                            onTap: () {
+                           onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return ComingSoon();
+                                return QrCodeGenerator();
                               }));
                             },
                             child: DashboardCard(
                               icon: Icons.qr_code,
                               bodyContent:
-                                  'Scan or Generate QR Code in once Click',
+                                  'Generate Customise QR Code in once Click',
                               headingContent: 'QR Code',
-                              cardColor:
-                                  Theme.of(context).colorScheme.primaryContainer,
+                              cardColor: Theme.of(context)
+                                  .colorScheme
+                                  .primaryContainer,
                             ),
                           ),
                         ),
@@ -344,7 +356,10 @@ class _DashboardState extends State<Dashboard> {
                               icon: Icons.games,
                               bodyContent: 'Play differnt type of games here',
                               headingContent: 'Games',
-                              cardColor: Theme.of(context).colorScheme.onPrimary,
+                              cardColor:
+                                  Theme.of(context)
+                                  .colorScheme
+                                  .primary,
                             ),
                           ),
                         ),
@@ -352,17 +367,14 @@ class _DashboardState extends State<Dashboard> {
                           crossAxisCellCount: 1,
                           mainAxisCellCount: 0.5,
                           child: InkWell(
-                            onTap: () {
-                              Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) {
-                                return ComingSoon();
-                              }));
+                            onTap: () async {
+                              launchInBrowserView(toLaunch);
                             },
                             child: DashboardCard(
                               icon: Icons.person,
                               bodyContent: 'Know About the developer',
                               headingContent: 'Developer',
-                              cardColor: Theme.of(context).colorScheme.primary,
+                              cardColor: Theme.of(context).colorScheme.onPrimaryContainer,
                             ),
                           ),
                         ),
@@ -412,7 +424,7 @@ class _DashboardState extends State<Dashboard> {
                               bodyContent:
                                   'Discribe your problem and get help from AI',
                               headingContent: 'Helper',
-                              cardColor: Theme.of(context).colorScheme.primary,
+                              cardColor: Theme.of(context).colorScheme.onPrimaryContainer,
                             ),
                           ),
                         ),
@@ -434,27 +446,28 @@ class _DashboardState extends State<Dashboard> {
                               headingContent: 'Download',
                               cardColor: Theme.of(context)
                                   .colorScheme
-                                  .onPrimaryContainer,
+                                  .primary,
                             ),
                           ),
                         ),
                         StaggeredGridTile.count(
-                          crossAxisCellCount: 1,
+                          crossAxisCellCount: 2,
                           mainAxisCellCount: 1,
                           child: InkWell(
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return ComingSoon();
+                                return QrCodeGenerator();
                               }));
                             },
                             child: DashboardCard(
                               icon: Icons.qr_code,
                               bodyContent:
-                                  'Scan or Generate QR Code in once Click',
+                                  'Generate Customise QR Code in once Click',
                               headingContent: 'QR Code',
-                              cardColor:
-                                  Theme.of(context).colorScheme.primaryContainer,
+                              cardColor: Theme.of(context)
+                                  .colorScheme
+                                  .primaryContainer,
                             ),
                           ),
                         ),
@@ -472,25 +485,23 @@ class _DashboardState extends State<Dashboard> {
                               icon: Icons.games,
                               bodyContent: 'Play differnt type of games here',
                               headingContent: 'Games',
-                              cardColor: Theme.of(context).colorScheme.onPrimary,
+                              cardColor:
+                                  Theme.of(context).colorScheme.onPrimary,
                             ),
                           ),
                         ),
                         StaggeredGridTile.count(
-                          crossAxisCellCount: 2,
+                          crossAxisCellCount: 1,
                           mainAxisCellCount: 1,
                           child: InkWell(
-                            onTap: () {
-                              Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) {
-                                return ComingSoon();
-                              }));
+                            onTap: () async {
+                              launchInBrowserView(toLaunch);
                             },
                             child: DashboardCard(
                               icon: Icons.person,
                               bodyContent: 'Know About the developer',
                               headingContent: 'Developer',
-                              cardColor: Theme.of(context).colorScheme.primary,
+                              cardColor: Theme.of(context).colorScheme.onPrimaryContainer,
                             ),
                           ),
                         ),

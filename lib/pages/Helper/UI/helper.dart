@@ -27,7 +27,8 @@ class _HelperState extends State<Helper> {
         body: Container(
       width: double.maxFinite,
       height: double.maxFinite,
-      decoration: BoxDecoration(color: Theme.of(context).colorScheme.primary),
+      decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.onPrimaryContainer),
       child: BlocConsumer<HelperBloc, HelperState>(
         bloc: helperBloc,
         listener: (context, state) {
@@ -57,7 +58,7 @@ class _HelperState extends State<Helper> {
                                     fontSize: 32,
                                     fontFamily: 'Goldman',
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.black),
+                                    color: Color.fromARGB(255, 53, 52, 52)),
                               ),
                               InkWell(
                                   onTap: () {
@@ -65,96 +66,154 @@ class _HelperState extends State<Helper> {
                                   },
                                   child: Icon(
                                     Icons.home,
-                                    color: Colors.black,
+                                    color: Color.fromARGB(255, 53, 52, 52),
                                     size: 28,
                                   ))
                             ],
                           ),
                         ),
                       ),
+                      SizedBox(
+                        height: 40,
+                      ),
                       Expanded(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 8.0),
-                              child: Container(
-                                height: 80,
-                                child: AnimatedTextKit(
-                                    totalRepeatCount: 1,
-                                    animatedTexts: [
-                                      TyperAnimatedText(
-                                        'Enter your problem or situation in which you are stuck, we will try to give solution for your problem. For Example : If you are having heavy pain in head just type Headache',
-                                        textStyle: TextStyle(
-                                            fontSize: 14,
-                                            fontFamily: 'Goldman',
-                                            fontStyle: FontStyle.italic),
-                                        textAlign: TextAlign.center,
+                        child: Padding(
+                          padding: const EdgeInsets.only(),
+                          child: SingleChildScrollView(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Container(
+                                    height: 150,
+                                    width: 150,
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color.fromARGB(255, 231, 193, 105),
+                                        borderRadius: BorderRadius.circular(25),
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color: Colors.black,
+                                              spreadRadius: 1,
+                                              blurRadius: 10,
+                                              offset: const Offset(10, 15))
+                                        ]),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(14.0),
+                                      child: Image.asset(
+                                        'assets/helper.png',
                                       ),
-                                    ]),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 8.0),
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: TextField(
-                                      controller: textEditingController,
-                                      style: TextStyle(fontFamily: 'Goldman'),
-                                      decoration: InputDecoration(
-                                        hintStyle: TextStyle(
-                                            color: Colors.grey,
-                                            fontSize: 20,
-                                            fontStyle: FontStyle.italic),
-                                        hintText: 'Enter Your Problem',
-                                        fillColor: Colors.grey.shade600,
-                                        filled: true,
-                                        enabledBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(50),
-                                            borderSide: BorderSide(
-                                                width: 2, color: Colors.white)),
-                                        focusedBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(50),
-                                            borderSide: BorderSide(
-                                                width: 2, color: Colors.white)),
-                                      ),
-                                    ),
+                                    )),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 16.0, right: 16, top: 50),
+                                  child: Container(
+                                    height: 100,
+                                    child: AnimatedTextKit(
+                                        totalRepeatCount: 1,
+                                        animatedTexts: [
+                                          TyperAnimatedText(
+                                            'Stuck? Share your situation, we will offer solutions. Example: Headache for head pain.',
+                                            textStyle: TextStyle(
+                                                color: Color.fromARGB(
+                                                    255, 79, 78, 78),
+                                                fontSize: 18,
+                                                fontFamily: 'NanumMyeongjo',
+                                                fontWeight: FontWeight.bold),
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ]),
                                   ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      helperBloc.add(HelperGenerateEvent(
-                                          helperText:
-                                              "Can you tell me some best practices for dealing with ${textEditingController.text}. Please give me a elaborated answer in points answer which covers everything about the topic, I need answer in HTML code without title tag and please do not add ```html in the output"));
-                                      textEditingController.clear();
-                                    },
-                                    child: CircleAvatar(
-                                      child: CircleAvatar(
-                                        radius: 28,
-                                        backgroundColor: Colors.white,
-                                        child: Icon(
-                                          Icons.search,
-                                          size: 30,
-                                          color: Colors.grey,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8.0, vertical: 14),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: Material(
+                                          elevation: 20,
+                                          borderRadius:
+                                              BorderRadius.circular(50),
+                                          shadowColor: Colors.black,
+                                          child: TextFormField(
+                                            cursorColor: Colors.grey,
+                                            controller: textEditingController,
+                                            style: TextStyle(
+                                                fontFamily: 'NanumMyeongjo',
+                                                fontWeight: FontWeight.bold),
+                                            decoration: InputDecoration(
+                                              hintStyle: TextStyle(
+                                                  color: const Color.fromARGB(
+                                                      255, 105, 103, 103),
+                                                  fontSize: 20,
+                                                  fontStyle: FontStyle.italic),
+                                              hintText:
+                                                  'Enter Your Situation...',
+                                              // fillColor: Colors.white,
+                                              fillColor: Color.fromARGB(
+                                                  255, 231, 193, 105),
+                                              filled: true,
+                                              enabledBorder: OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(50),
+                                                  borderSide: BorderSide(
+                                                      color: Color.fromARGB(
+                                                          255, 231, 193, 105))),
+                                              focusedBorder: OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(50),
+                                                  borderSide: BorderSide(
+                                                      width: 2,
+                                                      color: Color.fromARGB(
+                                                          255, 231, 193, 105))),
+                                            ),
+                                          ),
                                         ),
                                       ),
-                                      radius: 30,
-                                    ),
-                                  )
-                                ],
-                              ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          print(textEditingController.text);
+                                          textEditingController.text.isEmpty
+                                              ? ScaffoldMessenger.of(context)
+                                                  .showSnackBar(SnackBar(
+                                                      content: Text(
+                                                          'Enter your problem first before searching')))
+                                              : helperBloc.add(HelperGenerateEvent(
+                                                  helperText:
+                                                      "Can you tell me some best practices for dealing with ${textEditingController.text}. I need to write this in 1000 words so please give me a elaborated answer in multiple points which covers everything about the topic, I need answer only in HTML code without title tag and please do not add ```html in the output"));
+                                          textEditingController.clear();
+                                        },
+                                        child: Material(
+                                          elevation: 20,
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                          child: CircleAvatar(
+                                            backgroundColor: Color.fromARGB(
+                                                255, 231, 193, 105),
+                                            child: CircleAvatar(
+                                              radius: 30,
+                                              backgroundColor: Color.fromARGB(
+                                                  255, 231, 193, 105),
+                                              child: Icon(
+                                                Icons.search,
+                                                size: 30,
+                                                color: Color.fromARGB(
+                                                    255, 105, 103, 103),
+                                              ),
+                                            ),
+                                            radius: 32,
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
+                          ),
                         ),
                       ),
                     ],
@@ -178,7 +237,7 @@ class _HelperState extends State<Helper> {
                                     fontSize: 32,
                                     fontFamily: 'Goldman',
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.black),
+                                    color: Color.fromARGB(255, 53, 52, 52)),
                               ),
                               InkWell(
                                   onTap: () {
@@ -186,96 +245,154 @@ class _HelperState extends State<Helper> {
                                   },
                                   child: Icon(
                                     Icons.home,
-                                    color: Colors.black,
+                                    color: Color.fromARGB(255, 53, 52, 52),
                                     size: 28,
                                   ))
                             ],
                           ),
                         ),
                       ),
+                      SizedBox(
+                        height: 10,
+                      ),
                       Expanded(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 8.0),
-                              child: Container(
-                                height: 80,
-                                child: AnimatedTextKit(
-                                    totalRepeatCount: 1,
-                                    animatedTexts: [
-                                      TyperAnimatedText(
-                                        'Enter your problem or situation in which you are stuck, we will try to give solution for your problem. For Example : If you are having heavy pain in head just type Headache',
-                                        textStyle: TextStyle(
-                                            fontSize: 14,
-                                            fontFamily: 'Goldman',
-                                            fontStyle: FontStyle.italic),
-                                        textAlign: TextAlign.center,
+                        child: Padding(
+                          padding: const EdgeInsets.only(),
+                          child: SingleChildScrollView(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Container(
+                                    height: 150,
+                                    width: 150,
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color.fromARGB(255, 231, 193, 105),
+                                        borderRadius: BorderRadius.circular(25),
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color: Colors.black,
+                                              spreadRadius: 1,
+                                              blurRadius: 10,
+                                              offset: const Offset(10, 15))
+                                        ]),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(14.0),
+                                      child: Image.asset(
+                                        'assets/helper.png',
                                       ),
-                                    ]),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 8.0),
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: TextField(
-                                      controller: textEditingController,
-                                      style: TextStyle(fontFamily: 'Goldman'),
-                                      decoration: InputDecoration(
-                                        hintStyle: TextStyle(
-                                            color: Colors.grey,
-                                            fontSize: 20,
-                                            fontStyle: FontStyle.italic),
-                                        hintText: 'Enter Your Problem',
-                                        fillColor: Colors.grey.shade600,
-                                        filled: true,
-                                        enabledBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(50),
-                                            borderSide: BorderSide(
-                                                width: 2, color: Colors.white)),
-                                        focusedBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(50),
-                                            borderSide: BorderSide(
-                                                width: 2, color: Colors.white)),
-                                      ),
-                                    ),
+                                    )),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 16.0, right: 16, top: 50),
+                                  child: Container(
+                                    height: 50,
+                                    child: AnimatedTextKit(
+                                        totalRepeatCount: 1,
+                                        animatedTexts: [
+                                          TyperAnimatedText(
+                                            'Stuck? Share your situation, we will offer solutions. Example: Headache for head pain.',
+                                            textStyle: TextStyle(
+                                                color: Color.fromARGB(
+                                                    255, 79, 78, 78),
+                                                fontSize: 18,
+                                                fontFamily: 'NanumMyeongjo',
+                                                fontWeight: FontWeight.bold),
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ]),
                                   ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      helperBloc.add(HelperGenerateEvent(
-                                          helperText:
-                                              "Can you tell me some best practices for dealing with ${textEditingController.text}. Please give me a elaborated answer in points answer which covers everything about the topic, I need answer in HTML code without title tag and please do not add ```html in the output"));
-                                      textEditingController.clear();
-                                    },
-                                    child: CircleAvatar(
-                                      child: CircleAvatar(
-                                        radius: 28,
-                                        backgroundColor: Colors.white,
-                                        child: Icon(
-                                          Icons.search,
-                                          size: 30,
-                                          color: Colors.grey,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8.0, vertical: 14),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: Material(
+                                          elevation: 20,
+                                          borderRadius:
+                                              BorderRadius.circular(50),
+                                          shadowColor: Colors.black,
+                                          child: TextFormField(
+                                            cursorColor: Colors.grey,
+                                            controller: textEditingController,
+                                            style: TextStyle(
+                                                fontFamily: 'NanumMyeongjo',
+                                                fontWeight: FontWeight.bold),
+                                            decoration: InputDecoration(
+                                              hintStyle: TextStyle(
+                                                  color: const Color.fromARGB(
+                                                      255, 105, 103, 103),
+                                                  fontSize: 20,
+                                                  fontStyle: FontStyle.italic),
+                                              hintText:
+                                                  'Enter Your Situation...',
+                                              // fillColor: Colors.white,
+                                              fillColor: Color.fromARGB(
+                                                  255, 231, 193, 105),
+                                              filled: true,
+                                              enabledBorder: OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(50),
+                                                  borderSide: BorderSide(
+                                                      color: Color.fromARGB(
+                                                          255, 231, 193, 105))),
+                                              focusedBorder: OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(50),
+                                                  borderSide: BorderSide(
+                                                      width: 2,
+                                                      color: Color.fromARGB(
+                                                          255, 231, 193, 105))),
+                                            ),
+                                          ),
                                         ),
                                       ),
-                                      radius: 30,
-                                    ),
-                                  )
-                                ],
-                              ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          print(textEditingController.text);
+                                          textEditingController.text.isEmpty
+                                              ? ScaffoldMessenger.of(context)
+                                                  .showSnackBar(SnackBar(
+                                                      content: Text(
+                                                          'Enter your problem first before searching')))
+                                              : helperBloc.add(HelperGenerateEvent(
+                                                  helperText:
+                                                      "Can you tell me some best practices for dealing with ${textEditingController.text}. I need to write this in 1000 words so please give me a elaborated answer in multiple points which covers everything about the topic, I need answer only in HTML code without title tag and please do not add ```html in the output"));
+                                          textEditingController.clear();
+                                        },
+                                        child: Material(
+                                          elevation: 20,
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                          child: CircleAvatar(
+                                            backgroundColor: Color.fromARGB(
+                                                255, 231, 193, 105),
+                                            child: CircleAvatar(
+                                              radius: 30,
+                                              backgroundColor: Color.fromARGB(
+                                                  255, 231, 193, 105),
+                                              child: Icon(
+                                                Icons.search,
+                                                size: 30,
+                                                color: Color.fromARGB(
+                                                    255, 105, 103, 103),
+                                              ),
+                                            ),
+                                            radius: 32,
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
+                          ),
                         ),
                       ),
                     ],
@@ -299,7 +416,7 @@ class _HelperState extends State<Helper> {
                                     fontSize: 32,
                                     fontFamily: 'Goldman',
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.black),
+                                    color: Color.fromARGB(255, 53, 52, 52)),
                               ),
                               InkWell(
                                   onTap: () {
@@ -307,93 +424,154 @@ class _HelperState extends State<Helper> {
                                   },
                                   child: Icon(
                                     Icons.home,
-                                    color: Colors.black,
+                                    color: Color.fromARGB(255, 53, 52, 52),
                                     size: 28,
                                   ))
                             ],
                           ),
                         ),
                       ),
+                      SizedBox(
+                        height: 10,
+                      ),
                       Expanded(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 8.0),
-                              child: AnimatedTextKit(
-                                  totalRepeatCount: 1,
-                                  animatedTexts: [
-                                    TyperAnimatedText(
-                                      'Enter your problem or situation in which you are stuck, we will try to give solution for your problem. For Example : If you are having heavy pain in head just type Headache',
-                                      textStyle: TextStyle(
-                                          fontSize: 14,
-                                          fontFamily: 'Goldman',
-                                          fontStyle: FontStyle.italic),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                  ]),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 8.0),
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: TextField(
-                                      controller: textEditingController,
-                                      style: TextStyle(fontFamily: 'Goldman'),
-                                      decoration: InputDecoration(
-                                        hintStyle: TextStyle(
-                                            color: Colors.grey,
-                                            fontSize: 20,
-                                            fontStyle: FontStyle.italic),
-                                        hintText: 'Enter Your Problem',
-                                        fillColor: Colors.grey.shade600,
-                                        filled: true,
-                                        enabledBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(50),
-                                            borderSide: BorderSide(
-                                                width: 2, color: Colors.white)),
-                                        focusedBorder: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(50),
-                                            borderSide: BorderSide(
-                                                width: 2, color: Colors.white)),
+                        child: Padding(
+                          padding: const EdgeInsets.only(),
+                          child: SingleChildScrollView(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Container(
+                                    height: 150,
+                                    width: 150,
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color.fromARGB(255, 231, 193, 105),
+                                        borderRadius: BorderRadius.circular(25),
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color: Colors.black,
+                                              spreadRadius: 1,
+                                              blurRadius: 10,
+                                              offset: const Offset(10, 15))
+                                        ]),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(14.0),
+                                      child: Image.asset(
+                                        'assets/helper.png',
                                       ),
-                                    ),
+                                    )),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 16.0, right: 16, top: 40),
+                                  child: Container(
+                                    height: 50,
+                                    child: AnimatedTextKit(
+                                        totalRepeatCount: 1,
+                                        animatedTexts: [
+                                          TyperAnimatedText(
+                                            'Stuck? Share your situation, we will offer solutions. Example: Headache for head pain.',
+                                            textStyle: TextStyle(
+                                                color: Color.fromARGB(
+                                                    255, 79, 78, 78),
+                                                fontSize: 18,
+                                                fontFamily: 'NanumMyeongjo',
+                                                fontWeight: FontWeight.bold),
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ]),
                                   ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      helperBloc.add(HelperGenerateEvent(
-                                          helperText:
-                                              "Can you tell me some best practices for dealing with ${textEditingController.text}. I need to write this in 2 pages so please give me a elaborated answer in multiple points which covers everything about the topic, I need answer in HTML code without title tag and please do not add ```html in the output"));
-                                      textEditingController.clear();
-                                    },
-                                    child: CircleAvatar(
-                                      child: CircleAvatar(
-                                        radius: 28,
-                                        backgroundColor: Colors.white,
-                                        child: Icon(
-                                          Icons.search,
-                                          size: 30,
-                                          color: Colors.grey,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8.0, vertical: 14),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: Material(
+                                          elevation: 20,
+                                          borderRadius:
+                                              BorderRadius.circular(50),
+                                          shadowColor: Colors.black,
+                                          child: TextFormField(
+                                            controller: textEditingController,
+                                            cursorColor: Colors.grey,
+                                            style: TextStyle(
+                                                fontFamily: 'NanumMyeongjo',
+                                                fontWeight: FontWeight.bold),
+                                            decoration: InputDecoration(
+                                              hintStyle: TextStyle(
+                                                  color: const Color.fromARGB(
+                                                      255, 105, 103, 103),
+                                                  fontSize: 20,
+                                                  fontStyle: FontStyle.italic),
+                                              hintText:
+                                                  'Enter Your Situation...',
+                                              // fillColor: Colors.white,
+                                              fillColor: Color.fromARGB(
+                                                  255, 231, 193, 105),
+                                              filled: true,
+                                              enabledBorder: OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(50),
+                                                  borderSide: BorderSide(
+                                                      color: Color.fromARGB(
+                                                          255, 231, 193, 105))),
+                                              focusedBorder: OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(50),
+                                                  borderSide: BorderSide(
+                                                      width: 2,
+                                                      color: Color.fromARGB(
+                                                          255, 231, 193, 105))),
+                                            ),
+                                          ),
                                         ),
                                       ),
-                                      radius: 30,
-                                    ),
-                                  )
-                                ],
-                              ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          print(textEditingController.text);
+                                          textEditingController.text.isEmpty
+                                              ? ScaffoldMessenger.of(context)
+                                                  .showSnackBar(SnackBar(
+                                                      content: Text(
+                                                          'Enter your problem first before searching')))
+                                              : helperBloc.add(HelperGenerateEvent(
+                                                  helperText:
+                                                      "Can you tell me some best practices for dealing with ${textEditingController.text}. I need to write this in 1000 words so please give me a elaborated answer in multiple points which covers everything about the topic, I need stricty in HTML code everytime without title tag and please do not add ```html in the output"));
+                                          textEditingController.clear();
+                                        },
+                                        child: Material(
+                                          elevation: 20,
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                          child: CircleAvatar(
+                                            backgroundColor: Color.fromARGB(
+                                                255, 231, 193, 105),
+                                            child: CircleAvatar(
+                                              radius: 30,
+                                              backgroundColor: Color.fromARGB(
+                                                  255, 231, 193, 105),
+                                              child: Icon(
+                                                Icons.search,
+                                                size: 30,
+                                                color: Color.fromARGB(
+                                                    255, 105, 103, 103),
+                                              ),
+                                            ),
+                                            radius: 32,
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
+                          ),
                         ),
                       ),
                     ],
@@ -456,7 +634,13 @@ class _HelperState extends State<Helper> {
                         scrollDirection: Axis.vertical,
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: HtmlWidget(helperResult),
+                          child: HtmlWidget(
+                            helperResult,
+                            textStyle: TextStyle(
+                                fontFamily: 'NanumMyeongjo',
+                                fontSize: 16,
+                                fontVariations: []),
+                          ),
                         ),
                       ),
                     )

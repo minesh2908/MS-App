@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:space_app/pages/QR/UI/QrCodeGeneration.dart';
 import 'package:space_app/responsive/responsive_layout.dart';
 
-class QrPage extends StatelessWidget {
+class QrPage extends StatefulWidget {
   const QrPage({super.key});
 
+  @override
+  State<QrPage> createState() => _QrPageState();
+}
+
+class _QrPageState extends State<QrPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,8 +55,9 @@ class QrPage extends StatelessWidget {
                       radius: 100,
                       backgroundColor: Color.fromARGB(255, 219, 215, 177),
                       child: InkWell(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
                             return QrCodeGenerator();
                           }));
                         },

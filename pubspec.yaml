@@ -46,7 +46,12 @@ dependencies:
   flutter_widget_from_html: ^0.14.11
   qr_flutter:
   image_picker:
-  flutter_colorpicker:  
+  flutter_colorpicker:
+  path_provider:
+  permission_handler: 
+  url_launcher: ^6.2.5
+
+
   
 
 dev_dependencies:
@@ -96,6 +101,10 @@ flutter:
       fonts:
         - asset: assets/Goldman-Bold.ttf
         - asset: assets/Goldman-Regular.ttf
+
+    - family: NanumMyeongjo
+      fonts:
+        - asset: assets/NanumMyeongjo-Regular.ttf    
   #         weight: 700
   #
   # For details regarding fonts from package dependencies,

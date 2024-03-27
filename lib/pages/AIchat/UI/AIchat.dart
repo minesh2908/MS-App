@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                                                             color: Colors.grey,
                                                             fontSize: 18,
                                                             fontFamily:
-                                                                'Goldman',
+                                                                'NanumMyeongjo',
                                                             fontWeight:
                                                                 FontWeight
                                                                     .w600),
@@ -148,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                                                             color: Colors.red,
                                                             fontSize: 18,
                                                             fontFamily:
-                                                                'Goldman',
+                                                                'NanumMyeongjo',
                                                             fontWeight:
                                                                 FontWeight
                                                                     .w600),
@@ -162,7 +162,7 @@ class _HomePageState extends State<HomePage> {
                                                   style: TextStyle(
                                                       height: 2,
                                                       fontSize: 16,
-                                                      fontFamily: 'Goldman',
+                                                      fontFamily: 'NanumMyeongjo',
                                                       color: Colors.black),
                                                 ),
                                               ],
@@ -193,7 +193,7 @@ class _HomePageState extends State<HomePage> {
                                     controller: textEditingController,
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontFamily: 'Goldman'),
+                                        fontFamily: 'NanumMyeongjo'),
                                     decoration: InputDecoration(
                                         hintText: 'Start Chating...',
                                         hintStyle: TextStyle(
