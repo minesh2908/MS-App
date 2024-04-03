@@ -10,9 +10,10 @@ final class QrLoadingState extends QrState {}
 final class QrGenerationSuccessState extends QrState {
   final String data;
   Color? color;
-  XFile? image;
+  XFile? mobileimage;
+  PlatformFile? webImage;
 
-  QrGenerationSuccessState({required this.data, this.color, this.image});
+  QrGenerationSuccessState({required this.data, this.color, this.mobileimage, this.webImage});
 }
 
 final class QrGenerationFailedState extends QrState {

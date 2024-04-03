@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:space_app/Theme/bloc/theme_bloc.dart';
 import 'package:space_app/pages/ComingSoon/comingsoon.dart';
+import 'package:space_app/pages/Developer/UI/developer.dart';
 import 'package:space_app/pages/Helper/UI/helper.dart';
 import 'package:space_app/pages/AIchat/UI/AIchat.dart';
 import 'package:intl/intl.dart';
@@ -33,16 +34,6 @@ class _DashboardState extends State<Dashboard> {
     });
   }
 
-  Future<void> launchInBrowserView(Uri url) async {
-    if (!await launchUrl(url, mode: LaunchMode.inAppBrowserView)) {
-      throw Exception('Could not launch $url');
-    }
-  }
-
-  final Uri toLaunch = Uri(
-      scheme: 'https',
-      host: 'www.linkedin.com',
-      path: '/in/minesh-sarawogi-4787401a1/');
   @override
   Widget build(BuildContext context) {
     DateTime now = DateTime.now();
@@ -168,7 +159,9 @@ class _DashboardState extends State<Dashboard> {
                               bodyContent:
                                   'Discribe your problem and get help from AI',
                               headingContent: 'Helper',
-                              cardColor: Theme.of(context).colorScheme.onPrimaryContainer,
+                              cardColor: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
                             ),
                           ),
                         ),
@@ -188,9 +181,7 @@ class _DashboardState extends State<Dashboard> {
                               bodyContent:
                                   'Download any video of Youtube, Instagram in your phone directly',
                               headingContent: 'Download',
-                              cardColor: Theme.of(context)
-                                  .colorScheme
-                                  .primary,
+                              cardColor: Theme.of(context).colorScheme.primary,
                             ),
                           ),
                         ),
@@ -239,13 +230,18 @@ class _DashboardState extends State<Dashboard> {
                           mainAxisCellCount: 1,
                           child: InkWell(
                             onTap: () async {
-                              launchInBrowserView(toLaunch);
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return DevloperPage();
+                              }));
                             },
                             child: DashboardCard(
                               icon: Icons.person,
                               bodyContent: 'Know About the developer',
                               headingContent: 'Developer',
-                              cardColor: Theme.of(context).colorScheme.onPrimaryContainer,
+                              cardColor: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
                             ),
                           ),
                         ),
@@ -295,7 +291,9 @@ class _DashboardState extends State<Dashboard> {
                               bodyContent:
                                   'Discribe your problem and get help from AI',
                               headingContent: 'Helper',
-                              cardColor: Theme.of(context).colorScheme.onPrimaryContainer,
+                              cardColor: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
                             ),
                           ),
                         ),
@@ -315,9 +313,7 @@ class _DashboardState extends State<Dashboard> {
                               bodyContent:
                                   'Download any video of Youtube, Instagram in your phone directly',
                               headingContent: 'Download',
-                              cardColor: Theme.of(context)
-                                  .colorScheme
-                                  .primary,
+                              cardColor: Theme.of(context).colorScheme.primary,
                             ),
                           ),
                         ),
@@ -325,7 +321,7 @@ class _DashboardState extends State<Dashboard> {
                           crossAxisCellCount: 1,
                           mainAxisCellCount: 1,
                           child: InkWell(
-                           onTap: () {
+                            onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
                                 return QrCodeGenerator();
@@ -356,10 +352,7 @@ class _DashboardState extends State<Dashboard> {
                               icon: Icons.games,
                               bodyContent: 'Play differnt type of games here',
                               headingContent: 'Games',
-                              cardColor:
-                                  Theme.of(context)
-                                  .colorScheme
-                                  .primary,
+                              cardColor: Theme.of(context).colorScheme.primary,
                             ),
                           ),
                         ),
@@ -368,13 +361,18 @@ class _DashboardState extends State<Dashboard> {
                           mainAxisCellCount: 0.5,
                           child: InkWell(
                             onTap: () async {
-                              launchInBrowserView(toLaunch);
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return DevloperPage();
+                              }));
                             },
                             child: DashboardCard(
                               icon: Icons.person,
                               bodyContent: 'Know About the developer',
                               headingContent: 'Developer',
-                              cardColor: Theme.of(context).colorScheme.onPrimaryContainer,
+                              cardColor: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
                             ),
                           ),
                         ),
@@ -424,7 +422,9 @@ class _DashboardState extends State<Dashboard> {
                               bodyContent:
                                   'Discribe your problem and get help from AI',
                               headingContent: 'Helper',
-                              cardColor: Theme.of(context).colorScheme.onPrimaryContainer,
+                              cardColor: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
                             ),
                           ),
                         ),
@@ -444,9 +444,7 @@ class _DashboardState extends State<Dashboard> {
                               bodyContent:
                                   'Download any video of Youtube, Instagram in your phone directly',
                               headingContent: 'Download',
-                              cardColor: Theme.of(context)
-                                  .colorScheme
-                                  .primary,
+                              cardColor: Theme.of(context).colorScheme.primary,
                             ),
                           ),
                         ),
@@ -495,13 +493,18 @@ class _DashboardState extends State<Dashboard> {
                           mainAxisCellCount: 1,
                           child: InkWell(
                             onTap: () async {
-                              launchInBrowserView(toLaunch);
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return DevloperPage();
+                              }));
                             },
                             child: DashboardCard(
                               icon: Icons.person,
                               bodyContent: 'Know About the developer',
                               headingContent: 'Developer',
-                              cardColor: Theme.of(context).colorScheme.onPrimaryContainer,
+                              cardColor: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
                             ),
                           ),
                         ),

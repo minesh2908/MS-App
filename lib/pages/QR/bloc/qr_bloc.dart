@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:ui';
 
 import 'package:bloc/bloc.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:meta/meta.dart';
@@ -21,7 +22,7 @@ class QrBloc extends Bloc<QrEvent, QrState> {
       emit(QrGenerationSuccessState(
           data: event.linkGenerationText,
           color: event.selectedColor,
-          image: event.selectedImage));
+          mobileimage: event.mobileSelectedImage));
     } catch (e) {
       emit(QrGenerationFailedState(error: e.toString()));
       print(e.toString());

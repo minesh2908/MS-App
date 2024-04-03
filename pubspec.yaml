@@ -50,6 +50,8 @@ dependencies:
   path_provider:
   permission_handler: 
   url_launcher: ^6.2.5
+  file_picker: ^8.0.0+1
+
 
 
   

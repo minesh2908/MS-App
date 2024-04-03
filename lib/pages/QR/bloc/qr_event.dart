@@ -5,10 +5,11 @@ sealed class QrEvent {}
 
 final class GenerateQrEvent extends QrEvent {
   final String linkGenerationText;
-  XFile? selectedImage;
+  XFile? mobileSelectedImage;
   Color? selectedColor = Colors.black;
+  PlatformFile? webSelectedImage;
   GenerateQrEvent(
       {required this.linkGenerationText,
       this.selectedColor,
-      this.selectedImage});
+      this.mobileSelectedImage, this.webSelectedImage});
 }

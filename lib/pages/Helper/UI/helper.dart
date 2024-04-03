@@ -85,7 +85,7 @@ class _HelperState extends State<Helper> {
                                     width: 150,
                                     decoration: BoxDecoration(
                                         color:
-                                            Color.fromARGB(255, 243, 200, 99),
+                                            Theme.of(context).colorScheme.onTertiary,
                                         borderRadius: BorderRadius.circular(25),
                                         boxShadow: [
                                           BoxShadow(
@@ -143,26 +143,23 @@ class _HelperState extends State<Helper> {
                                                   color: const Color.fromARGB(
                                                       255, 105, 103, 103),
                                                   fontSize: 20,
-                                                  fontStyle: FontStyle.italic),
+                                                  ),
                                               hintText:
                                                   'Enter Your Situation...',
                                               // fillColor: Colors.white,
-                                              fillColor: Color.fromARGB(
-                                                  255, 231, 193, 105),
+                                              fillColor: Theme.of(context).colorScheme.onTertiary,
                                               filled: true,
                                               enabledBorder: OutlineInputBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(50),
                                                   borderSide: BorderSide(
-                                                      color: Color.fromARGB(
-                                                          255, 231, 193, 105))),
+                                                      color: Theme.of(context).colorScheme.onTertiary)),
                                               focusedBorder: OutlineInputBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(50),
                                                   borderSide: BorderSide(
                                                       width: 2,
-                                                      color: Color.fromARGB(
-                                                          255, 231, 193, 105))),
+                                                      color: Theme.of(context).colorScheme.onTertiary)),
                                             ),
                                           ),
                                         ),
@@ -188,12 +185,10 @@ class _HelperState extends State<Helper> {
                                           borderRadius:
                                               BorderRadius.circular(100),
                                           child: CircleAvatar(
-                                            backgroundColor: Color.fromARGB(
-                                                255, 231, 193, 105),
+                                            backgroundColor: Theme.of(context).colorScheme.onTertiary,
                                             child: CircleAvatar(
                                               radius: 30,
-                                              backgroundColor: Color.fromARGB(
-                                                  255, 231, 193, 105),
+                                              backgroundColor: Theme.of(context).colorScheme.onTertiary,
                                               child: Icon(
                                                 Icons.search,
                                                 size: 30,
@@ -264,7 +259,7 @@ class _HelperState extends State<Helper> {
                                     width: 150,
                                     decoration: BoxDecoration(
                                         color:
-                                            Color.fromARGB(255, 231, 193, 105),
+                                            Theme.of(context).colorScheme.onTertiary,
                                         borderRadius: BorderRadius.circular(25),
                                         boxShadow: [
                                           BoxShadow(
@@ -322,26 +317,23 @@ class _HelperState extends State<Helper> {
                                                   color: const Color.fromARGB(
                                                       255, 105, 103, 103),
                                                   fontSize: 20,
-                                                  fontStyle: FontStyle.italic),
+                                                  ),
                                               hintText:
                                                   'Enter Your Situation...',
                                               // fillColor: Colors.white,
-                                              fillColor: Color.fromARGB(
-                                                  255, 231, 193, 105),
+                                              fillColor: Theme.of(context).colorScheme.onTertiary,
                                               filled: true,
                                               enabledBorder: OutlineInputBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(50),
                                                   borderSide: BorderSide(
-                                                      color: Color.fromARGB(
-                                                          255, 231, 193, 105))),
+                                                      color: Theme.of(context).colorScheme.onTertiary)),
                                               focusedBorder: OutlineInputBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(50),
                                                   borderSide: BorderSide(
                                                       width: 2,
-                                                      color: Color.fromARGB(
-                                                          255, 231, 193, 105))),
+                                                      color: Theme.of(context).colorScheme.onTertiary)),
                                             ),
                                           ),
                                         ),
@@ -367,12 +359,10 @@ class _HelperState extends State<Helper> {
                                           borderRadius:
                                               BorderRadius.circular(100),
                                           child: CircleAvatar(
-                                            backgroundColor: Color.fromARGB(
-                                                255, 231, 193, 105),
+                                            backgroundColor: Theme.of(context).colorScheme.onTertiary,
                                             child: CircleAvatar(
                                               radius: 30,
-                                              backgroundColor: Color.fromARGB(
-                                                  255, 231, 193, 105),
+                                              backgroundColor: Theme.of(context).colorScheme.onTertiary,
                                               child: Icon(
                                                 Icons.search,
                                                 size: 30,
@@ -443,7 +433,7 @@ class _HelperState extends State<Helper> {
                                     width: 150,
                                     decoration: BoxDecoration(
                                         color:
-                                            Color.fromARGB(255, 231, 193, 105),
+                                            Theme.of(context).colorScheme.onTertiary,
                                         borderRadius: BorderRadius.circular(25),
                                         boxShadow: [
                                           BoxShadow(
@@ -501,26 +491,23 @@ class _HelperState extends State<Helper> {
                                                   color: const Color.fromARGB(
                                                       255, 105, 103, 103),
                                                   fontSize: 20,
-                                                  fontStyle: FontStyle.italic),
+                                                 ),
                                               hintText:
                                                   'Enter Your Situation...',
                                               // fillColor: Colors.white,
-                                              fillColor: Color.fromARGB(
-                                                  255, 231, 193, 105),
+                                              fillColor: Theme.of(context).colorScheme.onTertiary,
                                               filled: true,
                                               enabledBorder: OutlineInputBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(50),
                                                   borderSide: BorderSide(
-                                                      color: Color.fromARGB(
-                                                          255, 231, 193, 105))),
+                                                      color: Theme.of(context).colorScheme.onTertiary)),
                                               focusedBorder: OutlineInputBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(50),
                                                   borderSide: BorderSide(
                                                       width: 2,
-                                                      color: Color.fromARGB(
-                                                          255, 231, 193, 105))),
+                                                      color: Theme.of(context).colorScheme.onTertiary)),
                                             ),
                                           ),
                                         ),
@@ -546,12 +533,10 @@ class _HelperState extends State<Helper> {
                                           borderRadius:
                                               BorderRadius.circular(100),
                                           child: CircleAvatar(
-                                            backgroundColor: Color.fromARGB(
-                                                255, 231, 193, 105),
+                                            backgroundColor: Theme.of(context).colorScheme.onTertiary,
                                             child: CircleAvatar(
                                               radius: 30,
-                                              backgroundColor: Color.fromARGB(
-                                                  255, 231, 193, 105),
+                                              backgroundColor: Theme.of(context).colorScheme.onTertiary,
                                               child: Icon(
                                                 Icons.search,
                                                 size: 30,
@@ -630,12 +615,12 @@ class _HelperState extends State<Helper> {
                       child: SingleChildScrollView(
                         scrollDirection: Axis.vertical,
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(14.0),
                           child: HtmlWidget(
                             helperResult,
                             textStyle: TextStyle(
                                 fontFamily: 'NanumMyeongjo',
-                                fontSize: 16,
+                                fontSize: 18,
                                 fontVariations: []),
                           ),
                         ),
