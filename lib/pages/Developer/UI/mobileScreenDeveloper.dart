@@ -174,6 +174,7 @@ class mobileScreenDeveloper extends StatelessWidget {
             ),
           ),
           ExpansionTile(
+            tilePadding: EdgeInsets.all(0),
             shape: Border(),
             iconColor: Colors.black,
             title: Text(
@@ -182,9 +183,9 @@ class mobileScreenDeveloper extends StatelessWidget {
             ),
             children: [
               Wrap(
-                children: <Widget>[
+                children: [
                   SkillContainerNew(
-                    title: 'FLutter',
+                    title: 'Flutter',
                   ),
                   SkillContainerNew(title: 'Dart'),
                   SkillContainerNew(title: 'Bloc'),
@@ -206,6 +207,7 @@ class mobileScreenDeveloper extends StatelessWidget {
             ],
           ),
           ExpansionTile(
+            tilePadding: EdgeInsets.all(0),
             shape: Border(),
             iconColor: Colors.black,
             title: Text(
@@ -328,6 +330,7 @@ class mobileScreenDeveloper extends StatelessWidget {
             ],
           ),
           ExpansionTile(
+            tilePadding: EdgeInsets.all(0),
             shape: Border(),
             iconColor: Colors.black,
             title: Text(
@@ -337,6 +340,7 @@ class mobileScreenDeveloper extends StatelessWidget {
             children: [
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Expanded(
                       flex: 1,
@@ -345,7 +349,7 @@ class mobileScreenDeveloper extends StatelessWidget {
                           CircleAvatar(
                             radius: 20,
                             backgroundColor: Colors.transparent,
-                            child: Image(image: AssetImage('assets/logo.jpg')),
+                            child: Image(image: AssetImage('assets/logo1.png')),
                           ),
                         ],
                       )),
@@ -370,26 +374,39 @@ class mobileScreenDeveloper extends StatelessWidget {
                                 onTap: () {
                                   launchUrl(msapp);
                                 },
-                                child: Container(
-                                  height: 40,
-                                  decoration: BoxDecoration(
-                                      color: Colors.black,
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Colors.black)),
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 15.0),
-                                    child: Center(
-                                      child: Text(
-                                        'Try It',
-                                        style: TextStyle(
-                                            fontSize: 18,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
+                                child: Builder(builder: (context) {
+                                  return Container(
+                                    height: 30,
+                                    decoration: BoxDecoration(
+                                        border: Border.all(color: Colors.black),
+                                        borderRadius: BorderRadius.circular(8)),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(2.0),
+                                      child: Container(
+                                        height: 25,
+                                        decoration: BoxDecoration(
+                                            color: Colors.black,
+                                            borderRadius:
+                                                BorderRadius.circular(6),
+                                            border: Border.all(
+                                                color: Colors.black)),
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 10.0),
+                                          child: Center(
+                                            child: Text(
+                                              'Try It',
+                                              style: TextStyle(
+                                                  fontSize: 14,
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.w600),
+                                            ),
+                                          ),
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ),
+                                  );
+                                }),
                               ),
                             ],
                           ),
@@ -463,24 +480,35 @@ class mobileScreenDeveloper extends StatelessWidget {
                               ),
                               InkWell(
                                 onTap: () {
-                                  launchUrl(nerdynews);
+                                  launchUrl(nerdy);
                                 },
                                 child: Container(
-                                  height: 40,
+                                  height: 30,
                                   decoration: BoxDecoration(
-                                      color: Colors.black,
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Colors.black)),
+                                      border: Border.all(color: Colors.black),
+                                      borderRadius: BorderRadius.circular(8)),
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 15.0),
-                                    child: Center(
-                                      child: Text(
-                                        'Try It',
-                                        style: TextStyle(
-                                            fontSize: 18,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
+                                    padding: const EdgeInsets.all(2.0),
+                                    child: Container(
+                                      height: 25,
+                                      decoration: BoxDecoration(
+                                          color: Colors.black,
+                                          borderRadius:
+                                              BorderRadius.circular(6),
+                                          border:
+                                              Border.all(color: Colors.black)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 10.0),
+                                        child: Center(
+                                          child: Text(
+                                            'Try It',
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -565,21 +593,31 @@ class mobileScreenDeveloper extends StatelessWidget {
                                   launchUrl(foodie);
                                 },
                                 child: Container(
-                                  height: 40,
                                   decoration: BoxDecoration(
-                                      color: Colors.black,
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Colors.black)),
+                                      border: Border.all(color: Colors.black),
+                                      borderRadius: BorderRadius.circular(8)),
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 15.0),
-                                    child: Center(
-                                      child: Text(
-                                        'Working',
-                                        style: TextStyle(
-                                            fontSize: 18,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
+                                    padding: const EdgeInsets.all(2.0),
+                                    child: Container(
+                                      height: 25,
+                                      decoration: BoxDecoration(
+                                          color: Colors.black,
+                                          borderRadius:
+                                              BorderRadius.circular(6),
+                                          border:
+                                              Border.all(color: Colors.black)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 10.0),
+                                        child: Center(
+                                          child: Text(
+                                            'Working',
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -664,21 +702,31 @@ class mobileScreenDeveloper extends StatelessWidget {
                                   launchUrl(flipkartUI);
                                 },
                                 child: Container(
-                                  height: 40,
                                   decoration: BoxDecoration(
-                                      color: Colors.black,
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Colors.black)),
+                                      border: Border.all(color: Colors.black),
+                                      borderRadius: BorderRadius.circular(8)),
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 15.0),
-                                    child: Center(
-                                      child: Text(
-                                        'Working',
-                                        style: TextStyle(
-                                            fontSize: 18,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
+                                    padding: const EdgeInsets.all(2.0),
+                                    child: Container(
+                                      height: 25,
+                                      decoration: BoxDecoration(
+                                          color: Colors.black,
+                                          borderRadius:
+                                              BorderRadius.circular(6),
+                                          border:
+                                              Border.all(color: Colors.black)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 10.0),
+                                        child: Center(
+                                          child: Text(
+                                            'Working',
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -759,21 +807,31 @@ class mobileScreenDeveloper extends StatelessWidget {
                                   launchUrl(connect);
                                 },
                                 child: Container(
-                                  height: 40,
                                   decoration: BoxDecoration(
-                                      color: Colors.black,
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Colors.black)),
+                                      border: Border.all(color: Colors.black),
+                                      borderRadius: BorderRadius.circular(8)),
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 15.0),
-                                    child: Center(
-                                      child: Text(
-                                        'Working',
-                                        style: TextStyle(
-                                            fontSize: 18,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
+                                    padding: const EdgeInsets.all(2.0),
+                                    child: Container(
+                                      height: 25,
+                                      decoration: BoxDecoration(
+                                          color: Colors.black,
+                                          borderRadius:
+                                              BorderRadius.circular(6),
+                                          border:
+                                              Border.all(color: Colors.black)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 10.0),
+                                        child: Center(
+                                          child: Text(
+                                            'Working',
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -824,6 +882,7 @@ class mobileScreenDeveloper extends StatelessWidget {
             ],
           ),
           ExpansionTile(
+            tilePadding: EdgeInsets.all(0),
             shape: Border(),
             iconColor: Colors.black,
             title: Text(

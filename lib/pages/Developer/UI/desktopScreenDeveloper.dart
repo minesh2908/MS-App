@@ -54,8 +54,7 @@ class desktopScreenDeveloper extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 16.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
                         child: InkWell(
                           onTap: () {
                             launchUrl(github);
@@ -68,8 +67,7 @@ class desktopScreenDeveloper extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 16.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
                         child: InkWell(
                           onTap: () {
                             launchUrl(linkedin);
@@ -82,8 +80,7 @@ class desktopScreenDeveloper extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 16.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
                         child: InkWell(
                           onTap: () async {
                             await launchUrl(twitter);
@@ -124,8 +121,8 @@ class desktopScreenDeveloper extends StatelessWidget {
                               color: Colors.black,
                               borderRadius: BorderRadius.circular(10)),
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 20.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 20.0),
                             child: Center(
                               child: Text(
                                 'Hire Me',
@@ -152,8 +149,8 @@ class desktopScreenDeveloper extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(color: Colors.black)),
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 20.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 20.0),
                             child: Center(
                               child: Text(
                                 'Resume',
@@ -180,7 +177,6 @@ class desktopScreenDeveloper extends StatelessWidget {
                 child: ListView(
                   children: [
                     ExpansionTile(
-                     
                       shape: Border(),
                       iconColor: Colors.black,
                       title: Text(
@@ -239,8 +235,7 @@ class desktopScreenDeveloper extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.only(left: 10.0),
                                 child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       'Project Engineer, Wipro',
@@ -299,8 +294,7 @@ class desktopScreenDeveloper extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.only(left: 10.0),
                                 child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       'Development Intern, PN Infosys',
@@ -362,7 +356,7 @@ class desktopScreenDeveloper extends StatelessWidget {
                                       backgroundColor: Colors.transparent,
                                       child: Image(
                                           image:
-                                              AssetImage('assets/logo.jpg')),
+                                              AssetImage('assets/logo1.png')),
                                     ),
                                   ],
                                 )),
@@ -371,8 +365,7 @@ class desktopScreenDeveloper extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.only(left: 10.0),
                                 child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Row(
                                       mainAxisAlignment:
@@ -386,33 +379,49 @@ class desktopScreenDeveloper extends StatelessWidget {
                                               fontWeight: FontWeight.bold),
                                         ),
                                         InkWell(
-                                          onTap: (){
+                                          onTap: () {
                                             launchUrl(msapp);
                                           },
-                                          child: Container(
-                                            height: 40,
-                                            decoration: BoxDecoration(
-                                                color: Colors.black,
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                                border: Border.all(
-                                                    color: Colors.black)),
-                                            child: Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 15.0),
-                                              child: Center(
-                                                child: Text(
-                                                  'Try It',
-                                                  style: TextStyle(
-                                                      fontSize: 18,
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                          FontWeight.bold),
+                                          child: Builder(builder: (context) {
+                                            return Container(
+                                              height: 30,
+                                              decoration: BoxDecoration(
+                                                  border: Border.all(
+                                                      color: Colors.black),
+                                                  borderRadius:
+                                                      BorderRadius.circular(8)),
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(2.0),
+                                                child: Container(
+                                                  height: 25,
+                                                  decoration: BoxDecoration(
+                                                      color: Colors.black,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              6),
+                                                      border: Border.all(
+                                                          color: Colors.black)),
+                                                  child: Padding(
+                                                    padding: const EdgeInsets
+                                                        .symmetric(
+                                                        horizontal: 10.0),
+                                                    child: Center(
+                                                      child: Text(
+                                                        'Try It',
+                                                        style: TextStyle(
+                                                            fontSize: 14,
+                                                            color: Colors.white,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w600),
+                                                      ),
+                                                    ),
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                          ),
+                                            );
+                                          }),
                                         ),
                                       ],
                                     ),
@@ -473,8 +482,7 @@ class desktopScreenDeveloper extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.only(left: 10.0),
                                 child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Row(
                                       mainAxisAlignment:
@@ -488,29 +496,42 @@ class desktopScreenDeveloper extends StatelessWidget {
                                               fontWeight: FontWeight.bold),
                                         ),
                                         InkWell(
-                                          onTap: (){
-                                            launchUrl(nerdynews);
+                                          onTap: () {
+                                            launchUrl(nerdy);
                                           },
                                           child: Container(
-                                            height: 40,
+                                            height: 30,
                                             decoration: BoxDecoration(
-                                                color: Colors.black,
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
                                                 border: Border.all(
-                                                    color: Colors.black)),
+                                                    color: Colors.black),
+                                                borderRadius:
+                                                    BorderRadius.circular(8)),
                                             child: Padding(
                                               padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 15.0),
-                                              child: Center(
-                                                child: Text(
-                                                  'Try It',
-                                                  style: TextStyle(
-                                                      fontSize: 18,
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                          FontWeight.bold),
+                                                  const EdgeInsets.all(2.0),
+                                              child: Container(
+                                                height: 25,
+                                                decoration: BoxDecoration(
+                                                    color: Colors.black,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            6),
+                                                    border: Border.all(
+                                                        color: Colors.black)),
+                                                child: Padding(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      horizontal: 10.0),
+                                                  child: Center(
+                                                    child: Text(
+                                                      'Try It',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          color: Colors.white,
+                                                          fontWeight:
+                                                              FontWeight.w600),
+                                                    ),
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -571,16 +592,15 @@ class desktopScreenDeveloper extends StatelessWidget {
                                   radius: 20,
                                   backgroundColor: Colors.transparent,
                                   child: Image(
-                                      image: AssetImage(
-                                          'assets/foodielogo.png')),
+                                      image:
+                                          AssetImage('assets/foodielogo.png')),
                                 )),
                             Expanded(
                               flex: 10,
                               child: Padding(
                                 padding: const EdgeInsets.only(left: 10.0),
                                 child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Row(
                                       mainAxisAlignment:
@@ -594,27 +614,41 @@ class desktopScreenDeveloper extends StatelessWidget {
                                               fontWeight: FontWeight.bold),
                                         ),
                                         InkWell(
-                                          onTap: (){launchUrl(foodie);},
+                                          onTap: () {
+                                            launchUrl(foodie);
+                                          },
                                           child: Container(
-                                            height: 40,
                                             decoration: BoxDecoration(
-                                                color: Colors.black,
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
                                                 border: Border.all(
-                                                    color: Colors.black)),
+                                                    color: Colors.black),
+                                                borderRadius:
+                                                    BorderRadius.circular(8)),
                                             child: Padding(
                                               padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 15.0),
-                                              child: Center(
-                                                child: Text(
-                                                  'Working',
-                                                  style: TextStyle(
-                                                      fontSize: 18,
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                          FontWeight.bold),
+                                                  const EdgeInsets.all(2.0),
+                                              child: Container(
+                                                height: 25,
+                                                decoration: BoxDecoration(
+                                                    color: Colors.black,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            6),
+                                                    border: Border.all(
+                                                        color: Colors.black)),
+                                                child: Padding(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      horizontal: 10.0),
+                                                  child: Center(
+                                                    child: Text(
+                                                      'Working',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          color: Colors.white,
+                                                          fontWeight:
+                                                              FontWeight.w600),
+                                                    ),
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -683,8 +717,7 @@ class desktopScreenDeveloper extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.only(left: 10.0),
                                 child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Row(
                                       mainAxisAlignment:
@@ -698,27 +731,41 @@ class desktopScreenDeveloper extends StatelessWidget {
                                               fontWeight: FontWeight.bold),
                                         ),
                                         InkWell(
-                                          onTap: (){launchUrl(flipkartUI);},
+                                          onTap: () {
+                                            launchUrl(flipkartUI);
+                                          },
                                           child: Container(
-                                            height: 40,
                                             decoration: BoxDecoration(
-                                                color: Colors.black,
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
                                                 border: Border.all(
-                                                    color: Colors.black)),
+                                                    color: Colors.black),
+                                                borderRadius:
+                                                    BorderRadius.circular(8)),
                                             child: Padding(
                                               padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 15.0),
-                                              child: Center(
-                                                child: Text(
-                                                  'Working',
-                                                  style: TextStyle(
-                                                      fontSize: 18,
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                          FontWeight.bold),
+                                                  const EdgeInsets.all(2.0),
+                                              child: Container(
+                                                height: 25,
+                                                decoration: BoxDecoration(
+                                                    color: Colors.black,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            6),
+                                                    border: Border.all(
+                                                        color: Colors.black)),
+                                                child: Padding(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      horizontal: 10.0),
+                                                  child: Center(
+                                                    child: Text(
+                                                      'Working',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          color: Colors.white,
+                                                          fontWeight:
+                                                              FontWeight.w600),
+                                                    ),
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -775,16 +822,15 @@ class desktopScreenDeveloper extends StatelessWidget {
                                   radius: 20,
                                   backgroundColor: Colors.transparent,
                                   child: Image(
-                                      image: AssetImage(
-                                          'assets/connectlogo.png')),
+                                      image:
+                                          AssetImage('assets/connectlogo.png')),
                                 )),
                             Expanded(
                               flex: 10,
                               child: Padding(
                                 padding: const EdgeInsets.only(left: 10.0),
                                 child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Row(
                                       mainAxisAlignment:
@@ -798,29 +844,41 @@ class desktopScreenDeveloper extends StatelessWidget {
                                               fontWeight: FontWeight.bold),
                                         ),
                                         InkWell(
-                                          onTap: (){
+                                          onTap: () {
                                             launchUrl(connect);
                                           },
                                           child: Container(
-                                            height: 40,
                                             decoration: BoxDecoration(
-                                                color: Colors.black,
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
                                                 border: Border.all(
-                                                    color: Colors.black)),
+                                                    color: Colors.black),
+                                                borderRadius:
+                                                    BorderRadius.circular(8)),
                                             child: Padding(
                                               padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 15.0),
-                                              child: Center(
-                                                child: Text(
-                                                  'Working',
-                                                  style: TextStyle(
-                                                      fontSize: 18,
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                          FontWeight.bold),
+                                                  const EdgeInsets.all(2.0),
+                                              child: Container(
+                                                height: 25,
+                                                decoration: BoxDecoration(
+                                                    color: Colors.black,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            6),
+                                                    border: Border.all(
+                                                        color: Colors.black)),
+                                                child: Padding(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      horizontal: 10.0),
+                                                  child: Center(
+                                                    child: Text(
+                                                      'Working',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          color: Colors.white,
+                                                          fontWeight:
+                                                              FontWeight.w600),
+                                                    ),
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -888,16 +946,14 @@ class desktopScreenDeveloper extends StatelessWidget {
                                   radius: 20,
                                   backgroundColor: Colors.transparent,
                                   child: Image(
-                                      image:
-                                          AssetImage('assets/rjitlogo.jpg')),
+                                      image: AssetImage('assets/rjitlogo.jpg')),
                                 )),
                             Expanded(
                               flex: 10,
                               child: Padding(
                                 padding: const EdgeInsets.only(left: 10.0),
                                 child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       'B.Tech, Rustam Ji Institute of Technology',

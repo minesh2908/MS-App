@@ -6,6 +6,7 @@ class SkillContainerNew extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      
       margin: EdgeInsets.only(right: 5, bottom: 5),
       child: Chip(
         side: BorderSide(width: 2),
