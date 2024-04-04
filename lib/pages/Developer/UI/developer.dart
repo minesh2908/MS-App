@@ -14,14 +14,17 @@ class DevloperPage extends StatelessWidget {
           onTap: () {
             Navigator.pop(context);
           },
-          child: Icon(Icons.arrow_back,
-              color: Theme.of(context).colorScheme.onSecondary),
+          child: Icon(
+            Icons.arrow_back,
+            color: Theme.of(context).colorScheme.onSecondary,
+          ),
         ),
         title: Text(
           'Developer',
           style: TextStyle(
-              color: Theme.of(context).colorScheme.onSecondary,
-              fontWeight: FontWeight.bold),
+            color: Theme.of(context).colorScheme.onSecondary,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         backgroundColor: Colors.black,
       ),

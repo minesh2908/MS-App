@@ -14,7 +14,6 @@ class ComingSoon extends StatelessWidget {
         height: double.maxFinite,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
               height: 100,
@@ -26,69 +25,77 @@ class ComingSoon extends StatelessWidget {
                     Text(
                       'MS APP',
                       style: TextStyle(
-                          fontSize: 32,
-                          fontFamily: 'Goldman',
-                          fontWeight: FontWeight.bold,
-                          color: Theme.of(context).colorScheme.onSecondary),
+                        fontSize: 32,
+                        fontFamily: 'Goldman',
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).colorScheme.onSecondary,
+                      ),
                     ),
                     InkWell(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Icon(
-                          Icons.home,
-                          color: Theme.of(context).colorScheme.onSecondary,
-                          size: 28,
-                        ))
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.home,
+                        color: Theme.of(context).colorScheme.onSecondary,
+                        size: 28,
+                      ),
+                    ),
                   ],
                 ),
               ),
             ),
             Expanded(
-                child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 300,
-                  width: 300,
-                  child: LottieBuilder.asset('assets/waving.json'),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                SizedBox(
-                  width: double.maxFinite,
-                  height: 100,
-                  child: AnimatedTextKit(
-                      isRepeatingAnimation: true,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 300,
+                    width: 300,
+                    child: LottieBuilder.asset('assets/waving.json'),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  SizedBox(
+                    width: double.maxFinite,
+                    height: 100,
+                    child: AnimatedTextKit(
                       repeatForever: true,
                       animatedTexts: [
-                        RotateAnimatedText('Currently I am not available',
-                            textStyle: TextStyle(
-                                color:
-                                    Theme.of(context).colorScheme.onSecondary,
-                                fontSize: 18,
-                                fontFamily: 'Goldman',
-                                fontWeight: FontWeight.bold)),
-                        RotateAnimatedText('But, I will be coming soon',
-                            textStyle: TextStyle(
-                                color:
-                                    Theme.of(context).colorScheme.onSecondary,
-                                fontSize: 18,
-                                fontFamily: 'Goldman',
-                                fontWeight: FontWeight.bold)),
-                        RotateAnimatedText('Stay tunned for updates',
-                            textStyle: TextStyle(
-                                color:
-                                    Theme.of(context).colorScheme.onSecondary,
-                                fontSize: 18,
-                                fontFamily: 'Goldman',
-                                fontWeight: FontWeight.bold))
-                      ]),
-                )
-              ],
-            ))
+                        RotateAnimatedText(
+                          'Currently I am not available',
+                          textStyle: TextStyle(
+                            color: Theme.of(context).colorScheme.onSecondary,
+                            fontSize: 18,
+                            fontFamily: 'Goldman',
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        RotateAnimatedText(
+                          'But, I will be coming soon',
+                          textStyle: TextStyle(
+                            color: Theme.of(context).colorScheme.onSecondary,
+                            fontSize: 18,
+                            fontFamily: 'Goldman',
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        RotateAnimatedText(
+                          'Stay tunned for updates',
+                          textStyle: TextStyle(
+                            color: Theme.of(context).colorScheme.onSecondary,
+                            fontSize: 18,
+                            fontFamily: 'Goldman',
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

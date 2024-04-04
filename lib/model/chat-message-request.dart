@@ -29,7 +29,8 @@ class ChatMessageRequestModel {
 
   factory ChatMessageRequestModel.fromJson(String source) =>
       ChatMessageRequestModel.fromMap(
-          json.decode(source) as Map<String, dynamic>);
+        json.decode(source) as Map<String, dynamic>,
+      );
 }
 
 class ChatPartsMessageModel {
@@ -53,5 +54,6 @@ class ChatPartsMessageModel {
 
   factory ChatPartsMessageModel.fromJson(String source) =>
       ChatPartsMessageModel.fromMap(
-          json.decode(source) as Map<String, dynamic>);
+        json.decode(source) as Map<String, dynamic>,
+      );
 }

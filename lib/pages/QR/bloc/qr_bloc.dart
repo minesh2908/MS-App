@@ -17,13 +17,16 @@ class QrBloc extends Bloc<QrEvent, QrState> {
     emit(QrLoadingState());
 
     try {
-      emit(QrGenerationSuccessState(
+      emit(
+        QrGenerationSuccessState(
           data: event.linkGenerationText,
           color: event.selectedColor,
-          mobileimage: event.mobileSelectedImage));
+          mobileimage: event.mobileSelectedImage,
+        ),
+      );
     } catch (e) {
       emit(QrGenerationFailedState(error: e.toString()));
-      print(e.toString());
+      print(e);
     }
   }
 }

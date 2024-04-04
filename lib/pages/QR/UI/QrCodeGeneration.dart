@@ -31,8 +31,11 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
     try {
       image = await ImagePicker().pickImage(source: ImageSource.gallery);
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text('Somwthing went wrong! Please try agin.')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Somwthing went wrong! Please try agin.'),
+        ),
+      );
     }
 
     setState(() {
@@ -43,8 +46,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
   PlatformFile? webSelectedImage;
   Future<void> pickImageFromWeb() async {
     try {
-      FilePickerResult? result =
-          await FilePicker.platform.pickFiles(type: FileType.image);
+      final result = await FilePicker.platform.pickFiles(type: FileType.image);
       if (result == null) {
         return;
       }
@@ -106,13 +108,14 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
         title: const Text(
           'QR',
           style: TextStyle(
-              fontSize: 32,
-              fontFamily: 'Goldman',
-              color: Color.fromARGB(255, 53, 52, 52)),
+            fontSize: 32,
+            fontFamily: 'Goldman',
+            color: Color.fromARGB(255, 53, 52, 52),
+          ),
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: InkWell(
               onTap: () {
                 Navigator.pop(context);
@@ -122,7 +125,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                 color: Color.fromARGB(255, 53, 52, 52),
               ),
             ),
-          )
+          ),
         ],
       ),
       body: Container(
@@ -130,7 +133,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
         width: double.maxFinite,
         color: Theme.of(context).colorScheme.primaryContainer,
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -144,8 +147,9 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                     cursorColor: Colors.black38,
                     controller: linkTextEditingController,
                     style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'NanumMyeongjo'),
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'NanumMyeongjo',
+                    ),
                     decoration: InputDecoration(
                       hintStyle: const TextStyle(
                         color: Color.fromARGB(255, 105, 103, 103),
@@ -156,14 +160,18 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                       fillColor: Theme.of(context).colorScheme.onTertiary,
                       filled: true,
                       enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(50),
-                          borderSide: BorderSide(
-                              color: Theme.of(context).colorScheme.onTertiary)),
+                        borderRadius: BorderRadius.circular(50),
+                        borderSide: BorderSide(
+                          color: Theme.of(context).colorScheme.onTertiary,
+                        ),
+                      ),
                       focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(50),
-                          borderSide: BorderSide(
-                              width: 2,
-                              color: Theme.of(context).colorScheme.onTertiary)),
+                        borderRadius: BorderRadius.circular(50),
+                        borderSide: BorderSide(
+                          width: 2,
+                          color: Theme.of(context).colorScheme.onTertiary,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -174,232 +182,240 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     //Checking for Web Device
-                    kIsWeb
-                        ? webSelectedImage == null
-                            ? IconButton(
-                                onPressed: () {
-                                  pickImageFromWeb();
-                                },
-                                icon: Container(
-                                  decoration: BoxDecoration(
-                                      boxShadow: const [
-                                        BoxShadow(
-                                            color:
-                                                Color.fromARGB(255, 49, 49, 49),
-                                            spreadRadius: 1,
-                                            blurRadius: 10,
-                                            offset: Offset(5, 5))
-                                      ],
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .onTertiary,
-                                      border: Border.all(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .onTertiary,
-                                          width: 2),
-                                      borderRadius: BorderRadius.circular(20)),
-                                  child: Icon(
-                                    Icons.add_photo_alternate,
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .primaryContainer,
-                                    size: 100,
-                                  ),
-                                ))
-                            : Container(
+                    if (kIsWeb)
+                      webSelectedImage == null
+                          ? IconButton(
+                              onPressed: pickImageFromWeb,
+                              icon: Container(
                                 decoration: BoxDecoration(
-                                    boxShadow: const [
-                                      BoxShadow(
-                                          color:
-                                              Color.fromARGB(255, 49, 49, 49),
-                                          spreadRadius: 1,
-                                          blurRadius: 10,
-                                          offset: Offset(5, 5))
-                                    ],
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onTertiary,
-                                    border: Border.all(
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .onTertiary,
-                                        width: 2),
-                                    borderRadius: BorderRadius.circular(20)),
-                                child: Stack(
-                                  alignment: Alignment.center,
-                                  children: [
-                                    SizedBox(
-                                      height: 100,
-                                      width: 100,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Image.memory(
-                                          Uint8List.fromList(
-                                              webSelectedImage!.bytes!),
-                                        ),
-                                      ),
-                                    ),
-                                    IconButton(
-                                        onPressed: () {
-                                          webSelectedImage = null;
-                                          setState(() {});
-                                        },
-                                        icon: Container(
-                                          child: const Icon(
-                                            Icons.cancel,
-                                            color: Colors.red,
-                                          ),
-                                        ))
-                                  ],
-                                ),
-                              )
-                        : mobileSelectedImage == null
-                            ? IconButton(
-                                onPressed: () {
-                                  pickImageFromMobile();
-                                },
-                                icon: Container(
-                                  decoration: BoxDecoration(
-                                      boxShadow: const [
-                                        BoxShadow(
-                                            color:
-                                                Color.fromARGB(255, 49, 49, 49),
-                                            spreadRadius: 1,
-                                            blurRadius: 10,
-                                            offset: Offset(5, 5))
-                                      ],
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .onTertiary,
-                                      border: Border.all(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .onTertiary,
-                                          width: 2),
-                                      borderRadius: BorderRadius.circular(20)),
-                                  child: Icon(
-                                    Icons.add_photo_alternate,
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .primaryContainer,
-                                    size: 100,
-                                  ),
-                                ))
-                            : Container(
-                                decoration: BoxDecoration(
-                                    boxShadow: const [
-                                      BoxShadow(
-                                          color:
-                                              Color.fromARGB(255, 49, 49, 49),
-                                          spreadRadius: 1,
-                                          blurRadius: 10,
-                                          offset: Offset(5, 5))
-                                    ],
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onTertiary,
-                                    border: Border.all(
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .onTertiary,
-                                        width: 2),
-                                    borderRadius: BorderRadius.circular(20)),
-                                child: Stack(
-                                  alignment: Alignment.center,
-                                  children: [
-                                    SizedBox(
-                                      height: 100,
-                                      width: 100,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Image.file(
-                                          File(mobileSelectedImage!.path),
-                                        ),
-                                      ),
-                                    ),
-                                    IconButton(
-                                        onPressed: () {
-                                          mobileSelectedImage = null;
-                                          setState(() {});
-                                        },
-                                        icon: Container(
-                                          child: const Icon(
-                                            Icons.cancel,
-                                            color: Colors.red,
-                                          ),
-                                        ))
-                                  ],
-                                ),
-                              ),
-                    Container(
-                      child: IconButton(
-                          onPressed: () {
-                            showDialog(
-                                context: context,
-                                builder: (context) {
-                                  return AlertDialog(
-                                      content: SizedBox(
-                                    height: 600,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        ColorPicker(
-                                            pickerColor: selectedColor,
-                                            onColorChanged: (chooseColor) {
-                                              selectedColor = chooseColor;
-                                            }),
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: ElevatedButton(
-                                              style: ButtonStyle(
-                                                  backgroundColor:
-                                                      MaterialStateProperty.all(
-                                                          Theme.of(context)
-                                                              .colorScheme
-                                                              .primaryContainer)),
-                                              onPressed: () {
-                                                setState(() {});
-                                                Navigator.pop(context);
-                                              },
-                                              child: const Text(
-                                                'Select Color',
-                                                style: TextStyle(
-                                                    color: Colors.black),
-                                              )),
-                                        )
-                                      ],
-                                    ),
-                                  ));
-                                });
-                          },
-                          icon: Container(
-                            decoration: BoxDecoration(
-                                boxShadow: const [
-                                  BoxShadow(
+                                  boxShadow: const [
+                                    BoxShadow(
                                       color: Color.fromARGB(255, 49, 49, 49),
                                       spreadRadius: 1,
                                       blurRadius: 10,
-                                      offset: Offset(5, 5))
-                                ],
-                                color: Theme.of(context).colorScheme.onTertiary,
-                                border: Border.all(
+                                      offset: Offset(5, 5),
+                                    ),
+                                  ],
+                                  color:
+                                      Theme.of(context).colorScheme.onTertiary,
+                                  border: Border.all(
                                     color: Theme.of(context)
                                         .colorScheme
                                         .onTertiary,
-                                    width: 2),
-                                borderRadius: BorderRadius.circular(20)),
-                            child: Icon(
-                              Icons.colorize,
-                              size: 100,
-                              color: selectedColor == Colors.black
-                                  ? Theme.of(context)
+                                    width: 2,
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Icon(
+                                  Icons.add_photo_alternate,
+                                  color: Theme.of(context)
                                       .colorScheme
-                                      .primaryContainer
-                                  : selectedColor,
+                                      .primaryContainer,
+                                  size: 100,
+                                ),
+                              ),
+                            )
+                          : Container(
+                              decoration: BoxDecoration(
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Color.fromARGB(255, 49, 49, 49),
+                                    spreadRadius: 1,
+                                    blurRadius: 10,
+                                    offset: Offset(5, 5),
+                                  ),
+                                ],
+                                color: Theme.of(context).colorScheme.onTertiary,
+                                border: Border.all(
+                                  color:
+                                      Theme.of(context).colorScheme.onTertiary,
+                                  width: 2,
+                                ),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  SizedBox(
+                                    height: 100,
+                                    width: 100,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8),
+                                      child: Image.memory(
+                                        Uint8List.fromList(
+                                          webSelectedImage!.bytes!,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  IconButton(
+                                    onPressed: () {
+                                      webSelectedImage = null;
+                                      setState(() {});
+                                    },
+                                    icon: Container(
+                                      child: const Icon(
+                                        Icons.cancel,
+                                        color: Colors.red,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                    else
+                      mobileSelectedImage == null
+                          ? IconButton(
+                              onPressed: pickImageFromMobile,
+                              icon: Container(
+                                decoration: BoxDecoration(
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      color: Color.fromARGB(255, 49, 49, 49),
+                                      spreadRadius: 1,
+                                      blurRadius: 10,
+                                      offset: Offset(5, 5),
+                                    ),
+                                  ],
+                                  color:
+                                      Theme.of(context).colorScheme.onTertiary,
+                                  border: Border.all(
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onTertiary,
+                                    width: 2,
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Icon(
+                                  Icons.add_photo_alternate,
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .primaryContainer,
+                                  size: 100,
+                                ),
+                              ),
+                            )
+                          : Container(
+                              decoration: BoxDecoration(
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Color.fromARGB(255, 49, 49, 49),
+                                    spreadRadius: 1,
+                                    blurRadius: 10,
+                                    offset: Offset(5, 5),
+                                  ),
+                                ],
+                                color: Theme.of(context).colorScheme.onTertiary,
+                                border: Border.all(
+                                  color:
+                                      Theme.of(context).colorScheme.onTertiary,
+                                  width: 2,
+                                ),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  SizedBox(
+                                    height: 100,
+                                    width: 100,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8),
+                                      child: Image.file(
+                                        File(mobileSelectedImage!.path),
+                                      ),
+                                    ),
+                                  ),
+                                  IconButton(
+                                    onPressed: () {
+                                      mobileSelectedImage = null;
+                                      setState(() {});
+                                    },
+                                    icon: Container(
+                                      child: const Icon(
+                                        Icons.cancel,
+                                        color: Colors.red,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          )),
+                    Container(
+                      child: IconButton(
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                content: SizedBox(
+                                  height: 600,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      ColorPicker(
+                                        pickerColor: selectedColor,
+                                        onColorChanged: (chooseColor) {
+                                          selectedColor = chooseColor;
+                                        },
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(8),
+                                        child: ElevatedButton(
+                                          style: ButtonStyle(
+                                            backgroundColor:
+                                                MaterialStateProperty.all(
+                                              Theme.of(context)
+                                                  .colorScheme
+                                                  .primaryContainer,
+                                            ),
+                                          ),
+                                          onPressed: () {
+                                            setState(() {});
+                                            Navigator.pop(context);
+                                          },
+                                          child: const Text(
+                                            'Select Color',
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                        icon: Container(
+                          decoration: BoxDecoration(
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Color.fromARGB(255, 49, 49, 49),
+                                spreadRadius: 1,
+                                blurRadius: 10,
+                                offset: Offset(5, 5),
+                              ),
+                            ],
+                            color: Theme.of(context).colorScheme.onTertiary,
+                            border: Border.all(
+                              color: Theme.of(context).colorScheme.onTertiary,
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Icon(
+                            Icons.colorize,
+                            size: 100,
+                            color: selectedColor == Colors.black
+                                ? Theme.of(context).colorScheme.primaryContainer
+                                : selectedColor,
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -413,14 +429,22 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                 InkWell(
                   onTap: () {
                     linkTextEditingController.text.isEmpty
-                        ? ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                            content: Text(
-                                'Please enter text first to generate QR Code')))
-                        : qrBloc.add(GenerateQrEvent(
-                            linkGenerationText: linkTextEditingController.text,
-                            selectedColor: selectedColor,
-                            mobileSelectedImage: mobileSelectedImage,
-                            webSelectedImage: webSelectedImage));
+                        ? ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text(
+                                'Please enter text first to generate QR Code',
+                              ),
+                            ),
+                          )
+                        : qrBloc.add(
+                            GenerateQrEvent(
+                              linkGenerationText:
+                                  linkTextEditingController.text,
+                              selectedColor: selectedColor,
+                              mobileSelectedImage: mobileSelectedImage,
+                              webSelectedImage: webSelectedImage,
+                            ),
+                          );
 
                     linkTextEditingController.clear();
                   },
@@ -428,23 +452,25 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                     height: 60,
                     width: 300,
                     decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.onTertiary,
-                        borderRadius: BorderRadius.circular(40),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.black,
-                            spreadRadius: 1,
-                            blurRadius: 10,
-                          )
-                        ]),
+                      color: Theme.of(context).colorScheme.onTertiary,
+                      borderRadius: BorderRadius.circular(40),
+                      boxShadow: const [
+                        BoxShadow(
+                          spreadRadius: 1,
+                          blurRadius: 10,
+                        ),
+                      ],
+                    ),
                     child: const Center(
-                        child: Text(
-                      'Generate',
-                      style: TextStyle(
+                      child: Text(
+                        'Generate',
+                        style: TextStyle(
                           fontSize: 25,
                           fontFamily: 'Goldman',
-                          color: Color.fromARGB(255, 105, 103, 103)),
-                    )),
+                          color: Color.fromARGB(255, 105, 103, 103),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -457,33 +483,27 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                       case QrInitial:
                         return Container(
                           decoration: BoxDecoration(
-                              boxShadow: const [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 49, 49, 49),
-                                    spreadRadius: 1,
-                                    blurRadius: 10,
-                                    offset: Offset(5, 5))
-                              ],
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Color.fromARGB(255, 49, 49, 49),
+                                spreadRadius: 1,
+                                blurRadius: 10,
+                                offset: Offset(5, 5),
+                              ),
+                            ],
+                            color: Theme.of(context).colorScheme.onTertiary,
+                            border: Border.all(
                               color: Theme.of(context).colorScheme.onTertiary,
-                              border: Border.all(
-                                  color:
-                                      Theme.of(context).colorScheme.onTertiary,
-                                  width: 2),
-                              borderRadius: BorderRadius.circular(20)),
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                           child: Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(8),
                             child: QrImageView(
                               data:
                                   'https://www.linkedin.com/in/minesh-sarawogi-4787401a1/',
-                              version: QrVersions.auto,
-                              size: 250.0,
-                              gapless: true,
-                              eyeStyle: const QrEyeStyle(
-                                  color: Colors.black,
-                                  eyeShape: QrEyeShape.square),
-                              dataModuleStyle: const QrDataModuleStyle(
-                                  color: Colors.black,
-                                  dataModuleShape: QrDataModuleShape.square),
+                              size: 250,
                             ),
                           ),
                         );
@@ -495,78 +515,90 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                               width: 250,
                               child: LottieBuilder.asset('assets/scanner.json'),
                             ),
-                            const Text('Generating Qr Code...',
-                                style: TextStyle(
-                                    fontFamily: 'Goldman', fontSize: 20))
+                            const Text(
+                              'Generating Qr Code...',
+                              style: TextStyle(
+                                fontFamily: 'Goldman',
+                                fontSize: 20,
+                              ),
+                            ),
                           ],
                         );
                       case QrGenerationSuccessState:
                         state as QrGenerationSuccessState;
                         return Container(
                           decoration: BoxDecoration(
-                              boxShadow: const [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 49, 49, 49),
-                                    spreadRadius: 1,
-                                    blurRadius: 10,
-                                    offset: Offset(5, 5))
-                              ],
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Color.fromARGB(255, 49, 49, 49),
+                                spreadRadius: 1,
+                                blurRadius: 10,
+                                offset: Offset(5, 5),
+                              ),
+                            ],
+                            color: Theme.of(context).colorScheme.onTertiary,
+                            border: Border.all(
                               color: Theme.of(context).colorScheme.onTertiary,
-                              border: Border.all(
-                                  color:
-                                      Theme.of(context).colorScheme.onTertiary,
-                                  width: 2),
-                              borderRadius: BorderRadius.circular(20)),
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                           child: kIsWeb
                               ? Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(8),
                                   child: RepaintBoundary(
                                     key: qrCodeRepaintBoundaryKey,
                                     child: QrImageView(
                                       data: state.data,
-                                      version: QrVersions.auto,
-                                      size: 250.0,
-                                      gapless: true,
+                                      size: 250,
                                       eyeStyle: QrEyeStyle(
-                                          color: state.color,
-                                          eyeShape: QrEyeShape.square),
+                                        color: state.color,
+                                        eyeShape: QrEyeShape.square,
+                                      ),
                                       dataModuleStyle: QrDataModuleStyle(
-                                          color: state.color,
-                                          dataModuleShape:
-                                              QrDataModuleShape.square),
+                                        color: state.color,
+                                        dataModuleShape:
+                                            QrDataModuleShape.square,
+                                      ),
                                       embeddedImage: webSelectedImage != null
-                                          ? MemoryImage(Uint8List.fromList(
-                                              webSelectedImage!.bytes!))
+                                          ? MemoryImage(
+                                              Uint8List.fromList(
+                                                webSelectedImage!.bytes!,
+                                              ),
+                                            )
                                           : null,
                                       embeddedImageStyle:
                                           const QrEmbeddedImageStyle(
-                                              size: Size(40, 40)),
+                                        size: Size(40, 40),
+                                      ),
                                     ),
                                   ),
                                 )
                               : Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(8),
                                   child: RepaintBoundary(
                                     key: qrCodeRepaintBoundaryKey,
                                     child: QrImageView(
                                       data: state.data,
-                                      version: QrVersions.auto,
-                                      size: 250.0,
-                                      gapless: true,
+                                      size: 250,
                                       eyeStyle: QrEyeStyle(
-                                          color: state.color,
-                                          eyeShape: QrEyeShape.square),
+                                        color: state.color,
+                                        eyeShape: QrEyeShape.square,
+                                      ),
                                       dataModuleStyle: QrDataModuleStyle(
-                                          color: state.color,
-                                          dataModuleShape:
-                                              QrDataModuleShape.square),
+                                        color: state.color,
+                                        dataModuleShape:
+                                            QrDataModuleShape.square,
+                                      ),
                                       embeddedImage: state.mobileimage != null
                                           ? FileImage(
-                                              File(state.mobileimage!.path))
+                                              File(state.mobileimage!.path),
+                                            )
                                           : null,
                                       embeddedImageStyle:
                                           const QrEmbeddedImageStyle(
-                                              size: Size(40, 40)),
+                                        size: Size(40, 40),
+                                      ),
                                     ),
                                   ),
                                 ),

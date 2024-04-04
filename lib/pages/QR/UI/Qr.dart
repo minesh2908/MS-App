@@ -19,13 +19,14 @@ class _QrPageState extends State<QrPage> {
         title: Text(
           'QR',
           style: TextStyle(
-              fontSize: 32,
-              fontFamily: 'Goldman',
-              color: Theme.of(context).colorScheme.scrim),
+            fontSize: 32,
+            fontFamily: 'Goldman',
+            color: Theme.of(context).colorScheme.scrim,
+          ),
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: InkWell(
               onTap: () {
                 Navigator.pop(context);
@@ -35,31 +36,35 @@ class _QrPageState extends State<QrPage> {
                 color: Theme.of(context).colorScheme.scrim,
               ),
             ),
-          )
+          ),
         ],
       ),
       body: Container(
-          width: double.maxFinite,
-          height: double.maxFinite,
-          decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primaryContainer),
-          child: ResponsiveLayout(
-            mobileBody: Column(
-              children: [
-                Expanded(
-                    child: Column(
+        width: double.maxFinite,
+        height: double.maxFinite,
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.primaryContainer,
+        ),
+        child: ResponsiveLayout(
+          mobileBody: Column(
+            children: [
+              Expanded(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     CircleAvatar(
                       radius: 100,
                       backgroundColor: const Color.fromARGB(255, 219, 215, 177),
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return const QrCodeGenerator();
-                          }));
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const QrCodeGenerator();
+                              },
+                            ),
+                          );
                         },
                         child: CircleAvatar(
                           radius: 80,
@@ -76,10 +81,11 @@ class _QrPageState extends State<QrPage> {
                               Text(
                                 'GENERATE QR',
                                 style: TextStyle(
-                                    color: Theme.of(context).colorScheme.scrim,
-                                    fontFamily: 'Goldman',
-                                    fontWeight: FontWeight.bold),
-                              )
+                                  color: Theme.of(context).colorScheme.scrim,
+                                  fontFamily: 'Goldman',
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -105,25 +111,26 @@ class _QrPageState extends State<QrPage> {
                               Text(
                                 'SCAN QR',
                                 style: TextStyle(
-                                    color: Theme.of(context).colorScheme.scrim,
-                                    fontFamily: 'Goldman',
-                                    fontWeight: FontWeight.bold),
-                              )
+                                  color: Theme.of(context).colorScheme.scrim,
+                                  fontFamily: 'Goldman',
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ],
                           ),
                         ),
                       ),
-                    )
+                    ),
                   ],
-                ))
-              ],
-            ),
-            desktopBody: Column(
-              children: [
-                Expanded(
-                    child: Row(
+                ),
+              ),
+            ],
+          ),
+          desktopBody: Column(
+            children: [
+              Expanded(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     CircleAvatar(
                       radius: 100,
@@ -143,10 +150,11 @@ class _QrPageState extends State<QrPage> {
                             Text(
                               'GENERATE QR',
                               style: TextStyle(
-                                  color: Theme.of(context).colorScheme.scrim,
-                                  fontFamily: 'Goldman',
-                                  fontWeight: FontWeight.bold),
-                            )
+                                color: Theme.of(context).colorScheme.scrim,
+                                fontFamily: 'Goldman',
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -171,25 +179,26 @@ class _QrPageState extends State<QrPage> {
                               Text(
                                 'SCAN QR',
                                 style: TextStyle(
-                                    color: Theme.of(context).colorScheme.scrim,
-                                    fontFamily: 'Goldman',
-                                    fontWeight: FontWeight.bold),
-                              )
+                                  color: Theme.of(context).colorScheme.scrim,
+                                  fontFamily: 'Goldman',
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ],
                           ),
                         ),
                       ),
-                    )
+                    ),
                   ],
-                ))
-              ],
-            ),
-            tabletBody: Column(
-              children: [
-                Expanded(
-                    child: Row(
+                ),
+              ),
+            ],
+          ),
+          tabletBody: Column(
+            children: [
+              Expanded(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     CircleAvatar(
                       radius: 100,
@@ -209,10 +218,11 @@ class _QrPageState extends State<QrPage> {
                             Text(
                               'GENERATE QR',
                               style: TextStyle(
-                                  color: Theme.of(context).colorScheme.scrim,
-                                  fontFamily: 'Goldman',
-                                  fontWeight: FontWeight.bold),
-                            )
+                                color: Theme.of(context).colorScheme.scrim,
+                                fontFamily: 'Goldman',
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -237,20 +247,23 @@ class _QrPageState extends State<QrPage> {
                               Text(
                                 'SCAN QR',
                                 style: TextStyle(
-                                    color: Theme.of(context).colorScheme.scrim,
-                                    fontFamily: 'Goldman',
-                                    fontWeight: FontWeight.bold),
-                              )
+                                  color: Theme.of(context).colorScheme.scrim,
+                                  fontFamily: 'Goldman',
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ],
                           ),
                         ),
                       ),
-                    )
+                    ),
                   ],
-                ))
-              ],
-            ),
-          )),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

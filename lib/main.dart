@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:space_app/Theme/Theme/theme.dart';
 import 'package:space_app/Theme/bloc/theme_bloc.dart';
+import 'package:space_app/pages/Dashboard/UI/dashboard.dart';
 import 'package:space_app/pages/weather/UI/weather.dart';
 
 void main() {

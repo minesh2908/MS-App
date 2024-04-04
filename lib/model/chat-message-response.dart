@@ -1,13 +1,32 @@
 import 'dart:convert';
 
 class ChatMessageResponse {
-  final List<Candidate>? candidates;
-  final PromptFeedback? promptFeedback;
-
   ChatMessageResponse({
     this.candidates,
     this.promptFeedback,
   });
+
+  factory ChatMessageResponse.fromJson(String str) =>
+      ChatMessageResponse.fromMap(json.decode(str) as Map<String, dynamic>);
+
+  factory ChatMessageResponse.fromMap(Map<String, dynamic> json) =>
+      ChatMessageResponse(
+        candidates: json['candidates'] == null
+            ? []
+            : (json['candidates'] as List<dynamic>)
+                .map(
+                  (candidateJson) =>
+                      Candidate.fromMap(candidateJson as Map<String, dynamic>),
+                )
+                .toList(),
+        promptFeedback: json['promptFeedback'] == null
+            ? null
+            : PromptFeedback.fromMap(
+                json['promptFeedback'] as Map<String, dynamic>,
+              ),
+      );
+  final List<Candidate>? candidates;
+  final PromptFeedback? promptFeedback;
 
   ChatMessageResponse copyWith({
     List<Candidate>? candidates,
@@ -18,42 +37,46 @@ class ChatMessageResponse {
         promptFeedback: promptFeedback ?? this.promptFeedback,
       );
 
-  factory ChatMessageResponse.fromJson(String str) =>
-      ChatMessageResponse.fromMap(json.decode(str));
-
   String toJson() => json.encode(toMap());
 
-  factory ChatMessageResponse.fromMap(Map<String, dynamic> json) =>
-      ChatMessageResponse(
-        candidates: json["candidates"] == null
-            ? []
-            : List<Candidate>.from(
-                json["candidates"]!.map((x) => Candidate.fromMap(x))),
-        promptFeedback: json["promptFeedback"] == null
-            ? null
-            : PromptFeedback.fromMap(json["promptFeedback"]),
-      );
-
   Map<String, dynamic> toMap() => {
-        "candidates": candidates == null
+        'candidates': candidates == null
             ? []
             : List<dynamic>.from(candidates!.map((x) => x.toMap())),
-        "promptFeedback": promptFeedback?.toMap(),
+        'promptFeedback': promptFeedback?.toMap(),
       };
 }
 
 class Candidate {
-  final Content? content;
-  final String? finishReason;
-  final int? index;
-  final List<SafetyRating>? safetyRatings;
-
   Candidate({
     this.content,
     this.finishReason,
     this.index,
     this.safetyRatings,
   });
+
+  factory Candidate.fromJson(String str) =>
+      Candidate.fromMap(json.decode(str) as Map<String, dynamic>);
+
+  factory Candidate.fromMap(Map<String, dynamic> json) => Candidate(
+        content: json['content'] == null
+            ? null
+            : Content.fromMap(json['content'] as Map<String, dynamic>),
+        finishReason: json['finishReason'] as String?,
+        index: json['index'] as int?,
+        safetyRatings: json['safetyRatings'] == null
+            ? []
+            : (json['safetyRatings'] as List<dynamic>)
+                .map(
+                  (ratingJson) =>
+                      SafetyRating.fromMap(ratingJson as Map<String, dynamic>),
+                )
+                .toList(),
+      );
+  final Content? content;
+  final String? finishReason;
+  final int? index;
+  final List<SafetyRating>? safetyRatings;
 
   Candidate copyWith({
     Content? content,
@@ -68,39 +91,39 @@ class Candidate {
         safetyRatings: safetyRatings ?? this.safetyRatings,
       );
 
-  factory Candidate.fromJson(String str) => Candidate.fromMap(json.decode(str));
-
   String toJson() => json.encode(toMap());
 
-  factory Candidate.fromMap(Map<String, dynamic> json) => Candidate(
-        content:
-            json["content"] == null ? null : Content.fromMap(json["content"]),
-        finishReason: json["finishReason"],
-        index: json["index"],
-        safetyRatings: json["safetyRatings"] == null
-            ? []
-            : List<SafetyRating>.from(
-                json["safetyRatings"]!.map((x) => SafetyRating.fromMap(x))),
-      );
-
   Map<String, dynamic> toMap() => {
-        "content": content?.toMap(),
-        "finishReason": finishReason,
-        "index": index,
-        "safetyRatings": safetyRatings == null
+        'content': content?.toMap(),
+        'finishReason': finishReason,
+        'index': index,
+        'safetyRatings': safetyRatings == null
             ? []
             : List<dynamic>.from(safetyRatings!.map((x) => x.toMap())),
       };
 }
 
 class Content {
-  final List<Part>? parts;
-  final String? role;
-
   Content({
     this.parts,
     this.role,
   });
+
+  factory Content.fromJson(String str) =>
+      Content.fromMap(json.decode(str) as Map<String, dynamic>);
+
+  factory Content.fromMap(Map<String, dynamic> json) => Content(
+        parts: json['parts'] == null
+            ? []
+            : (json['parts'] as List<dynamic>)
+                .map(
+                  (partJson) => Part.fromMap(partJson as Map<String, dynamic>),
+                )
+                .toList(),
+        role: json['role'] as String?,
+      );
+  final List<Part>? parts;
+  final String? role;
 
   Content copyWith({
     List<Part>? parts,
@@ -111,31 +134,28 @@ class Content {
         role: role ?? this.role,
       );
 
-  factory Content.fromJson(String str) => Content.fromMap(json.decode(str));
-
   String toJson() => json.encode(toMap());
 
-  factory Content.fromMap(Map<String, dynamic> json) => Content(
-        parts: json["parts"] == null
-            ? []
-            : List<Part>.from(json["parts"]!.map((x) => Part.fromMap(x))),
-        role: json["role"],
-      );
-
   Map<String, dynamic> toMap() => {
-        "parts": parts == null
+        'parts': parts == null
             ? []
             : List<dynamic>.from(parts!.map((x) => x.toMap())),
-        "role": role,
+        'role': role,
       };
 }
 
 class Part {
-  final String? text;
-
   Part({
     this.text,
   });
+
+  factory Part.fromJson(String str) =>
+      Part.fromMap(json.decode(str) as Map<String, dynamic>);
+
+  factory Part.fromMap(Map<String, dynamic> json) => Part(
+        text: json['text'] as String?,
+      );
+  final String? text;
 
   Part copyWith({
     String? text,
@@ -144,27 +164,28 @@ class Part {
         text: text ?? this.text,
       );
 
-  factory Part.fromJson(String str) => Part.fromMap(json.decode(str));
-
   String toJson() => json.encode(toMap());
 
-  factory Part.fromMap(Map<String, dynamic> json) => Part(
-        text: json["text"],
-      );
-
   Map<String, dynamic> toMap() => {
-        "text": text,
+        'text': text,
       };
 }
 
 class SafetyRating {
-  final String? category;
-  final String? probability;
-
   SafetyRating({
     this.category,
     this.probability,
   });
+
+  factory SafetyRating.fromJson(String str) =>
+      SafetyRating.fromMap(json.decode(str) as Map<String, dynamic>);
+
+  factory SafetyRating.fromMap(Map<String, dynamic> json) => SafetyRating(
+        category: json['category'] as String?,
+        probability: json['probability'] as String?,
+      );
+  final String? category;
+  final String? probability;
 
   SafetyRating copyWith({
     String? category,
@@ -175,28 +196,33 @@ class SafetyRating {
         probability: probability ?? this.probability,
       );
 
-  factory SafetyRating.fromJson(String str) =>
-      SafetyRating.fromMap(json.decode(str));
-
   String toJson() => json.encode(toMap());
 
-  factory SafetyRating.fromMap(Map<String, dynamic> json) => SafetyRating(
-        category: json["category"],
-        probability: json["probability"],
-      );
-
   Map<String, dynamic> toMap() => {
-        "category": category,
-        "probability": probability,
+        'category': category,
+        'probability': probability,
       };
 }
 
 class PromptFeedback {
-  final List<SafetyRating>? safetyRatings;
-
   PromptFeedback({
     this.safetyRatings,
   });
+
+  factory PromptFeedback.fromJson(String str) =>
+      PromptFeedback.fromMap(json.decode(str) as Map<String, dynamic>);
+
+  factory PromptFeedback.fromMap(Map<String, dynamic> json) => PromptFeedback(
+        safetyRatings: json['safetyRatings'] == null
+            ? []
+            : (json['safetyRatings'] as List<dynamic>)
+                .map(
+                  (ratingJson) =>
+                      SafetyRating.fromMap(ratingJson as Map<String, dynamic>),
+                )
+                .toList(),
+      );
+  final List<SafetyRating>? safetyRatings;
 
   PromptFeedback copyWith({
     List<SafetyRating>? safetyRatings,
@@ -205,20 +231,10 @@ class PromptFeedback {
         safetyRatings: safetyRatings ?? this.safetyRatings,
       );
 
-  factory PromptFeedback.fromJson(String str) =>
-      PromptFeedback.fromMap(json.decode(str));
-
   String toJson() => json.encode(toMap());
 
-  factory PromptFeedback.fromMap(Map<String, dynamic> json) => PromptFeedback(
-        safetyRatings: json["safetyRatings"] == null
-            ? []
-            : List<SafetyRating>.from(
-                json["safetyRatings"]!.map((x) => SafetyRating.fromMap(x))),
-      );
-
   Map<String, dynamic> toMap() => {
-        "safetyRatings": safetyRatings == null
+        'safetyRatings': safetyRatings == null
             ? []
             : List<dynamic>.from(safetyRatings!.map((x) => x.toMap())),
       };

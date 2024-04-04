@@ -18,24 +18,25 @@ class _WeatherPageState extends State<WeatherPage> {
     getLocation.determinePosition();
     super.initState();
     _currentPosition = Position(
-      latitude: 0.0,
-      longitude: 0.0,
-      altitude: 0.0, // Adding default values for other parameters
-      accuracy: 0.0,
-      heading: 0.0,
-      speed: 0.0,
-      speedAccuracy: 0.0,
-      altitudeAccuracy: 0.0,
-      timestamp: DateTime.now(), headingAccuracy: 0.0,
+      latitude: 0,
+      longitude: 0,
+      altitude: 0, // Adding default values for other parameters
+      accuracy: 0,
+      heading: 0,
+      speed: 0,
+      speedAccuracy: 0,
+      altitudeAccuracy: 0,
+      timestamp: DateTime.now(), headingAccuracy: 0,
     );
   }
 
   late Position _currentPosition;
-  void getLotLong() async {
+  Future<void> getLotLong() async {
     print('clicked');
     try {
-      Position position = await Geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.high);
+      final position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high,
+      );
       setState(() {
         _currentPosition = position;
       });
@@ -48,28 +49,30 @@ class _WeatherPageState extends State<WeatherPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        ElevatedButton(
-            onPressed: () {
-              getLotLong();
-            },
-            child: const Text('Get Location')),
-        Column(
-          children: [
-            Text('Latitude: ${_currentPosition.latitude}'),
-            Text('Longitude: ${_currentPosition.longitude}'),
-          ],
-        ),
-        ElevatedButton(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(
+            onPressed: getLotLong,
+            child: const Text('Get Location'),
+          ),
+          Column(
+            children: [
+              Text('Latitude: ${_currentPosition.latitude}'),
+              Text('Longitude: ${_currentPosition.longitude}'),
+            ],
+          ),
+          ElevatedButton(
             onPressed: () {
               WeatherApi.getWeatherDetails(
-                  _currentPosition.longitude.toString(),
-                  _currentPosition.latitude.toString());
+                _currentPosition.longitude.toString(),
+                _currentPosition.latitude.toString(),
+              );
             },
-            child: const Text('Get Weather'))
-      ],
-    ));
+            child: const Text('Get Weather'),
+          ),
+        ],
+      ),
+    );
   }
 }
