@@ -11,7 +11,7 @@ class _QrCodeScannerState extends State<QrCodeScanner> {
   String qrCode = '';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Column(
         children: [],
       ),

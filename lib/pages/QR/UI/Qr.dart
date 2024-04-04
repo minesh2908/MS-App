@@ -53,17 +53,18 @@ class _QrPageState extends State<QrPage> {
                   children: [
                     CircleAvatar(
                       radius: 100,
-                      backgroundColor: Color.fromARGB(255, 219, 215, 177),
+                      backgroundColor: const Color.fromARGB(255, 219, 215, 177),
                       child: InkWell(
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                            return QrCodeGenerator();
+                            return const QrCodeGenerator();
                           }));
                         },
                         child: CircleAvatar(
                           radius: 80,
-                          backgroundColor: Color.fromARGB(255, 218, 205, 93),
+                          backgroundColor:
+                              const Color.fromARGB(255, 218, 205, 93),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -86,11 +87,12 @@ class _QrPageState extends State<QrPage> {
                     ),
                     CircleAvatar(
                       radius: 100,
-                      backgroundColor: Color.fromARGB(255, 219, 215, 177),
+                      backgroundColor: const Color.fromARGB(255, 219, 215, 177),
                       child: CircleAvatar(
                         radius: 80,
                         child: CircleAvatar(
-                          backgroundColor: Color.fromARGB(255, 232, 93, 83),
+                          backgroundColor:
+                              const Color.fromARGB(255, 232, 93, 83),
                           radius: 80,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -125,10 +127,11 @@ class _QrPageState extends State<QrPage> {
                   children: [
                     CircleAvatar(
                       radius: 100,
-                      backgroundColor: Color.fromARGB(255, 219, 215, 177),
+                      backgroundColor: const Color.fromARGB(255, 219, 215, 177),
                       child: CircleAvatar(
                         radius: 80,
-                        backgroundColor: Color.fromARGB(255, 218, 205, 93),
+                        backgroundColor:
+                            const Color.fromARGB(255, 218, 205, 93),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -150,11 +153,12 @@ class _QrPageState extends State<QrPage> {
                     ),
                     CircleAvatar(
                       radius: 100,
-                      backgroundColor: Color.fromARGB(255, 219, 215, 177),
+                      backgroundColor: const Color.fromARGB(255, 219, 215, 177),
                       child: CircleAvatar(
                         radius: 80,
                         child: CircleAvatar(
-                          backgroundColor: Color.fromARGB(255, 232, 93, 83),
+                          backgroundColor:
+                              const Color.fromARGB(255, 232, 93, 83),
                           radius: 80,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -189,10 +193,11 @@ class _QrPageState extends State<QrPage> {
                   children: [
                     CircleAvatar(
                       radius: 100,
-                      backgroundColor: Color.fromARGB(255, 219, 215, 177),
+                      backgroundColor: const Color.fromARGB(255, 219, 215, 177),
                       child: CircleAvatar(
                         radius: 80,
-                        backgroundColor: Color.fromARGB(255, 218, 205, 93),
+                        backgroundColor:
+                            const Color.fromARGB(255, 218, 205, 93),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -214,11 +219,12 @@ class _QrPageState extends State<QrPage> {
                     ),
                     CircleAvatar(
                       radius: 100,
-                      backgroundColor: Color.fromARGB(255, 219, 215, 177),
+                      backgroundColor: const Color.fromARGB(255, 219, 215, 177),
                       child: CircleAvatar(
                         radius: 80,
                         child: CircleAvatar(
-                          backgroundColor: Color.fromARGB(255, 232, 93, 83),
+                          backgroundColor:
+                              const Color.fromARGB(255, 232, 93, 83),
                           radius: 80,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,

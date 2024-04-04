@@ -1,9 +1,9 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
-import 'package:space_app/pages/AIchat/bloc/chat_message_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
 import 'package:space_app/model/chat-message-request.dart';
+import 'package:space_app/pages/AIchat/bloc/chat_message_bloc.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
                       color: Theme.of(context).colorScheme.onPrimary),
                   child: Column(
                     children: [
-                      Container(
+                      SizedBox(
                         height: 100,
                         child: Padding(
                           padding: const EdgeInsets.only(
@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 'AI Chat',
                                 style: TextStyle(
                                     fontSize: 32,
@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                                   onTap: () {
                                     Navigator.pop(context);
                                   },
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.home,
                                     color: Colors.black,
                                     size: 28,
@@ -67,12 +67,12 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       Expanded(
-                        child: message.length == 0
+                        child: message.isEmpty
                             ? Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Container(
+                                  SizedBox(
                                       height: 200,
                                       width: 200,
                                       child: LottieBuilder.asset(
@@ -103,22 +103,22 @@ class _HomePageState extends State<HomePage> {
                                         itemCount: message.length,
                                         itemBuilder: (conext, index) {
                                           return Container(
-                                            margin: EdgeInsets.all(10),
-                                            padding: EdgeInsets.all(10),
+                                            margin: const EdgeInsets.all(10),
+                                            padding: const EdgeInsets.all(10),
                                             decoration: BoxDecoration(
                                                 color: Colors.yellow.shade300
                                                     .withOpacity(0.6),
                                                 borderRadius: message[index]
                                                             .role ==
                                                         'user'
-                                                    ? BorderRadius.only(
+                                                    ? const BorderRadius.only(
                                                         topLeft:
                                                             Radius.circular(25),
                                                         topRight:
                                                             Radius.circular(25),
                                                         bottomLeft:
                                                             Radius.circular(25))
-                                                    : BorderRadius.only(
+                                                    : const BorderRadius.only(
                                                         topLeft:
                                                             Radius.circular(25),
                                                         topRight:
@@ -131,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 message[index].role == 'user'
-                                                    ? Text(
+                                                    ? const Text(
                                                         'User',
                                                         style: TextStyle(
                                                             color: Colors.grey,
@@ -142,7 +142,7 @@ class _HomePageState extends State<HomePage> {
                                                                 FontWeight
                                                                     .w600),
                                                       )
-                                                    : Text(
+                                                    : const Text(
                                                         'AI Chat',
                                                         style: TextStyle(
                                                             color: Colors.red,
@@ -159,10 +159,11 @@ class _HomePageState extends State<HomePage> {
                                                       .first
                                                       .text
                                                       .replaceAll('**', ''),
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                       height: 2,
                                                       fontSize: 16,
-                                                      fontFamily: 'NanumMyeongjo',
+                                                      fontFamily:
+                                                          'NanumMyeongjo',
                                                       color: Colors.black),
                                                 ),
                                               ],
@@ -174,13 +175,13 @@ class _HomePageState extends State<HomePage> {
                       Column(
                         children: [
                           chatMessageBloc.generating == true
-                              ? Container(
+                              ? SizedBox(
                                   height: 50,
                                   child: Lottie.asset('assets/loading.json'))
-                              : SizedBox()
+                              : const SizedBox()
                         ],
                       ),
-                      Container(
+                      SizedBox(
                         height: 80,
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -191,7 +192,7 @@ class _HomePageState extends State<HomePage> {
                                   padding: const EdgeInsets.all(0.0),
                                   child: TextField(
                                     controller: textEditingController,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         color: Colors.black,
                                         fontFamily: 'NanumMyeongjo'),
                                     decoration: InputDecoration(
@@ -222,7 +223,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               InkWell(
@@ -261,10 +262,10 @@ class _HomePageState extends State<HomePage> {
                 );
               case ChatMessageErrorState:
                 return Container(
-                  child: Text('Some Error Occured'),
+                  child: const Text('Some Error Occured'),
                 );
               default:
-                return SizedBox();
+                return const SizedBox();
             }
           }),
     );

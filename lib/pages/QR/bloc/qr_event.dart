@@ -11,5 +11,6 @@ final class GenerateQrEvent extends QrEvent {
   GenerateQrEvent(
       {required this.linkGenerationText,
       this.selectedColor,
-      this.mobileSelectedImage, this.webSelectedImage});
+      this.mobileSelectedImage,
+      this.webSelectedImage});
 }

@@ -9,7 +9,7 @@ class HelperApi {
 
     try {
       var response = await dio.post(
-          'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.0-pro:generateContent?key=${geminiApiKey}',
+          'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.0-pro:generateContent?key=$geminiApiKey',
           data: {
             "contents": message.map((e) => e.toMap()).toList(),
             "generationConfig": {
@@ -38,14 +38,14 @@ class HelperApi {
               }
             ]
           });
-      print(response
-            .data['candidates'].first['content']['parts'].first['text']);
+      print(
+          response.data['candidates'].first['content']['parts'].first['text']);
       if (response.statusCode! >= 200 && response.statusCode! < 300) {
         //print(response.data['candidates'].first['content']['parts'].first['text']);
         // return response
         //     .data['candidates'].first['content']['parts'].first['text'];
-         final modal1 = ChatMessageResponse.fromMap(response.data);
-           return modal1.candidates?.first.content?.parts?.first.text;
+        final modal1 = ChatMessageResponse.fromMap(response.data);
+        return modal1.candidates?.first.content?.parts?.first.text;
       }
     } catch (e) {
       print(e);

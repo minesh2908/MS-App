@@ -9,27 +9,27 @@ part 'chat_message_event.dart';
 part 'chat_message_state.dart';
 
 class ChatMessageBloc extends Bloc<ChatMessageEvent, ChatMessageState> {
-  ChatMessageBloc() : super(ChatMessageSuccessState(message: [])) {
+  ChatMessageBloc() : super(ChatMessageSuccessState(message: const [])) {
     on<ChatMessageCalledEvent>(chatMessageCalledEvent);
   }
   List<ChatMessageRequestModel> message = [];
-  bool generating= false;
+  bool generating = false;
   Future<FutureOr<void>> chatMessageCalledEvent(
       ChatMessageCalledEvent event, Emitter<ChatMessageState> emit) async {
     message.add(ChatMessageRequestModel(
         role: "user",
         parts: [ChatPartsMessageModel(text: event.promptByUser)]));
     emit(ChatMessageSuccessState(message: message));
-    generating= true;
+    generating = true;
     try {
       String generatedText =
           await ChatMessageApiCall.chatTextGenerationApi(message);
-      if (generatedText.length > 0) {
+      if (generatedText.isNotEmpty) {
         message.add(ChatMessageRequestModel(
             role: "model",
             parts: [ChatPartsMessageModel(text: generatedText)]));
-            emit(ChatMessageSuccessState(message: message));
-             generating= false; 
+        emit(ChatMessageSuccessState(message: message));
+        generating = false;
       }
     } catch (e) {
       print(e.toString());

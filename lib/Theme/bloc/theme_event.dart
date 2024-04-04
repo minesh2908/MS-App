@@ -3,10 +3,8 @@ part of 'theme_bloc.dart';
 
 @immutable
 sealed class ThemeEvent {}
+
 class ThemeChange extends ThemeEvent {
- final bool isDark;
-  ThemeChange({
-    required this.isDark
-  });
-  
+  final bool isDark;
+  ThemeChange({required this.isDark});
 }

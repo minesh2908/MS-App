@@ -1,13 +1,9 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lottie/lottie.dart';
-import 'package:space_app/model/helper.dart';
-import 'package:space_app/pages/Helper/bloc/helper_bloc.dart';
-import 'package:space_app/repo/helper-api.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+import 'package:lottie/lottie.dart';
+import 'package:space_app/pages/Helper/bloc/helper_bloc.dart';
 import 'package:space_app/responsive/responsive_layout.dart';
 
 class Helper extends StatefulWidget {
@@ -44,7 +40,7 @@ class _HelperState extends State<Helper> {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      Container(
+                      SizedBox(
                         height: 100,
                         child: Padding(
                           padding: const EdgeInsets.only(
@@ -52,7 +48,7 @@ class _HelperState extends State<Helper> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 'HELPER',
                                 style: TextStyle(
                                     fontSize: 32,
@@ -64,7 +60,7 @@ class _HelperState extends State<Helper> {
                                   onTap: () {
                                     Navigator.pop(context);
                                   },
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.home,
                                     color: Color.fromARGB(255, 53, 52, 52),
                                     size: 28,
@@ -84,15 +80,16 @@ class _HelperState extends State<Helper> {
                                     height: 150,
                                     width: 150,
                                     decoration: BoxDecoration(
-                                        color:
-                                            Theme.of(context).colorScheme.onTertiary,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .onTertiary,
                                         borderRadius: BorderRadius.circular(25),
-                                        boxShadow: [
+                                        boxShadow: const [
                                           BoxShadow(
                                               color: Colors.black,
                                               spreadRadius: 1,
                                               blurRadius: 10,
-                                              offset: const Offset(10, 15))
+                                              offset: Offset(10, 15))
                                         ]),
                                     child: Padding(
                                       padding: const EdgeInsets.all(14.0),
@@ -103,14 +100,14 @@ class _HelperState extends State<Helper> {
                                 Padding(
                                   padding: const EdgeInsets.only(
                                       left: 16.0, right: 16, top: 50),
-                                  child: Container(
+                                  child: SizedBox(
                                     height: 100,
                                     child: AnimatedTextKit(
                                         totalRepeatCount: 1,
                                         animatedTexts: [
                                           TyperAnimatedText(
                                             'Stuck? Share your situation, we will offer solutions. Example: Headache for head pain.',
-                                            textStyle: TextStyle(
+                                            textStyle: const TextStyle(
                                                 color: Color.fromARGB(
                                                     255, 79, 78, 78),
                                                 fontSize: 18,
@@ -135,36 +132,42 @@ class _HelperState extends State<Helper> {
                                           child: TextFormField(
                                             cursorColor: Colors.grey,
                                             controller: textEditingController,
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 fontFamily: 'NanumMyeongjo',
                                                 fontWeight: FontWeight.bold),
                                             decoration: InputDecoration(
-                                              hintStyle: TextStyle(
-                                                  color: const Color.fromARGB(
-                                                      255, 105, 103, 103),
-                                                  fontSize: 20,
-                                                  ),
+                                              hintStyle: const TextStyle(
+                                                color: Color.fromARGB(
+                                                    255, 105, 103, 103),
+                                                fontSize: 20,
+                                              ),
                                               hintText:
                                                   'Enter Your Situation...',
                                               // fillColor: Colors.white,
-                                              fillColor: Theme.of(context).colorScheme.onTertiary,
+                                              fillColor: Theme.of(context)
+                                                  .colorScheme
+                                                  .onTertiary,
                                               filled: true,
                                               enabledBorder: OutlineInputBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(50),
                                                   borderSide: BorderSide(
-                                                      color: Theme.of(context).colorScheme.onTertiary)),
+                                                      color: Theme.of(context)
+                                                          .colorScheme
+                                                          .onTertiary)),
                                               focusedBorder: OutlineInputBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(50),
                                                   borderSide: BorderSide(
                                                       width: 2,
-                                                      color: Theme.of(context).colorScheme.onTertiary)),
+                                                      color: Theme.of(context)
+                                                          .colorScheme
+                                                          .onTertiary)),
                                             ),
                                           ),
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 10,
                                       ),
                                       InkWell(
@@ -172,7 +175,7 @@ class _HelperState extends State<Helper> {
                                           print(textEditingController.text);
                                           textEditingController.text.isEmpty
                                               ? ScaffoldMessenger.of(context)
-                                                  .showSnackBar(SnackBar(
+                                                  .showSnackBar(const SnackBar(
                                                       content: Text(
                                                           'Enter your problem first before searching')))
                                               : helperBloc.add(HelperGenerateEvent(
@@ -185,18 +188,22 @@ class _HelperState extends State<Helper> {
                                           borderRadius:
                                               BorderRadius.circular(100),
                                           child: CircleAvatar(
-                                            backgroundColor: Theme.of(context).colorScheme.onTertiary,
+                                            backgroundColor: Theme.of(context)
+                                                .colorScheme
+                                                .onTertiary,
+                                            radius: 32,
                                             child: CircleAvatar(
                                               radius: 30,
-                                              backgroundColor: Theme.of(context).colorScheme.onTertiary,
-                                              child: Icon(
+                                              backgroundColor: Theme.of(context)
+                                                  .colorScheme
+                                                  .onTertiary,
+                                              child: const Icon(
                                                 Icons.search,
                                                 size: 30,
                                                 color: Color.fromARGB(
                                                     255, 105, 103, 103),
                                               ),
                                             ),
-                                            radius: 32,
                                           ),
                                         ),
                                       )
@@ -215,7 +222,7 @@ class _HelperState extends State<Helper> {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      Container(
+                      SizedBox(
                         height: 100,
                         child: Padding(
                           padding: const EdgeInsets.only(
@@ -223,7 +230,7 @@ class _HelperState extends State<Helper> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 'HELPER',
                                 style: TextStyle(
                                     fontSize: 32,
@@ -235,7 +242,7 @@ class _HelperState extends State<Helper> {
                                   onTap: () {
                                     Navigator.pop(context);
                                   },
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.home,
                                     color: Color.fromARGB(255, 53, 52, 52),
                                     size: 28,
@@ -244,7 +251,7 @@ class _HelperState extends State<Helper> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Expanded(
@@ -258,15 +265,16 @@ class _HelperState extends State<Helper> {
                                     height: 150,
                                     width: 150,
                                     decoration: BoxDecoration(
-                                        color:
-                                            Theme.of(context).colorScheme.onTertiary,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .onTertiary,
                                         borderRadius: BorderRadius.circular(25),
-                                        boxShadow: [
+                                        boxShadow: const [
                                           BoxShadow(
                                               color: Colors.black,
                                               spreadRadius: 1,
                                               blurRadius: 10,
-                                              offset: const Offset(10, 15))
+                                              offset: Offset(10, 15))
                                         ]),
                                     child: Padding(
                                       padding: const EdgeInsets.all(14.0),
@@ -277,14 +285,14 @@ class _HelperState extends State<Helper> {
                                 Padding(
                                   padding: const EdgeInsets.only(
                                       left: 16.0, right: 16, top: 50),
-                                  child: Container(
+                                  child: SizedBox(
                                     height: 50,
                                     child: AnimatedTextKit(
                                         totalRepeatCount: 1,
                                         animatedTexts: [
                                           TyperAnimatedText(
                                             'Stuck? Share your situation, we will offer solutions. Example: Headache for head pain.',
-                                            textStyle: TextStyle(
+                                            textStyle: const TextStyle(
                                                 color: Color.fromARGB(
                                                     255, 79, 78, 78),
                                                 fontSize: 18,
@@ -309,36 +317,42 @@ class _HelperState extends State<Helper> {
                                           child: TextFormField(
                                             cursorColor: Colors.grey,
                                             controller: textEditingController,
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 fontFamily: 'NanumMyeongjo',
                                                 fontWeight: FontWeight.bold),
                                             decoration: InputDecoration(
-                                              hintStyle: TextStyle(
-                                                  color: const Color.fromARGB(
-                                                      255, 105, 103, 103),
-                                                  fontSize: 20,
-                                                  ),
+                                              hintStyle: const TextStyle(
+                                                color: Color.fromARGB(
+                                                    255, 105, 103, 103),
+                                                fontSize: 20,
+                                              ),
                                               hintText:
                                                   'Enter Your Situation...',
                                               // fillColor: Colors.white,
-                                              fillColor: Theme.of(context).colorScheme.onTertiary,
+                                              fillColor: Theme.of(context)
+                                                  .colorScheme
+                                                  .onTertiary,
                                               filled: true,
                                               enabledBorder: OutlineInputBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(50),
                                                   borderSide: BorderSide(
-                                                      color: Theme.of(context).colorScheme.onTertiary)),
+                                                      color: Theme.of(context)
+                                                          .colorScheme
+                                                          .onTertiary)),
                                               focusedBorder: OutlineInputBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(50),
                                                   borderSide: BorderSide(
                                                       width: 2,
-                                                      color: Theme.of(context).colorScheme.onTertiary)),
+                                                      color: Theme.of(context)
+                                                          .colorScheme
+                                                          .onTertiary)),
                                             ),
                                           ),
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 10,
                                       ),
                                       InkWell(
@@ -346,7 +360,7 @@ class _HelperState extends State<Helper> {
                                           print(textEditingController.text);
                                           textEditingController.text.isEmpty
                                               ? ScaffoldMessenger.of(context)
-                                                  .showSnackBar(SnackBar(
+                                                  .showSnackBar(const SnackBar(
                                                       content: Text(
                                                           'Enter your problem first before searching')))
                                               : helperBloc.add(HelperGenerateEvent(
@@ -359,18 +373,22 @@ class _HelperState extends State<Helper> {
                                           borderRadius:
                                               BorderRadius.circular(100),
                                           child: CircleAvatar(
-                                            backgroundColor: Theme.of(context).colorScheme.onTertiary,
+                                            backgroundColor: Theme.of(context)
+                                                .colorScheme
+                                                .onTertiary,
+                                            radius: 32,
                                             child: CircleAvatar(
                                               radius: 30,
-                                              backgroundColor: Theme.of(context).colorScheme.onTertiary,
-                                              child: Icon(
+                                              backgroundColor: Theme.of(context)
+                                                  .colorScheme
+                                                  .onTertiary,
+                                              child: const Icon(
                                                 Icons.search,
                                                 size: 30,
                                                 color: Color.fromARGB(
                                                     255, 105, 103, 103),
                                               ),
                                             ),
-                                            radius: 32,
                                           ),
                                         ),
                                       )
@@ -389,7 +407,7 @@ class _HelperState extends State<Helper> {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      Container(
+                      SizedBox(
                         height: 100,
                         child: Padding(
                           padding: const EdgeInsets.only(
@@ -397,7 +415,7 @@ class _HelperState extends State<Helper> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 'HELPER',
                                 style: TextStyle(
                                     fontSize: 32,
@@ -409,7 +427,7 @@ class _HelperState extends State<Helper> {
                                   onTap: () {
                                     Navigator.pop(context);
                                   },
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.home,
                                     color: Color.fromARGB(255, 53, 52, 52),
                                     size: 28,
@@ -418,7 +436,7 @@ class _HelperState extends State<Helper> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Expanded(
@@ -432,15 +450,16 @@ class _HelperState extends State<Helper> {
                                     height: 150,
                                     width: 150,
                                     decoration: BoxDecoration(
-                                        color:
-                                            Theme.of(context).colorScheme.onTertiary,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .onTertiary,
                                         borderRadius: BorderRadius.circular(25),
-                                        boxShadow: [
+                                        boxShadow: const [
                                           BoxShadow(
                                               color: Colors.black,
                                               spreadRadius: 1,
                                               blurRadius: 10,
-                                              offset: const Offset(10, 15))
+                                              offset: Offset(10, 15))
                                         ]),
                                     child: Padding(
                                       padding: const EdgeInsets.all(14.0),
@@ -451,14 +470,14 @@ class _HelperState extends State<Helper> {
                                 Padding(
                                   padding: const EdgeInsets.only(
                                       left: 16.0, right: 16, top: 40),
-                                  child: Container(
+                                  child: SizedBox(
                                     height: 50,
                                     child: AnimatedTextKit(
                                         totalRepeatCount: 1,
                                         animatedTexts: [
                                           TyperAnimatedText(
                                             'Stuck? Share your situation, we will offer solutions. Example: Headache for head pain.',
-                                            textStyle: TextStyle(
+                                            textStyle: const TextStyle(
                                                 color: Color.fromARGB(
                                                     255, 79, 78, 78),
                                                 fontSize: 18,
@@ -483,36 +502,42 @@ class _HelperState extends State<Helper> {
                                           child: TextFormField(
                                             controller: textEditingController,
                                             cursorColor: Colors.grey,
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 fontFamily: 'NanumMyeongjo',
                                                 fontWeight: FontWeight.bold),
                                             decoration: InputDecoration(
-                                              hintStyle: TextStyle(
-                                                  color: const Color.fromARGB(
-                                                      255, 105, 103, 103),
-                                                  fontSize: 20,
-                                                 ),
+                                              hintStyle: const TextStyle(
+                                                color: Color.fromARGB(
+                                                    255, 105, 103, 103),
+                                                fontSize: 20,
+                                              ),
                                               hintText:
                                                   'Enter Your Situation...',
                                               // fillColor: Colors.white,
-                                              fillColor: Theme.of(context).colorScheme.onTertiary,
+                                              fillColor: Theme.of(context)
+                                                  .colorScheme
+                                                  .onTertiary,
                                               filled: true,
                                               enabledBorder: OutlineInputBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(50),
                                                   borderSide: BorderSide(
-                                                      color: Theme.of(context).colorScheme.onTertiary)),
+                                                      color: Theme.of(context)
+                                                          .colorScheme
+                                                          .onTertiary)),
                                               focusedBorder: OutlineInputBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(50),
                                                   borderSide: BorderSide(
                                                       width: 2,
-                                                      color: Theme.of(context).colorScheme.onTertiary)),
+                                                      color: Theme.of(context)
+                                                          .colorScheme
+                                                          .onTertiary)),
                                             ),
                                           ),
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 10,
                                       ),
                                       InkWell(
@@ -520,7 +545,7 @@ class _HelperState extends State<Helper> {
                                           print(textEditingController.text);
                                           textEditingController.text.isEmpty
                                               ? ScaffoldMessenger.of(context)
-                                                  .showSnackBar(SnackBar(
+                                                  .showSnackBar(const SnackBar(
                                                       content: Text(
                                                           'Enter your problem first before searching')))
                                               : helperBloc.add(HelperGenerateEvent(
@@ -533,18 +558,22 @@ class _HelperState extends State<Helper> {
                                           borderRadius:
                                               BorderRadius.circular(100),
                                           child: CircleAvatar(
-                                            backgroundColor: Theme.of(context).colorScheme.onTertiary,
+                                            backgroundColor: Theme.of(context)
+                                                .colorScheme
+                                                .onTertiary,
+                                            radius: 32,
                                             child: CircleAvatar(
                                               radius: 30,
-                                              backgroundColor: Theme.of(context).colorScheme.onTertiary,
-                                              child: Icon(
+                                              backgroundColor: Theme.of(context)
+                                                  .colorScheme
+                                                  .onTertiary,
+                                              child: const Icon(
                                                 Icons.search,
                                                 size: 30,
                                                 color: Color.fromARGB(
                                                     255, 105, 103, 103),
                                               ),
                                             ),
-                                            radius: 32,
                                           ),
                                         ),
                                       )
@@ -561,12 +590,12 @@ class _HelperState extends State<Helper> {
                 ),
               );
             case HelperSuccessState:
-              return Container(
+              return SizedBox(
                 height: double.maxFinite,
                 width: double.maxFinite,
                 child: Column(
                   children: [
-                    Container(
+                    SizedBox(
                       height: 100,
                       child: Padding(
                         padding:
@@ -574,7 +603,7 @@ class _HelperState extends State<Helper> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
+                            const Text(
                               'HELPER',
                               style: TextStyle(
                                   fontSize: 32,
@@ -588,19 +617,19 @@ class _HelperState extends State<Helper> {
                                     onTap: () {
                                       Navigator.pop(context);
                                     },
-                                    child: Icon(
+                                    child: const Icon(
                                       Icons.home,
                                       color: Colors.black,
                                       size: 28,
                                     )),
-                                SizedBox(
+                                const SizedBox(
                                   width: 20,
                                 ),
                                 InkWell(
                                     onTap: () {
                                       helperBloc.add(HelperPopEvent());
                                     },
-                                    child: Icon(
+                                    child: const Icon(
                                       Icons.cancel,
                                       color: Colors.black,
                                       size: 28,
@@ -618,7 +647,7 @@ class _HelperState extends State<Helper> {
                           padding: const EdgeInsets.all(14.0),
                           child: HtmlWidget(
                             helperResult,
-                            textStyle: TextStyle(
+                            textStyle: const TextStyle(
                                 fontFamily: 'NanumMyeongjo',
                                 fontSize: 18,
                                 fontVariations: []),
@@ -634,29 +663,29 @@ class _HelperState extends State<Helper> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
+                  SizedBox(
                     height: 200,
                     width: 200,
                     child: Lottie.asset('assets/waving.json'),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  Container(
+                  SizedBox(
                     height: 50,
                     child: AnimatedTextKit(animatedTexts: [
                       RotateAnimatedText('Searching Best Solutions',
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                               fontSize: 18,
                               fontFamily: 'Goldman',
                               fontWeight: FontWeight.bold)),
                       RotateAnimatedText('You can sit and relax',
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                               fontSize: 18,
                               fontFamily: 'Goldman',
                               fontWeight: FontWeight.bold)),
                       RotateAnimatedText('We will definatley give you solution',
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                               fontSize: 18,
                               fontFamily: 'Goldman',
                               fontWeight: FontWeight.bold))
@@ -665,7 +694,7 @@ class _HelperState extends State<Helper> {
                 ],
               );
             default:
-              return SizedBox();
+              return const SizedBox();
           }
         },
       ),

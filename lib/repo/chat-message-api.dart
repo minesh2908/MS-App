@@ -1,16 +1,15 @@
-import 'dart:math';
-
 import 'package:dio/dio.dart';
 import 'package:space_app/model/chat-message-request.dart';
 import 'package:space_app/model/chat-message-response.dart';
 import 'package:space_app/utils/constants.dart';
 
 class ChatMessageApiCall {
-  static chatTextGenerationApi(List<ChatMessageRequestModel> previousMessages) async {
+  static chatTextGenerationApi(
+      List<ChatMessageRequestModel> previousMessages) async {
     try {
       Dio dio = Dio();
       var response = await dio.post(
-          'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.0-pro:generateContent?key=${geminiApiKey}',
+          'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.0-pro:generateContent?key=$geminiApiKey',
           data: {
             "contents": previousMessages.map((e) => e.toMap()).toList(),
             "generationConfig": {
@@ -39,14 +38,14 @@ class ChatMessageApiCall {
               }
             ]
           });
-           
-          if(response.statusCode!>=200 && response.statusCode!<300){
-              //print(response.data['candidates'].first['content']['parts'].first['text']);
-           //   return response.data['candidates'].first['content']['parts'].first['text'];
-           print(response.data.runtimeType);
-           final modal1 = ChatMessageResponse.fromMap(response.data);
-           return modal1.candidates?.first.content?.parts?.first.text;
-          }
+
+      if (response.statusCode! >= 200 && response.statusCode! < 300) {
+        //print(response.data['candidates'].first['content']['parts'].first['text']);
+        //   return response.data['candidates'].first['content']['parts'].first['text'];
+        print(response.data.runtimeType);
+        final modal1 = ChatMessageResponse.fromMap(response.data);
+        return modal1.candidates?.first.content?.parts?.first.text;
+      }
       return '';
     } catch (e) {
       print(e.toString());

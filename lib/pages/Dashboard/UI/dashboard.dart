@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:intl/intl.dart';
 import 'package:space_app/Theme/bloc/theme_bloc.dart';
+import 'package:space_app/pages/AIchat/UI/AIchat.dart';
 import 'package:space_app/pages/ComingSoon/comingsoon.dart';
 import 'package:space_app/pages/Developer/UI/developer.dart';
 import 'package:space_app/pages/Helper/UI/helper.dart';
-import 'package:space_app/pages/AIchat/UI/AIchat.dart';
-import 'package:intl/intl.dart';
-import 'package:space_app/pages/QR/UI/Qr.dart';
 import 'package:space_app/pages/QR/UI/QrCodeGeneration.dart';
 import 'package:space_app/responsive/responsive_layout.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -43,7 +41,7 @@ class _DashboardState extends State<Dashboard> {
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           actions: [
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: InkWell(
                   onTap: () {},
                   child: Switch(
@@ -53,8 +51,9 @@ class _DashboardState extends State<Dashboard> {
                           .read<ThemeBloc>()
                           .add(ThemeChange(isDark: !value));
                     },
-                    activeThumbImage: AssetImage('assets/nightmode.jpg'),
-                    inactiveThumbImage: AssetImage('assets/lightmode.png'),
+                    activeThumbImage: const AssetImage('assets/nightmode.jpg'),
+                    inactiveThumbImage:
+                        const AssetImage('assets/lightmode.png'),
                     activeTrackColor: Colors.white,
                     activeColor: Colors.white,
                     inactiveTrackColor: Colors.white,
@@ -97,7 +96,7 @@ class _DashboardState extends State<Dashboard> {
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         'Features',
                         style: TextStyle(
                           color: Colors.black,
@@ -129,7 +128,7 @@ class _DashboardState extends State<Dashboard> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return HomePage();
+                                    return const HomePage();
                                   },
                                 ),
                               );
@@ -151,7 +150,7 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return Helper();
+                                return const Helper();
                               }));
                             },
                             child: DashboardCard(
@@ -173,7 +172,7 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return ComingSoon();
+                                return const ComingSoon();
                               }));
                             },
                             child: DashboardCard(
@@ -192,7 +191,7 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return QrCodeGenerator();
+                                return const QrCodeGenerator();
                               }));
                             },
                             child: DashboardCard(
@@ -213,7 +212,7 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return ComingSoon();
+                                return const ComingSoon();
                               }));
                             },
                             child: DashboardCard(
@@ -232,7 +231,7 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () async {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return DevloperPage();
+                                return const DevloperPage();
                               }));
                             },
                             child: DashboardCard(
@@ -261,7 +260,7 @@ class _DashboardState extends State<Dashboard> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return HomePage();
+                                    return const HomePage();
                                   },
                                 ),
                               );
@@ -283,7 +282,7 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return Helper();
+                                return const Helper();
                               }));
                             },
                             child: DashboardCard(
@@ -305,7 +304,7 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return ComingSoon();
+                                return const ComingSoon();
                               }));
                             },
                             child: DashboardCard(
@@ -324,7 +323,7 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return QrCodeGenerator();
+                                return const QrCodeGenerator();
                               }));
                             },
                             child: DashboardCard(
@@ -345,7 +344,7 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return ComingSoon();
+                                return const ComingSoon();
                               }));
                             },
                             child: DashboardCard(
@@ -363,7 +362,7 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () async {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return DevloperPage();
+                                return const DevloperPage();
                               }));
                             },
                             child: DashboardCard(
@@ -392,7 +391,7 @@ class _DashboardState extends State<Dashboard> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return HomePage();
+                                    return const HomePage();
                                   },
                                 ),
                               );
@@ -414,7 +413,7 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return Helper();
+                                return const Helper();
                               }));
                             },
                             child: DashboardCard(
@@ -436,7 +435,7 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return ComingSoon();
+                                return const ComingSoon();
                               }));
                             },
                             child: DashboardCard(
@@ -455,7 +454,7 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return QrCodeGenerator();
+                                return const QrCodeGenerator();
                               }));
                             },
                             child: DashboardCard(
@@ -476,7 +475,7 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return ComingSoon();
+                                return const ComingSoon();
                               }));
                             },
                             child: DashboardCard(
@@ -495,7 +494,7 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () async {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return DevloperPage();
+                                return const DevloperPage();
                               }));
                             },
                             child: DashboardCard(
@@ -512,7 +511,7 @@ class _DashboardState extends State<Dashboard> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 )
               ],
@@ -551,10 +550,10 @@ class DashboardCard extends StatelessWidget {
             size: 30,
           ),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Text(
               headingContent,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.black,
                   fontFamily: 'Goldman',
                   fontSize: 20,
@@ -562,12 +561,12 @@ class DashboardCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Text(
               bodyContent,
               textAlign: TextAlign.center,
-              style:
-                  TextStyle(color: Colors.black, fontWeight: FontWeight.w400),
+              style: const TextStyle(
+                  color: Colors.black, fontWeight: FontWeight.w400),
             ),
           )
         ],

@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:space_app/repo/weather-api.dart';
@@ -57,7 +55,7 @@ class _WeatherPageState extends State<WeatherPage> {
             onPressed: () {
               getLotLong();
             },
-            child: Text('Get Location')),
+            child: const Text('Get Location')),
         Column(
           children: [
             Text('Latitude: ${_currentPosition.latitude}'),
@@ -70,7 +68,7 @@ class _WeatherPageState extends State<WeatherPage> {
                   _currentPosition.longitude.toString(),
                   _currentPosition.latitude.toString());
             },
-            child: Text('Get Weather'))
+            child: const Text('Get Weather'))
       ],
     ));
   }

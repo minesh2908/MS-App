@@ -1,17 +1,13 @@
 import 'dart:io';
-import 'dart:ui';
+
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:lottie/lottie.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:space_app/pages/QR/bloc/qr_bloc.dart';
 
@@ -35,8 +31,8 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
     try {
       image = await ImagePicker().pickImage(source: ImageSource.gallery);
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Somwthing went wrong! Please try agin.')));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Somwthing went wrong! Please try agin.')));
     }
 
     setState(() {
@@ -107,7 +103,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-        title: Text(
+        title: const Text(
           'QR',
           style: TextStyle(
               fontSize: 32,
@@ -121,7 +117,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
               onTap: () {
                 Navigator.pop(context);
               },
-              child: Icon(
+              child: const Icon(
                 Icons.home,
                 color: Color.fromARGB(255, 53, 52, 52),
               ),
@@ -138,7 +134,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Material(
@@ -147,12 +143,12 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                   child: TextField(
                     cursorColor: Colors.black38,
                     controller: linkTextEditingController,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontFamily: 'NanumMyeongjo'),
                     decoration: InputDecoration(
-                      hintStyle: TextStyle(
-                        color: const Color.fromARGB(255, 105, 103, 103),
+                      hintStyle: const TextStyle(
+                        color: Color.fromARGB(255, 105, 103, 103),
                         fontSize: 20,
                       ),
                       hintText: 'Enter Text/Link here',
@@ -171,7 +167,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Row(
@@ -186,7 +182,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                                 },
                                 icon: Container(
                                   decoration: BoxDecoration(
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                             color:
                                                 Color.fromARGB(255, 49, 49, 49),
@@ -213,7 +209,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                                 ))
                             : Container(
                                 decoration: BoxDecoration(
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                           color:
                                               Color.fromARGB(255, 49, 49, 49),
@@ -233,7 +229,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                                 child: Stack(
                                   alignment: Alignment.center,
                                   children: [
-                                    Container(
+                                    SizedBox(
                                       height: 100,
                                       width: 100,
                                       child: Padding(
@@ -250,7 +246,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                                           setState(() {});
                                         },
                                         icon: Container(
-                                          child: Icon(
+                                          child: const Icon(
                                             Icons.cancel,
                                             color: Colors.red,
                                           ),
@@ -265,7 +261,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                                 },
                                 icon: Container(
                                   decoration: BoxDecoration(
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                             color:
                                                 Color.fromARGB(255, 49, 49, 49),
@@ -292,7 +288,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                                 ))
                             : Container(
                                 decoration: BoxDecoration(
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                           color:
                                               Color.fromARGB(255, 49, 49, 49),
@@ -312,7 +308,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                                 child: Stack(
                                   alignment: Alignment.center,
                                   children: [
-                                    Container(
+                                    SizedBox(
                                       height: 100,
                                       width: 100,
                                       child: Padding(
@@ -328,7 +324,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                                           setState(() {});
                                         },
                                         icon: Container(
-                                          child: Icon(
+                                          child: const Icon(
                                             Icons.cancel,
                                             color: Colors.red,
                                           ),
@@ -343,7 +339,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                                 context: context,
                                 builder: (context) {
                                   return AlertDialog(
-                                      content: Container(
+                                      content: SizedBox(
                                     height: 600,
                                     child: Column(
                                       mainAxisAlignment:
@@ -367,7 +363,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                                                 setState(() {});
                                                 Navigator.pop(context);
                                               },
-                                              child: Text(
+                                              child: const Text(
                                                 'Select Color',
                                                 style: TextStyle(
                                                     color: Colors.black),
@@ -380,7 +376,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                           },
                           icon: Container(
                             decoration: BoxDecoration(
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                       color: Color.fromARGB(255, 49, 49, 49),
                                       spreadRadius: 1,
@@ -407,17 +403,17 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
 
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 InkWell(
                   onTap: () {
                     linkTextEditingController.text.isEmpty
-                        ? ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        ? ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                             content: Text(
                                 'Please enter text first to generate QR Code')))
                         : qrBloc.add(GenerateQrEvent(
@@ -434,14 +430,14 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                     decoration: BoxDecoration(
                         color: Theme.of(context).colorScheme.onTertiary,
                         borderRadius: BorderRadius.circular(40),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Colors.black,
                             spreadRadius: 1,
                             blurRadius: 10,
                           )
                         ]),
-                    child: Center(
+                    child: const Center(
                         child: Text(
                       'Generate',
                       style: TextStyle(
@@ -451,7 +447,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                     )),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 BlocBuilder<QrBloc, QrState>(
@@ -461,7 +457,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                       case QrInitial:
                         return Container(
                           decoration: BoxDecoration(
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                     color: Color.fromARGB(255, 49, 49, 49),
                                     spreadRadius: 1,
@@ -482,10 +478,10 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                               version: QrVersions.auto,
                               size: 250.0,
                               gapless: true,
-                              eyeStyle: QrEyeStyle(
+                              eyeStyle: const QrEyeStyle(
                                   color: Colors.black,
                                   eyeShape: QrEyeShape.square),
-                              dataModuleStyle: QrDataModuleStyle(
+                              dataModuleStyle: const QrDataModuleStyle(
                                   color: Colors.black,
                                   dataModuleShape: QrDataModuleShape.square),
                             ),
@@ -494,12 +490,12 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                       case QrLoadingState:
                         return Column(
                           children: [
-                            Container(
+                            SizedBox(
                               height: 250,
                               width: 250,
                               child: LottieBuilder.asset('assets/scanner.json'),
                             ),
-                            Text('Generating Qr Code...',
+                            const Text('Generating Qr Code...',
                                 style: TextStyle(
                                     fontFamily: 'Goldman', fontSize: 20))
                           ],
@@ -508,7 +504,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                         state as QrGenerationSuccessState;
                         return Container(
                           decoration: BoxDecoration(
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                     color: Color.fromARGB(255, 49, 49, 49),
                                     spreadRadius: 1,
@@ -542,8 +538,9 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                                           ? MemoryImage(Uint8List.fromList(
                                               webSelectedImage!.bytes!))
                                           : null,
-                                      embeddedImageStyle: QrEmbeddedImageStyle(
-                                          size: Size(40, 40)),
+                                      embeddedImageStyle:
+                                          const QrEmbeddedImageStyle(
+                                              size: Size(40, 40)),
                                     ),
                                   ),
                                 )
@@ -567,8 +564,9 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                                           ? FileImage(
                                               File(state.mobileimage!.path))
                                           : null,
-                                      embeddedImageStyle: QrEmbeddedImageStyle(
-                                          size: Size(40, 40)),
+                                      embeddedImageStyle:
+                                          const QrEmbeddedImageStyle(
+                                              size: Size(40, 40)),
                                     ),
                                   ),
                                 ),
@@ -577,12 +575,12 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                         state as QrGenerationFailedState;
                         return Text(state.error);
                       default:
-                        return SizedBox();
+                        return const SizedBox();
                       // TODO: Handle this case.
                     }
                   },
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
                 // InkWell(

@@ -13,7 +13,8 @@ final class QrGenerationSuccessState extends QrState {
   XFile? mobileimage;
   PlatformFile? webImage;
 
-  QrGenerationSuccessState({required this.data, this.color, this.mobileimage, this.webImage});
+  QrGenerationSuccessState(
+      {required this.data, this.color, this.mobileimage, this.webImage});
 }
 
 final class QrGenerationFailedState extends QrState {

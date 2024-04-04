@@ -17,10 +17,10 @@ class mobileScreenDeveloper extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Center(
+          const Center(
             child: CircleAvatar(
                 backgroundColor: Colors.black87,
                 radius: 100,
@@ -96,7 +96,7 @@ class mobileScreenDeveloper extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(vertical: 14),
             child: Text(
               'Experienced Flutter developer adept at leading teams and collaborating effectively. With 2 years of expertise, I bring a blend of technical prowess and teamwork to every project.',
@@ -121,8 +121,8 @@ class mobileScreenDeveloper extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(10)),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.0),
                       child: Center(
                         child: Text(
                           'Hire Me',
@@ -135,7 +135,7 @@ class mobileScreenDeveloper extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 InkWell(
@@ -148,8 +148,8 @@ class mobileScreenDeveloper extends StatelessWidget {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(color: Colors.black)),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.0),
                       child: Center(
                         child: Text(
                           'Resume',
@@ -165,15 +165,15 @@ class mobileScreenDeveloper extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 16.0),
             child: Divider(
               color: Colors.black38,
               indent: 20,
               endIndent: 20,
             ),
           ),
-          ExpansionTile(
+          const ExpansionTile(
             tilePadding: EdgeInsets.all(0),
             shape: Border(),
             iconColor: Colors.black,
@@ -206,7 +206,7 @@ class mobileScreenDeveloper extends StatelessWidget {
               )
             ],
           ),
-          ExpansionTile(
+          const ExpansionTile(
             tilePadding: EdgeInsets.all(0),
             shape: Border(),
             iconColor: Colors.black,
@@ -228,7 +228,7 @@ class mobileScreenDeveloper extends StatelessWidget {
                   Expanded(
                     flex: 10,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 10.0),
+                      padding: EdgeInsets.only(left: 10.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -286,7 +286,7 @@ class mobileScreenDeveloper extends StatelessWidget {
                   Expanded(
                     flex: 10,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 10.0),
+                      padding: EdgeInsets.only(left: 10.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -330,10 +330,10 @@ class mobileScreenDeveloper extends StatelessWidget {
             ],
           ),
           ExpansionTile(
-            tilePadding: EdgeInsets.all(0),
-            shape: Border(),
+            tilePadding: const EdgeInsets.all(0),
+            shape: const Border(),
             iconColor: Colors.black,
-            title: Text(
+            title: const Text(
               'Projects',
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
             ),
@@ -342,7 +342,7 @@ class mobileScreenDeveloper extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Expanded(
+                  const Expanded(
                       flex: 1,
                       child: Column(
                         children: [
@@ -363,7 +363,7 @@ class mobileScreenDeveloper extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 'MS App',
                                 style: TextStyle(
                                     fontSize: 22,
@@ -390,8 +390,8 @@ class mobileScreenDeveloper extends StatelessWidget {
                                                 BorderRadius.circular(6),
                                             border: Border.all(
                                                 color: Colors.black)),
-                                        child: Padding(
-                                          padding: const EdgeInsets.symmetric(
+                                        child: const Padding(
+                                          padding: EdgeInsets.symmetric(
                                               horizontal: 10.0),
                                           child: Center(
                                             child: Text(
@@ -410,34 +410,34 @@ class mobileScreenDeveloper extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '1.',
                             pointDescription:
                                 'Created "MS App" using Flutter with Gen AI integration for AI    chat and custom helper functions.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '2.',
                             pointDescription:
                                 'Integrated a versatile custom QR code generator supporting iOS, Android, and web platforms.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                               pointNumber: '3.',
                               pointDescription:
                                   'Designed a responsive UI for seamless user experience across various devices.'),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '4.',
                             pointDescription:
                                 'Included download capabilities to facilitate easy access to content.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '5.',
                             pointDescription:
                                 'Incorporated interactive gaming features to enhance user engagement within the app.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                               pointNumber: '6.',
                               pointDescription:
                                   'Ensured compatibility and functionality across multiple operating systems and devices.'),
@@ -447,13 +447,13 @@ class mobileScreenDeveloper extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Expanded(
+                  const Expanded(
                       flex: 1,
                       child: CircleAvatar(
                         radius: 20,
@@ -471,7 +471,7 @@ class mobileScreenDeveloper extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 'Nerdy News',
                                 style: TextStyle(
                                     fontSize: 22,
@@ -497,8 +497,8 @@ class mobileScreenDeveloper extends StatelessWidget {
                                               BorderRadius.circular(6),
                                           border:
                                               Border.all(color: Colors.black)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
+                                      child: const Padding(
+                                        padding: EdgeInsets.symmetric(
                                             horizontal: 10.0),
                                         child: Center(
                                           child: Text(
@@ -516,38 +516,38 @@ class mobileScreenDeveloper extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '1.',
                             pointDescription:
                                 'Dynamic news application designed for daily updates.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '2.',
                             pointDescription:
                                 'Seamless browsing experience across various news topics.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                               pointNumber: '3.',
                               pointDescription:
                                   'Bookmarking feature for saving articles.'),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '4.',
                             pointDescription:
                                 'Reader mode for enhanced readability.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '5.',
                             pointDescription:
                                 'Dark mode for comfortable viewing in low-light environments.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                               pointNumber: '6.',
                               pointDescription:
                                   'Robust authentication for secure access.'),
-                          DetailPoint(
+                          const DetailPoint(
                               pointNumber: '7.',
                               pointDescription:
                                   ' Integration of web view for smooth navigation.'),
@@ -557,13 +557,13 @@ class mobileScreenDeveloper extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Expanded(
+                  const Expanded(
                       flex: 1,
                       child: CircleAvatar(
                         radius: 20,
@@ -581,7 +581,7 @@ class mobileScreenDeveloper extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 'Foodie',
                                 style: TextStyle(
                                     fontSize: 22,
@@ -606,8 +606,8 @@ class mobileScreenDeveloper extends StatelessWidget {
                                               BorderRadius.circular(6),
                                           border:
                                               Border.all(color: Colors.black)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
+                                      child: const Padding(
+                                        padding: EdgeInsets.symmetric(
                                             horizontal: 10.0),
                                         child: Center(
                                           child: Text(
@@ -625,38 +625,38 @@ class mobileScreenDeveloper extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '1.',
                             pointDescription:
                                 'A cutting-edge grocery delivery app revolutionizing shopping experiences.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '2.',
                             pointDescription:
                                 'Users can effortlessly browse through a wide array of groceries and food items.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                               pointNumber: '3.',
                               pointDescription:
                                   'Users can effortlessly add desired products to their carts for purchase.'),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '4.',
                             pointDescription:
                                 'Customers can conveniently create wishlists for future reference, ensuring they never miss out on favorite items.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '5.',
                             pointDescription:
                                 'Integration of Google authentication guarantees a secure and hassle-free login process.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                               pointNumber: '6.',
                               pointDescription:
                                   'Personalized profile and order pages enhance user engagement and satisfaction.'),
-                          DetailPoint(
+                          const DetailPoint(
                               pointNumber: '7.',
                               pointDescription:
                                   'Experience the convenience of grocery shopping at your fingertips with this innovative app.'),
@@ -666,13 +666,13 @@ class mobileScreenDeveloper extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Expanded(
+                  const Expanded(
                       flex: 1,
                       child: CircleAvatar(
                         radius: 20,
@@ -690,7 +690,7 @@ class mobileScreenDeveloper extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 'Flipkart UI Clone',
                                 style: TextStyle(
                                     fontSize: 22,
@@ -715,8 +715,8 @@ class mobileScreenDeveloper extends StatelessWidget {
                                               BorderRadius.circular(6),
                                           border:
                                               Border.all(color: Colors.black)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
+                                      child: const Padding(
+                                        padding: EdgeInsets.symmetric(
                                             horizontal: 10.0),
                                         child: Center(
                                           child: Text(
@@ -734,34 +734,34 @@ class mobileScreenDeveloper extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '1.',
                             pointDescription:
                                 'A comprehensive UI clone of the renowned Flipkart app.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '2.',
                             pointDescription:
                                 'Meticulously replicates every aspect of Flipkart user interface,encompassing all its distinctive features and pages.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                               pointNumber: '3.',
                               pointDescription:
                                   'From the homepage to product listings, users navigate through an interface mirroring the seamless functionality and aesthetic appeal of the original Flipkart app.'),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '4.',
                             pointDescription:
                                 'Showcases expertise in UI design and attention to detail in recreating a familiar and intuitive user experience.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '5.',
                             pointDescription:
                                 'Explore the world of e-commerce with this meticulously crafted    Flipkart UI clone.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                               pointNumber: '6.',
                               pointDescription:
                                   'A testament to dedication to delivering polished and immersive digital experiences.'),
@@ -771,13 +771,13 @@ class mobileScreenDeveloper extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Expanded(
+                  const Expanded(
                       flex: 1,
                       child: CircleAvatar(
                         radius: 20,
@@ -795,7 +795,7 @@ class mobileScreenDeveloper extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 'Connect',
                                 style: TextStyle(
                                     fontSize: 22,
@@ -820,8 +820,8 @@ class mobileScreenDeveloper extends StatelessWidget {
                                               BorderRadius.circular(6),
                                           border:
                                               Border.all(color: Colors.black)),
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
+                                      child: const Padding(
+                                        padding: EdgeInsets.symmetric(
                                             horizontal: 10.0),
                                         child: Center(
                                           child: Text(
@@ -839,34 +839,34 @@ class mobileScreenDeveloper extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '1.',
                             pointDescription:
                                 'A dynamic social media application designed to connect users in an interactive and engaging online community.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '2.',
                             pointDescription:
                                 'Users can easily create profiles to represent themselves.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                               pointNumber: '3.',
                               pointDescription:
                                   'Seamless connection with others through search and follow functionalities.'),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '4.',
                             pointDescription:
                                 'Users can freely share posts and stories to express themselves.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                             pointNumber: '5.',
                             pointDescription:
                                 'Followers can view and interact with shared content through liking and commenting features.',
                           ),
-                          DetailPoint(
+                          const DetailPoint(
                               pointNumber: '6.',
                               pointDescription:
                                   'Features like liking and commenting foster meaningful interactions, enriching the social experience.'),
@@ -876,12 +876,12 @@ class mobileScreenDeveloper extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
             ],
           ),
-          ExpansionTile(
+          const ExpansionTile(
             tilePadding: EdgeInsets.all(0),
             shape: Border(),
             iconColor: Colors.black,
@@ -903,7 +903,7 @@ class mobileScreenDeveloper extends StatelessWidget {
                   Expanded(
                     flex: 10,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 10.0),
+                      padding: EdgeInsets.only(left: 10.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -939,7 +939,7 @@ class mobileScreenDeveloper extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
         ],

@@ -33,6 +33,6 @@ class HelperBloc extends Bloc<HelperEvent, HelperState> {
 
   FutureOr<void> helperPopEvent(
       HelperPopEvent event, Emitter<HelperState> emit) {
-        emit(HelperInitial());
-      }
+    emit(HelperInitial());
+  }
 }

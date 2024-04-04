@@ -14,13 +14,18 @@ class HelperModel {
 
   factory HelperModel.fromMap(Map<String, dynamic> map) {
     return HelperModel(
-      parts: List<HelperPartModel>.from((map['parts'] as List<int>).map<HelperPartModel>((x) => HelperPartModel.fromMap(x as Map<String,dynamic>),),),
+      parts: List<HelperPartModel>.from(
+        (map['parts'] as List<int>).map<HelperPartModel>(
+          (x) => HelperPartModel.fromMap(x as Map<String, dynamic>),
+        ),
+      ),
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory HelperModel.fromJson(String source) => HelperModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory HelperModel.fromJson(String source) =>
+      HelperModel.fromMap(json.decode(source) as Map<String, dynamic>);
 }
 
 class HelperPartModel {
@@ -42,5 +47,6 @@ class HelperPartModel {
 
   String toJson() => json.encode(toMap());
 
-  factory HelperPartModel.fromJson(String source) => HelperPartModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory HelperPartModel.fromJson(String source) =>
+      HelperPartModel.fromMap(json.decode(source) as Map<String, dynamic>);
 }

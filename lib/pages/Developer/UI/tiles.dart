@@ -6,13 +6,12 @@ class SkillContainerNew extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
-      margin: EdgeInsets.only(right: 5, bottom: 5),
+      margin: const EdgeInsets.only(right: 5, bottom: 5),
       child: Chip(
-        side: BorderSide(width: 2),
+        side: const BorderSide(width: 2),
         label: Text(
           title,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
       ),
     );
@@ -36,7 +35,7 @@ class DetailPoint extends StatelessWidget {
               flex: 1,
               child: Text(
                 pointNumber,
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 16,
                     fontFamily: 'NanumMyeongjo',
                     fontWeight: FontWeight.w600),
@@ -45,7 +44,7 @@ class DetailPoint extends StatelessWidget {
             flex: 18,
             child: Text(
               pointDescription,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 16,
                   fontFamily: 'NanumMyeongjo',
                   fontWeight: FontWeight.w600),

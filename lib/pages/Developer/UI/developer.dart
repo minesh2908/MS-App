@@ -1,13 +1,7 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:space_app/pages/Developer/UI/desktopScreenDeveloper.dart';
 import 'package:space_app/pages/Developer/UI/mobileScreenDeveloper.dart';
-import 'package:space_app/pages/Developer/UI/tiles.dart';
 import 'package:space_app/responsive/responsive_layout.dart';
-import 'package:space_app/utils/urls.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class DevloperPage extends StatelessWidget {
   const DevloperPage({super.key});
@@ -17,7 +11,7 @@ class DevloperPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: InkWell(
-          onTap: (){
+          onTap: () {
             Navigator.pop(context);
           },
           child: Icon(Icons.arrow_back,
@@ -31,7 +25,7 @@ class DevloperPage extends StatelessWidget {
         ),
         backgroundColor: Colors.black,
       ),
-      body: ResponsiveLayout(
+      body: const ResponsiveLayout(
         mobileBody: mobileScreenDeveloper(),
         tabletBody: mobileScreenDeveloper(),
         desktopBody: desktopScreenDeveloper(),
@@ -39,4 +33,3 @@ class DevloperPage extends StatelessWidget {
     );
   }
 }
-
