@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       child: BlocBuilder<ThemeBloc, ThemeMode>(
         builder: (context, state) {
           return MaterialApp(
-            home: Dashboard(),
+            home: WeatherPage(),
             debugShowCheckedModeBanner: false,
             theme: lightTheme,
             darkTheme: darkTheme,

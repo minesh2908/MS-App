@@ -9,7 +9,7 @@ class HelperApi {
 
     try {
       var response = await dio.post(
-          'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.0-pro:generateContent?key=${api}',
+          'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.0-pro:generateContent?key=${geminiApiKey}',
           data: {
             "contents": message.map((e) => e.toMap()).toList(),
             "generationConfig": {
