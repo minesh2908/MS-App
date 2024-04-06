@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:space_app/model/helper.dart';
-import 'package:space_app/repo/helper-api.dart';
+import 'package:space_app/repo/helper_api.dart';
 
 part 'helper_event.dart';
 part 'helper_state.dart';
@@ -22,7 +22,7 @@ class HelperBloc extends Bloc<HelperEvent, HelperState> {
     print('----------------');
     print(state);
     try {
-      final String? helperResult = await HelperApi.HelperGenerationApi([
+      final helperResult = await HelperApi.HelperGenerationApi([
         HelperModel(parts: [HelperPartModel(text: event.helperText)]),
       ]);
       emit(HelperSuccessState(helperResult: helperResult!));

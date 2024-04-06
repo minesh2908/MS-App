@@ -1,16 +1,8 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 class HelperModel {
-  final List<HelperPartModel> parts;
 
   HelperModel({required this.parts});
-
-  Map<String, dynamic> toMap() {
-    return <String, dynamic>{
-      'parts': parts.map((x) => x.toMap()).toList(),
-    };
-  }
 
   factory HelperModel.fromMap(Map<String, dynamic> map) {
     return HelperModel(
@@ -22,22 +14,22 @@ class HelperModel {
     );
   }
 
-  String toJson() => json.encode(toMap());
-
   factory HelperModel.fromJson(String source) =>
       HelperModel.fromMap(json.decode(source) as Map<String, dynamic>);
-}
-
-class HelperPartModel {
-  final String text;
-
-  HelperPartModel({required this.text});
+  final List<HelperPartModel> parts;
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'text': text,
+      'parts': parts.map((x) => x.toMap()).toList(),
     };
   }
+
+  String toJson() => json.encode(toMap());
+}
+
+class HelperPartModel {
+
+  HelperPartModel({required this.text});
 
   factory HelperPartModel.fromMap(Map<String, dynamic> map) {
     return HelperPartModel(
@@ -45,8 +37,15 @@ class HelperPartModel {
     );
   }
 
-  String toJson() => json.encode(toMap());
-
   factory HelperPartModel.fromJson(String source) =>
       HelperPartModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  final String text;
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'text': text,
+    };
+  }
+
+  String toJson() => json.encode(toMap());
 }

@@ -1,6 +1,6 @@
 {
     "dart.flutterHotReloadOnSave": "all",
     "dart.hotReloadOnSave": "all",
-    "files.autoSave": "afterDelay",
+    "files.autoSave": "off",
     "files.autoSaveDelay": 200
 }

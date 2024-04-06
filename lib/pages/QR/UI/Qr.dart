@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:space_app/pages/QR/UI/QrCodeGeneration.dart';
+import 'package:space_app/pages/qr/ui/qr_code_generation.dart';
 import 'package:space_app/responsive/responsive_layout.dart';
 
 class QrPage extends StatefulWidget {

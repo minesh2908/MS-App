@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:space_app/Theme/Theme/theme.dart';
-import 'package:space_app/Theme/bloc/theme_bloc.dart';
-import 'package:space_app/pages/Dashboard/UI/dashboard.dart';
-import 'package:space_app/pages/weather/UI/weather.dart';
+import 'package:space_app/pages/dashboard/ui/dashboard.dart';
+import 'package:space_app/theme/bloc/theme_bloc.dart';
+import 'package:space_app/theme/theme/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
       child: BlocBuilder<ThemeBloc, ThemeMode>(
         builder: (context, state) {
           return MaterialApp(
-            home: const WeatherPage(),
+            home: const Dashboard(),
             debugShowCheckedModeBanner: false,
             theme: lightTheme,
             darkTheme: darkTheme,

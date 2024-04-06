@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:space_app/pages/Developer/UI/desktopScreenDeveloper.dart';
-import 'package:space_app/pages/Developer/UI/mobileScreenDeveloper.dart';
+import 'package:space_app/pages/developer/ui/desktop_screen_developer.dart';
+import 'package:space_app/pages/developer/ui/mobile_screen_developer.dart';
 import 'package:space_app/responsive/responsive_layout.dart';
 
 class DevloperPage extends StatelessWidget {
