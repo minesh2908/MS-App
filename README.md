@@ -1,3 +1,11 @@
+## Different Screens Layouts
+- Computer/PC Screen
+![1](https://github.com/minesh2908/AI-App/assets/54062823/2e876515-d314-4f35-bcf6-6ddc57b42403)
+
+- Mobile Phone Screen
+![2](https://github.com/minesh2908/AI-App/assets/54062823/56bab26c-54ec-4715-9c55-56848739b9e8)
+![3](https://github.com/minesh2908/AI-App/assets/54062823/7c5947dd-ed0d-49f4-965e-4a779c6e1e3f)
+
 ## MS App Overview
 MS App is a web application built with Flutter that provides a range of features, including AI chatting, QR code generation, theme changing, and temperature fetching. The app uses Gemini API for AI chat and Open Weather API for fetching current temperature.
 
