@@ -3,11 +3,11 @@ MS App is a web application built with Flutter that provides a range of features
 
 ## Features
 
-# AI Chatting: Engage in conversations with the AI chatbot using Gemini API.
-# QR Code Generation: Generate QR codes with custom colors and images.
-# Theme Changing: Switch between light and dark themes.
-# Temperature Fetching: Fetch current temperature using Open Weather API.
-# Responsive Design: The app is fully responsive and adapts to different screen sizes for computer/PC, tablets, and mobiles.
+AI Chatting: Engage in conversations with the AI chatbot using Gemini API.
+QR Code Generation: Generate QR codes with custom colors and images.
+Theme Changing: Switch between light and dark themes.
+Temperature Fetching: Fetch current temperature using Open Weather API.
+Responsive Design: The app is fully responsive and adapts to different screen sizes for computer/PC, tablets, and mobiles.
 
 
 ## Technical Details
@@ -38,9 +38,9 @@ lib/: Contains the application code.
   pubspec.yaml: Configuration file for Flutter dependencies.
 
 ## How to Run
-1- Clone the repository: git clone https://github.com/your-repo/ms-app.git
-2- Install dependencies: flutter pub get
-3 - Run the app: flutter run
+Clone the repository: git clone https://github.com/your-repo/ms-app.git
+Install dependencies: flutter pub get
+Run the app: flutter run
 
 ## Live Demo
 The app is currently live at mineshsarawogi.online.
