@@ -55,7 +55,7 @@ MS App is a web application built with Flutter that provides a range of features
 - Run the app: flutter run
 
 ## Live Demo
-The app is currently live at mineshsarawogi.online.
+The app is currently live at https://mineshsarawogi.online.
 
 License
 This project is licensed under the MIT License. See LICENSE for details.
