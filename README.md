@@ -38,9 +38,9 @@ MS App is a web application built with Flutter that provides a range of features
   - pubspec.yaml: Configuration file for Flutter dependencies.
 
 ## How to Run
-Clone the repository: git clone https://github.com/your-repo/ms-app.git
-Install dependencies: flutter pub get
-Run the app: flutter run
+- Clone the repository: git clone https://github.com/your-repo/ms-app.git
+- Install dependencies: flutter pub get
+- Run the app: flutter run
 
 ## Live Demo
 The app is currently live at mineshsarawogi.online.
