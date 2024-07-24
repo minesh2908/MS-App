@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:space_app/pages/Developer/UI/tiles.dart';
-import 'package:space_app/utils/urls.dart';
+import 'package:minesh_app/pages/developer/ui/tiles.dart';
+import 'package:minesh_app/utils/urls.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class mobileScreenDeveloper extends StatelessWidget {
@@ -201,10 +201,12 @@ class mobileScreenDeveloper extends StatelessWidget {
                     SkillContainerNew(title: 'Supabase'),
                     SkillContainerNew(title: 'Appwrite'),
                     SkillContainerNew(title: 'Flutterflow'),
+                    SkillContainerNew(title: 'CI/CD'),
+                    SkillContainerNew(title: 'Git'),
+                    SkillContainerNew(title: 'GitHub'),
                     SkillContainerNew(title: 'C++'),
                     SkillContainerNew(title: 'Java Script'),
                     SkillContainerNew(title: 'SAP Fiori'),
-                    SkillContainerNew(title: 'Git'),
                     SkillContainerNew(title: 'Agile'),
                     SkillContainerNew(title: 'Leadership'),
                     SkillContainerNew(title: 'Project Management'),
@@ -975,6 +977,118 @@ class mobileScreenDeveloper extends StatelessWidget {
                             ),
                             Text(
                               'Graduated in Information Technology with 8.52/10 CGPA',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: 'NanumMyeongjo',
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            const ExpansionTile(
+              tilePadding: EdgeInsets.all(0),
+              shape: Border(),
+              iconColor: Colors.black,
+              title: Text(
+                'Top Achievements',
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+              ),
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: CircleAvatar(
+                        radius: 20,
+                        backgroundColor: Colors.transparent,
+                        child: Image(image: AssetImage('assets/gdg1.png')),
+                      ),
+                    ),
+                    Expanded(
+                      flex: 10,
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Co-Organiser',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: 'NanumMyeongjo',
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              'Google Developer Group & Flutter Gwalior',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: 'NanumMyeongjo',
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              'Organised big tech events like Devfest, Hackathons, and study jams in the area. These events aimed to teach tech lovers about new technology',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: 'NanumMyeongjo',
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: CircleAvatar(
+                        radius: 20,
+                        backgroundColor: Colors.transparent,
+                        child: Image(image: AssetImage('assets/wiprologo.png')),
+                      ),
+                    ),
+                    Expanded(
+                      flex: 10,
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Habit Flag Beared',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: 'NanumMyeongjo',
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              'Wipro',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: 'NanumMyeongjo',
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              'Recognized with Habit Flag Bearer Award for demonstrating leadership, technical expertise, and fostering a collaborative team environment by competency head',
                               style: TextStyle(
                                 fontSize: 16,
                                 fontFamily: 'NanumMyeongjo',

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:space_app/model/chat_message_response.dart';
-import 'package:space_app/model/helper.dart';
-import 'package:space_app/utils/constants.dart';
+import 'package:minesh_app/model/chat_message_response.dart';
+import 'package:minesh_app/model/helper.dart';
+import 'package:minesh_app/utils/constants.dart';
 
 class HelperApi {
   static Future<String?>? HelperGenerationApi(List<HelperModel> message) async {

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:space_app/model/chat_message_request.dart';
-import 'package:space_app/model/chat_message_response.dart';
-import 'package:space_app/utils/constants.dart';
+import 'package:minesh_app/model/chat_message_request.dart';
+import 'package:minesh_app/model/chat_message_response.dart';
+import 'package:minesh_app/utils/constants.dart';
 
 class ChatMessageApiCall {
   static Future<String?>? chatTextGenerationApi(
@@ -45,7 +45,8 @@ class ChatMessageApiCall {
         //print(response.data['candidates'].first['content']['parts'].first['text']);
         //   return response.data['candidates'].first['content']['parts'].first['text'];
         print(response.data.runtimeType);
-        final modal1 = ChatMessageResponse.fromMap(response.data as Map<String, dynamic>);
+        final modal1 =
+            ChatMessageResponse.fromMap(response.data as Map<String, dynamic>);
         return modal1.candidates?.first.content?.parts?.first.text;
       }
       return '';

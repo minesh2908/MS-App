@@ -4,9 +4,9 @@ import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:minesh_app/model/weather_model.dart';
+import 'package:minesh_app/repo/weather_api.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:space_app/model/weather_model.dart';
-import 'package:space_app/repo/weather_api.dart';
 import 'package:universal_html/html.dart' as html;
 
 part 'weather_event.dart';

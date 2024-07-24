@@ -3,16 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
-import 'package:space_app/model/weather_model.dart';
-import 'package:space_app/pages/Developer/UI/developer.dart';
-import 'package:space_app/pages/Helper/UI/helper.dart';
-import 'package:space_app/pages/ai_chat/ui/ai_chat.dart';
-import 'package:space_app/pages/coming_soon/coming_soon.dart';
-import 'package:space_app/pages/qr/ui/qr_code_generation.dart';
-import 'package:space_app/pages/weather/bloc/weather_bloc.dart';
-import 'package:space_app/responsive/responsive_layout.dart';
-import 'package:space_app/theme/bloc/theme_bloc.dart';
-import 'package:space_app/utils/getlocation.dart';
+import 'package:minesh_app/model/weather_model.dart';
+import 'package:minesh_app/pages/coming_soon/coming_soon.dart';
+import 'package:minesh_app/pages/weather/bloc/weather_bloc.dart';
+import 'package:minesh_app/responsive/responsive_layout.dart';
+import 'package:minesh_app/theme/bloc/theme_bloc.dart';
+import 'package:minesh_app/utils/getlocation.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -112,8 +108,9 @@ class _DashboardState extends State<Dashboard> {
                             child: Container(
                               height: 50,
                               width: 50,
-                              decoration: const BoxDecoration(
-                                color: Colors.white,
+                              decoration: BoxDecoration(
+                                color:
+                                    Theme.of(context).scaffoldBackgroundColor,
                               ),
                               child: const Icon(
                                 Icons.thermostat_sharp,
@@ -245,14 +242,7 @@ class _DashboardState extends State<Dashboard> {
                       mainAxisCellCount: 1.5,
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return const HomePage();
-                              },
-                            ),
-                          );
+                          Navigator.pushNamed(context, '/aichat');
                         },
                         child: DashboardCard(
                           icon: Icons.message,
@@ -268,14 +258,7 @@ class _DashboardState extends State<Dashboard> {
                       mainAxisCellCount: 1,
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return const Helper();
-                              },
-                            ),
-                          );
+                          Navigator.popAndPushNamed(context, '/helper');
                         },
                         child: DashboardCard(
                           icon: Icons.help,
@@ -316,14 +299,7 @@ class _DashboardState extends State<Dashboard> {
                       mainAxisCellCount: 1,
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return const QrCodeGenerator();
-                              },
-                            ),
-                          );
+                          Navigator.pushNamed(context, '/qr');
                         },
                         child: DashboardCard(
                           icon: Icons.qr_code,
@@ -362,14 +338,8 @@ class _DashboardState extends State<Dashboard> {
                       mainAxisCellCount: 1,
                       child: InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return const DevloperPage();
-                              },
-                            ),
-                          );
+                          await Navigator.pushReplacementNamed(
+                              context, '/mineshsarawogi');
                         },
                         child: DashboardCard(
                           icon: Icons.person,
@@ -392,14 +362,7 @@ class _DashboardState extends State<Dashboard> {
                       mainAxisCellCount: 0.5,
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return const HomePage();
-                              },
-                            ),
-                          );
+                          Navigator.pushNamed(context, '/aichat');
                         },
                         child: DashboardCard(
                           icon: Icons.message,
@@ -415,14 +378,7 @@ class _DashboardState extends State<Dashboard> {
                       mainAxisCellCount: 1,
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return const Helper();
-                              },
-                            ),
-                          );
+                          Navigator.pushNamed(context, '/helper');
                         },
                         child: DashboardCard(
                           icon: Icons.help,
@@ -463,14 +419,7 @@ class _DashboardState extends State<Dashboard> {
                       mainAxisCellCount: 1,
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return const QrCodeGenerator();
-                              },
-                            ),
-                          );
+                          Navigator.pushNamed(context, '/qr');
                         },
                         child: DashboardCard(
                           icon: Icons.qr_code,
@@ -509,14 +458,7 @@ class _DashboardState extends State<Dashboard> {
                       mainAxisCellCount: 0.5,
                       child: InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return const DevloperPage();
-                              },
-                            ),
-                          );
+                          await Navigator.pushNamed(context, '/mineshsarawogi');
                         },
                         child: DashboardCard(
                           icon: Icons.person,
@@ -539,14 +481,7 @@ class _DashboardState extends State<Dashboard> {
                       mainAxisCellCount: 1,
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return const HomePage();
-                              },
-                            ),
-                          );
+                          Navigator.pushNamed(context, '/aichat');
                         },
                         child: DashboardCard(
                           icon: Icons.message,
@@ -562,14 +497,7 @@ class _DashboardState extends State<Dashboard> {
                       mainAxisCellCount: 1,
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return const Helper();
-                              },
-                            ),
-                          );
+                          Navigator.pushNamed(context, '/helper');
                         },
                         child: DashboardCard(
                           icon: Icons.help,
@@ -610,14 +538,7 @@ class _DashboardState extends State<Dashboard> {
                       mainAxisCellCount: 1,
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return const QrCodeGenerator();
-                              },
-                            ),
-                          );
+                          Navigator.pushNamed(context, '/qr');
                         },
                         child: DashboardCard(
                           icon: Icons.qr_code,
@@ -656,14 +577,7 @@ class _DashboardState extends State<Dashboard> {
                       mainAxisCellCount: 1,
                       child: InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return const DevloperPage();
-                              },
-                            ),
-                          );
+                          await Navigator.pushNamed(context, '/mineshsarawogi');
                         },
                         child: DashboardCard(
                           icon: Icons.person,

@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:space_app/model/weather_model.dart';
-import 'package:space_app/utils/constants.dart';
+import 'package:minesh_app/model/weather_model.dart';
+import 'package:minesh_app/utils/constants.dart';
 
 class WeatherApi {
   static Future<WeatherModal> getWeatherDetails(String lat, String lon) async {

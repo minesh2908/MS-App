@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:space_app/model/helper.dart';
-import 'package:space_app/repo/helper_api.dart';
+import 'package:minesh_app/model/helper.dart';
+import 'package:minesh_app/repo/helper_api.dart';
 
 part 'helper_event.dart';
 part 'helper_state.dart';

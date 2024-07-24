@@ -8,8 +8,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:lottie/lottie.dart';
+import 'package:minesh_app/pages/qr/bloc/qr_bloc.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:space_app/pages/QR/bloc/qr_bloc.dart';
 
 class QrCodeGenerator extends StatefulWidget {
   const QrCodeGenerator({super.key});
@@ -365,7 +365,7 @@ class _QrCodeGeneratorState extends State<QrCodeGenerator> {
                                         child: ElevatedButton(
                                           style: ButtonStyle(
                                             backgroundColor:
-                                                MaterialStateProperty.all(
+                                                WidgetStateProperty.all(
                                               Theme.of(context)
                                                   .colorScheme
                                                   .primaryContainer,

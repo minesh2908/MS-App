@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:lottie/lottie.dart';
-import 'package:space_app/pages/Helper/bloc/helper_bloc.dart';
-import 'package:space_app/responsive/responsive_layout.dart';
+import 'package:minesh_app/pages/helper/bloc/helper_bloc.dart';
+import 'package:minesh_app/responsive/responsive_layout.dart';
 
 class Helper extends StatefulWidget {
   const Helper({super.key});

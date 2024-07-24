@@ -2,7 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
-import 'package:space_app/pages/ai_chat/bloc/chat_message_bloc.dart';
+import 'package:minesh_app/pages/ai_chat/bloc/chat_message_bloc.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

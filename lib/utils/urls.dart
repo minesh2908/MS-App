@@ -12,7 +12,7 @@ final Uri github = Uri(scheme: 'https', host: 'github.com', path: 'minesh2908');
 final Uri resume = Uri(
   scheme: 'https',
   host: 'drive.google.com',
-  path: '/file/d/1_ZWDXzBSoPSTuprwKvea1efatae3QFq_/view',
+  path: 'file/d/1S91pm74EvYIXxtv2jzM2Q7P-yX-65umY/view',
 );
 
 final Uri msapp = Uri(scheme: 'https', host: 'mineshsarawogi.online', path: '');

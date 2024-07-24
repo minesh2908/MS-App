@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:space_app/pages/developer/ui/desktop_screen_developer.dart';
-import 'package:space_app/pages/developer/ui/mobile_screen_developer.dart';
-import 'package:space_app/responsive/responsive_layout.dart';
+import 'package:minesh_app/pages/developer/ui/desktop_screen_developer.dart';
+import 'package:minesh_app/pages/developer/ui/mobile_screen_developer.dart';
+import 'package:minesh_app/responsive/responsive_layout.dart';
 
 class DevloperPage extends StatelessWidget {
   const DevloperPage({super.key});
@@ -10,15 +10,7 @@ class DevloperPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: InkWell(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Icon(
-            Icons.arrow_back,
-            color: Theme.of(context).colorScheme.onSecondary,
-          ),
-        ),
+        centerTitle: true,
         title: Text(
           'Developer',
           style: TextStyle(

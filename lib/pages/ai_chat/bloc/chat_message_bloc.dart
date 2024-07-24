@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:space_app/model/chat_message_request.dart';
-import 'package:space_app/repo/chat_message_api.dart';
+import 'package:minesh_app/model/chat_message_request.dart';
+import 'package:minesh_app/repo/chat_message_api.dart';
 
 part 'chat_message_event.dart';
 part 'chat_message_state.dart';
