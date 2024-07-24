@@ -41,3 +41,36 @@ final Uri connect = Uri(
   host: 'drive.google.com',
   path: '/file/d/1vYGI2m8lTCdqyz159FnHWhV4_sey8SpM/view',
 );
+
+final Uri msAppGit =
+    Uri(scheme: 'https', host: 'github.com', path: '/minesh2908/MS-App');
+
+final Uri tmtGit = Uri(
+  scheme: 'https',
+  host: 'github.com',
+  path: '/minesh2908/TMT-TrackMyThings',
+);
+
+final Uri nerdyGit = Uri(
+  scheme: 'https',
+  host: 'github.com',
+  path: '/minesh2908/Nerdy-News',
+);
+
+final Uri foodieGit = Uri(
+  scheme: 'https',
+  host: 'github.com',
+  path: '/minesh2908/Foodie',
+);
+
+final Uri connectGit = Uri(
+  scheme: 'https',
+  host: 'github.com',
+  path: '/minesh2908/Connect-social-media',
+);
+
+final Uri flipkartGit = Uri(
+  scheme: 'https',
+  host: 'github.com',
+  path: '/minesh2908/flipkart',
+);
