@@ -86,56 +86,26 @@ class ShowCustomDialog extends StatelessWidget {
         ],
       ),
       content: SizedBox(
-        height: 120,
+        height: 110,
         width: 150,
-        // child: Column(
-        //   children: [
-        //     ListTile(
-        //       onTap: () {
-        //         launchUrl(msapp);
-        //       },
-        //       contentPadding: EdgeInsets.zero,
-        //       title: const Text(
-        //         'Try on Play store',
-        //         style: TextStyle(
-        //           fontSize: 18,
-        //           fontFamily: 'NanumMyeongjo',
-        //         ),
-        //       ),
-        //     ),
-        //     ListTile(
-        //       onTap: () {
-        //         launchUrl(nerdy);
-        //       },
-        //       contentPadding: EdgeInsets.zero,
-        //       title: const Text(
-        //         'Try on Git Hub',
-        //         style: TextStyle(
-        //           fontSize: 18,
-        //           fontFamily: 'NanumMyeongjo',
-        //         ),
-        //       ),
-        //     ),
-        //   ],
-        // ),
-        child: Scrollbar(
-          child: ListView.builder(
-            itemCount: tryItModel!.length,
-            itemBuilder: (BuildContext context, index) {
-              return ListTile(
-                title: Text(
-                  tryItModel![index].title,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontFamily: 'NanumMyeongjo',
-                  ),
+        child: ListView.builder(
+          padding: EdgeInsets.zero,
+          itemCount: tryItModel!.length,
+          itemBuilder: (BuildContext context, index) {
+            return ListTile(
+              contentPadding: EdgeInsets.zero,
+              title: Text(
+                tryItModel![index].title,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontFamily: 'NanumMyeongjo',
                 ),
-                onTap: () {
-                  launchUrl(tryItModel![index].launchUrl);
-                },
-              );
-            },
-          ),
+              ),
+              onTap: () {
+                launchUrl(tryItModel![index].launchUrl);
+              },
+            );
+          },
         ),
       ),
       actions: [
