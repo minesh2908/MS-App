@@ -25,6 +25,9 @@ final Uri hireme = Uri(
 final Uri nerdy = Uri.parse(
   'https://play.google.com/store/apps/details?id=news.nerdy.mobile',
 );
+final Uri tmtApp = Uri.parse(
+  'https://play.google.com/store/apps/details?id=online.mineshsarawogi.track_my_things',
+);
 final Uri foodie = Uri(
   scheme: 'https',
   host: 'drive.google.com',

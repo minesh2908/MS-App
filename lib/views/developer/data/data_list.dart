@@ -2,7 +2,7 @@ import 'package:minesh_app/model/try_it_model.dart';
 import 'package:minesh_app/utils/urls.dart';
 
 final tmtList = [
-  TryItModel(launchUrl: msapp, title: 'Download from Play Store'),
+  TryItModel(launchUrl: tmtApp, title: 'Download from Play Store'),
   TryItModel(launchUrl: tmtGit, title: 'Get the Source Code'),
 ];
 
