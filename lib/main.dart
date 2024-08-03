@@ -34,6 +34,7 @@ class MyApp extends StatelessWidget {
               '/helper': (context) => const Helper(),
               '/qr': (context) => const QrCodeGenerator(),
               '/mineshsarawogi': (context) => const DevloperPage(),
+              '/bottom': (context) => const Bottomnavbar(),
             },
             theme: lightTheme,
             darkTheme: darkTheme,

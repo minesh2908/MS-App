@@ -12,7 +12,7 @@ final Uri github = Uri(scheme: 'https', host: 'github.com', path: 'minesh2908');
 final Uri resume = Uri(
   scheme: 'https',
   host: 'drive.google.com',
-  path: 'file/d/1S91pm74EvYIXxtv2jzM2Q7P-yX-65umY/view',
+  path: 'file/d/1r7Mgbzoj6Wg_qXWe5tS8-OGU2xiEN7L0/view',
 );
 
 final Uri msapp = Uri(scheme: 'https', host: 'mineshsarawogi.online', path: '');
@@ -30,19 +30,34 @@ final Uri tmtApp = Uri.parse(
 );
 final Uri foodie = Uri(
   scheme: 'https',
-  host: 'drive.google.com',
-  path: '/file/d/17zEGzYywdi7Y-fjjekHe51HovAYaY2aO/view',
+  host: 'www.youtube.com',
+  path: 'watch',
+  queryParameters: {
+    'v': 'tUUkUJnB8jg',
+  },
 );
-final Uri flipkartUI = Uri(
+final Uri tmtPreview = Uri(
   scheme: 'https',
-  host: 'drive.google.com',
-  path: '/file/d/1VfBCQCos0Grue5xs03pO7-H68h1JiEOM/view',
+  host: 'www.youtube.com',
+  path: '/watch',
+  queryParameters: {
+    'v': 'I9JNLrqg_T8',
+  },
 );
 
 final Uri connect = Uri(
   scheme: 'https',
-  host: 'drive.google.com',
-  path: '/file/d/1vYGI2m8lTCdqyz159FnHWhV4_sey8SpM/view',
+  host: 'www.youtube.com',
+  path: '/watch',
+  queryParameters: {
+    'v': '6ucmZPzc3Pc',
+  },
+);
+
+final Uri flipkartUI = Uri(
+  scheme: 'https',
+  host: 'www.youtube.com',
+  path: 'shorts/pB-KC0h4vW0',
 );
 
 final Uri msAppGit =

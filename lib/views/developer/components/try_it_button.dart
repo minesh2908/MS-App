@@ -87,25 +87,29 @@ class ShowCustomDialog extends StatelessWidget {
       ),
       content: SizedBox(
         height: 110,
-        width: 150,
-        child: ListView.builder(
-          padding: EdgeInsets.zero,
-          itemCount: tryItModel!.length,
-          itemBuilder: (BuildContext context, index) {
-            return ListTile(
-              contentPadding: EdgeInsets.zero,
-              title: Text(
-                tryItModel![index].title,
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontFamily: 'NanumMyeongjo',
+        width: 180,
+        child: Scrollbar(
+          thumbVisibility: true,
+          trackVisibility: true,
+          child: ListView.builder(
+            padding: EdgeInsets.zero,
+            itemCount: tryItModel!.length,
+            itemBuilder: (BuildContext context, index) {
+              return ListTile(
+                contentPadding: EdgeInsets.zero,
+                title: Text(
+                  tryItModel![index].title,
+                  style: const TextStyle(
+                    fontSize: 17,
+                    fontFamily: 'NanumMyeongjo',
+                  ),
                 ),
-              ),
-              onTap: () {
-                launchUrl(tryItModel![index].launchUrl);
-              },
-            );
-          },
+                onTap: () {
+                  launchUrl(tryItModel![index].launchUrl);
+                },
+              );
+            },
+          ),
         ),
       ),
       actions: [
