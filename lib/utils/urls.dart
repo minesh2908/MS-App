@@ -12,9 +12,8 @@ final Uri github = Uri(scheme: 'https', host: 'github.com', path: 'minesh2908');
 final Uri resume = Uri(
   scheme: 'https',
   host: 'drive.google.com',
-  path: 'file/d/1S91pm74EvYIXxtv2jzM2Q7P-yX-65umY/view',
+  path: 'file/d/1fDv_uh-9Awyg47esL1x58GlGqWzHAtOs/view',
 );
-
 final Uri msapp = Uri(scheme: 'https', host: 'mineshsarawogi.online', path: '');
 
 final Uri hireme = Uri(
@@ -28,6 +27,9 @@ final Uri nerdy = Uri.parse(
 final Uri tmtApp = Uri.parse(
   'https://play.google.com/store/apps/details?id=online.mineshsarawogi.track_my_things',
 );
+
+final Uri busyBeeApp = Uri.parse(
+    'https://apps.apple.com/in/app/busybee-work-order-system/id6473514512');
 final Uri foodie = Uri(
   scheme: 'https',
   host: 'drive.google.com',

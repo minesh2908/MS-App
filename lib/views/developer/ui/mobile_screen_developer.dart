@@ -109,7 +109,7 @@ class _mobileScreenDeveloperState extends State<mobileScreenDeveloper> {
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 14),
               child: Text(
-                'Experienced Flutter developer adept at leading teams and collaborating effectively. With 2 years of expertise, I bring a blend of technical prowess and teamwork to every project.',
+                'Experienced Flutter developer adept at leading teams and collaborating effectively. With 3 years of expertise, I bring a blend of technical prowess and teamwork to every project.',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
@@ -208,13 +208,16 @@ class _mobileScreenDeveloperState extends State<mobileScreenDeveloper> {
                     SkillContainerNew(title: 'Firebase'),
                     SkillContainerNew(title: 'Supabase'),
                     SkillContainerNew(title: 'Appwrite'),
+                    SkillContainerNew(title: 'Notifications'),
                     SkillContainerNew(title: 'Flutterflow'),
+                    SkillContainerNew(title: 'SQL'),
+                    SkillContainerNew(title: 'Java Script'),
+                    SkillContainerNew(title: 'SAP UI5'),
                     SkillContainerNew(title: 'CI/CD'),
                     SkillContainerNew(title: 'Git'),
                     SkillContainerNew(title: 'GitHub'),
                     SkillContainerNew(title: 'C++'),
                     SkillContainerNew(title: 'Java Script'),
-                    SkillContainerNew(title: 'SAP Fiori'),
                     SkillContainerNew(title: 'Agile'),
                     SkillContainerNew(title: 'Leadership'),
                     SkillContainerNew(title: 'Project Management'),
@@ -334,6 +337,113 @@ class _mobileScreenDeveloperState extends State<mobileScreenDeveloper> {
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
               ),
               children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    const Expanded(
+                      child: Column(
+                        children: [
+                          CircleAvatar(
+                            radius: 20,
+                            backgroundColor: Colors.transparent,
+                            child: Image(
+                              image: AssetImage('assets/busybeelogo1.webp'),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      flex: 10,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Heading(
+                                  title: 'BusyBee: Work Order System',
+                                ),
+                                Container(
+                                  height: 30,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsets.all(2),
+                                    child: Container(
+                                      height: 25,
+                                      decoration: BoxDecoration(
+                                        color: Colors.black,
+                                        borderRadius: BorderRadius.circular(6),
+                                        border: Border.all(),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 10,
+                                        ),
+                                        child: InkWell(
+                                          onTap: () {
+                                            launchUrl(busyBeeApp);
+                                          },
+                                          child: const Center(
+                                            child: Text(
+                                              'Try It',
+                                              style: TextStyle(
+                                                fontSize: 14,
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            const DetailPoint(
+                              pointNumber: '1.',
+                              pointDescription:
+                                  'Designed and developed the UI of the application to ensure a seamless user experience.',
+                            ),
+                            const DetailPoint(
+                              pointNumber: '2.',
+                              pointDescription:
+                                  'Integrated APIs for creating and managing orders, enhancing operational efficiency',
+                            ),
+                            const DetailPoint(
+                              pointNumber: '3.',
+                              pointDescription:
+                                  'Automated email notifications and phone notifications for order creation and processing to streamline communication',
+                            ),
+                            const DetailPoint(
+                              pointNumber: '4.',
+                              pointDescription:
+                                  'Successfully deployed the application to the App Store and delivered regular updates.',
+                            ),
+                            const DetailPoint(
+                              pointNumber: '5.',
+                              pointDescription:
+                                  'Ensured continuous app improvement through deployment and iterative feature updates.',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.end,

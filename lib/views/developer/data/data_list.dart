@@ -6,6 +6,10 @@ final tmtList = [
   TryItModel(launchUrl: tmtGit, title: 'Get the Source Code'),
 ];
 
+final busyBeeList = [
+  TryItModel(launchUrl: busyBeeApp, title: 'Download from App Store'),
+];
+
 final msAppList = [
   TryItModel(launchUrl: msapp, title: 'Try the Web App'),
   TryItModel(launchUrl: msAppGit, title: 'Get the Source Code'),

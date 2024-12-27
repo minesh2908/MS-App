@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:minesh_app/theme/bloc/theme_bloc.dart';
 import 'package:minesh_app/theme/theme/theme.dart';
 import 'package:minesh_app/views/ai_chat/ui/ai_chat.dart';
-import 'package:minesh_app/views/bottom/bottomNavBar.dart';
+// import 'package:minesh_app/views/bottom/bottomNavBar.dart';
 import 'package:minesh_app/views/dashboard/ui/dashboard.dart';
 import 'package:minesh_app/views/developer/ui/developer.dart';
 import 'package:minesh_app/views/helper/ui/helper.dart';
