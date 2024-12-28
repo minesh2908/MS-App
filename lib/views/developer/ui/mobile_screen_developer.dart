@@ -365,7 +365,7 @@ class _mobileScreenDeveloperState extends State<mobileScreenDeveloper> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Heading(
-                                  title: 'BusyBee: Work Order System',
+                                  title: 'BusyBee',
                                 ),
                                 Container(
                                   height: 30,

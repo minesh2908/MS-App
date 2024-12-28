@@ -399,8 +399,8 @@ class desktopScreenDeveloper extends StatelessWidget {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Heading(
-                                        title: 'BusyBee: Work Order System',
+                                      const Heading(
+                                        title: 'BusyBee',
                                       ),
                                       Container(
                                         height: 30,
@@ -410,7 +410,7 @@ class desktopScreenDeveloper extends StatelessWidget {
                                               BorderRadius.circular(8),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(2),
+                                          padding: const EdgeInsets.all(2),
                                           child: Container(
                                             height: 25,
                                             decoration: BoxDecoration(

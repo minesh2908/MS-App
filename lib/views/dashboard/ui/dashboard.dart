@@ -6,7 +6,6 @@ import 'package:lottie/lottie.dart';
 import 'package:minesh_app/model/weather_model.dart';
 import 'package:minesh_app/responsive/responsive_layout.dart';
 import 'package:minesh_app/theme/bloc/theme_bloc.dart';
-import 'package:minesh_app/utils/getlocation.dart';
 import 'package:minesh_app/views/coming_soon/coming_soon.dart';
 import 'package:minesh_app/views/weather/bloc/weather_bloc.dart';
 
@@ -22,7 +21,7 @@ class _DashboardState extends State<Dashboard> {
   void initState() {
     // TODO: implement initState
     // getLocation.determinePosition();
-    getLocation.checkPermission();
+    //getLocation.checkPermission();
     super.initState();
   }
 
