@@ -29,22 +29,29 @@ final Uri tmtApp = Uri.parse(
 );
 
 final Uri busyBeeApp = Uri.parse(
-    'https://apps.apple.com/in/app/busybee-work-order-system/id6473514512');
+  'https://apps.apple.com/in/app/busybee-work-order-system/id6473514512',
+);
+final Uri tmtVideo = Uri(
+  scheme: 'https',
+  host: 'youtu.be',
+  path: '/I9JNLrqg_T8?si=h72jTRiQRnZjDU1_',
+);
 final Uri foodie = Uri(
   scheme: 'https',
-  host: 'drive.google.com',
-  path: '/file/d/17zEGzYywdi7Y-fjjekHe51HovAYaY2aO/view',
+  host: 'youtu.be',
+  path: '/tUUkUJnB8jg?si=-lZQOWrErsWgccLN',
 );
+
 final Uri flipkartUI = Uri(
   scheme: 'https',
-  host: 'drive.google.com',
-  path: '/file/d/1VfBCQCos0Grue5xs03pO7-H68h1JiEOM/view',
+  host: 'youtube.com',
+  path: '/shorts/tyxfTQ7vvv8',
 );
 
 final Uri connect = Uri(
   scheme: 'https',
-  host: 'drive.google.com',
-  path: '/file/d/1vYGI2m8lTCdqyz159FnHWhV4_sey8SpM/view',
+  host: 'youtu.be',
+  path: '/6ucmZPzc3Pc?si=V6-dkE8hIId4hIsu',
 );
 
 final Uri msAppGit =
